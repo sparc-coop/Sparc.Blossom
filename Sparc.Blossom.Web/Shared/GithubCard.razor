@@ -1,0 +1,19 @@
+﻿<div class="github-card">
+    <img class="project-photo" src="@GetPath(Name)" />
+    <div class="github-wrapper">
+        <p class="subtitle-1">@Name</p>
+        <img class="github-logo" src="/images/Github.png" />
+    </div>
+</div>
+
+@code {
+    [Parameter] public string? Name { get; set; }
+
+    public string GetPath(string? name)
+    {
+        string path;
+        //path = "/images/projects/Github_Project_" + name + ".png";
+        path = "/images/projects/Project_Photo_" + name + ".png";
+        return path;
+    }
+}

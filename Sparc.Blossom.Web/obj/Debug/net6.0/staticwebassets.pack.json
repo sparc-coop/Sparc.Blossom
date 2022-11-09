@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\Styles\\Global\\_assets.scss"
     },
     {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\Styles\\Global\\_footer.scss",
+      "PackagePath": "staticwebassets\\Styles\\Global\\_footer.scss"
+    },
+    {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\Styles\\Global\\_navmenu.scss",
       "PackagePath": "staticwebassets\\Styles\\Global\\_navmenu.scss"
     },
@@ -149,6 +153,14 @@
       "PackagePath": "staticwebassets\\fonts\\Nimbus-Sans-Extd-Regular.ttf"
     },
     {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Arrow.png",
+      "PackagePath": "staticwebassets\\images\\Arrow.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Blocks.png",
+      "PackagePath": "staticwebassets\\images\\Blocks.png"
+    },
+    {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Blossom Color White.png",
       "PackagePath": "staticwebassets\\images\\Blossom Color White.png"
     },
@@ -165,12 +177,32 @@
       "PackagePath": "staticwebassets\\images\\Blossom white.png"
     },
     {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Fastfoward_Left.png",
+      "PackagePath": "staticwebassets\\images\\Fastfoward_Left.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Fastfoward_Right.png",
+      "PackagePath": "staticwebassets\\images\\Fastfoward_Right.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Github.png",
+      "PackagePath": "staticwebassets\\images\\Github.png"
+    },
+    {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Group 343.png",
       "PackagePath": "staticwebassets\\images\\Group 343.png"
     },
     {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Group 346.png",
       "PackagePath": "staticwebassets\\images\\Group 346.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Pattern_1.png",
+      "PackagePath": "staticwebassets\\images\\Pattern_1.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Pattern_2.png",
+      "PackagePath": "staticwebassets\\images\\Pattern_2.png"
     },
     {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\Petal 1.png",
@@ -189,6 +221,22 @@
       "PackagePath": "staticwebassets\\images\\projects\\Conseris_Hori.png"
     },
     {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Github_Project_Citeblue.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Github_Project_Citeblue.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Github_Project_Conseris.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Github_Project_Conseris.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Github_Project_Lawof100.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Github_Project_Lawof100.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Github_Project_Sparc.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Github_Project_Sparc.png"
+    },
+    {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Ibis_Hori.png",
       "PackagePath": "staticwebassets\\images\\projects\\Ibis_Hori.png"
     },
@@ -203,6 +251,18 @@
     {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Law of 100.png",
       "PackagePath": "staticwebassets\\images\\projects\\Law of 100.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Project_Photo_Citeblue.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Project_Photo_Citeblue.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Project_Photo_Conseris.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Project_Photo_Conseris.png"
+    },
+    {
+      "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Project_Photo_Sparc.png",
+      "PackagePath": "staticwebassets\\images\\projects\\Project_Photo_Sparc.png"
     },
     {
       "Id": "C:\\Users\\cjoya\\source\\repos\\Sparc.Blossom\\Sparc.Blossom.Web\\wwwroot\\images\\projects\\Sparc_Hori.png",

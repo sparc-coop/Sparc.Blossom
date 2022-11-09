@@ -4,15 +4,11 @@
 body {
     background: #020201;
     color: #F6F4F3;
-    font-family: Helvetica;
+    font-family: 'NimbusSansExtd';
 }
 
 body::-webkit-scrollbar {
     display: none;
-}
-
-main {
-    padding-top: 59px;
 }
 
 /*html, body {

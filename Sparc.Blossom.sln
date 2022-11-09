@@ -5,7 +5,7 @@ VisualStudioVersion = 17.4.33027.239
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sparc.Blossom.Web", "Sparc.Blossom.Web\Sparc.Blossom.Web.csproj", "{D5F8FFDE-2386-4472-ADEC-C0E8F89B9A79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sparc.Blossom.Server", "Sparc.Blossom.Server\Sparc.Blossom.Server.csproj", "{FBFFA6F0-F4D7-4EA2-9DF5-8DF4A84AFBDC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sparc.Blossom.Server", "Sparc.Blossom.Server\Sparc.Blossom.Server.csproj", "{FBFFA6F0-F4D7-4EA2-9DF5-8DF4A84AFBDC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
