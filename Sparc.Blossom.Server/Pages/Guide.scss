@@ -1,0 +1,69 @@
+﻿@import "../App.Variables.scss";
+
+.guide {
+    width: 100%;
+    padding: 0 188px;
+    padding-top: 125px;
+    padding-bottom: 335px;
+
+    &--hero {
+        width: 1039px;
+        margin: 0 auto;
+        text-align: center;
+
+        .header {
+            width: 809px;
+            margin: 0 auto;
+
+            h1 {
+                margin-bottom: 10px;
+            }
+        }
+
+        .ask-questions {
+            margin-top: 50px;
+            margin-bottom: 183px;
+            display: flex;
+            justify-content: center;
+            gap: 19px;
+
+            input {
+                width: 900px;
+                height: 100px;
+                padding: 0 47px;
+                border: 2px solid $grey-100;
+                border-radius: 100px;
+                background: transparent;
+                color: $white;
+                font-size: 41px;
+            }
+
+            button {
+                width: 100px;
+                height: 100px;
+                padding: 0;
+                margin: 0;
+                background: transparent;
+                border: none;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    &--categories {
+        .category {
+            margin-bottom: 102px;
+
+            .subtitle-1 {
+                color: $grey-400;
+            }
+
+            h2 {
+                margin-bottom: 31px;
+            }
+        }
+    }
+}

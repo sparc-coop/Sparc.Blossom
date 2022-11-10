@@ -1,0 +1,15 @@
+﻿//Global
+@import "App.Variables";
+@import "App.Typography";
+
+//Shared
+@import "Shared/NavMenu";
+
+//Pages
+@import "Pages/Index";
+@import "Pages/Guide";
+
+
+body {
+    margin: 0;
+}
