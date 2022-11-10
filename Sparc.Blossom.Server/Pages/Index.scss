@@ -1,4 +1,4 @@
-﻿@import "../Global/_variables.scss";
+﻿@import "../App.Variables.scss";
 
 .home {
     background: $background;
@@ -6,7 +6,8 @@
     /*font-family: 'NimbusSansExtd';*/
     font-family: Helvetica;
     font-weight: 400;
-
+    overflow-x: hidden;
+    
     section {
         padding: 150px 0;
     }

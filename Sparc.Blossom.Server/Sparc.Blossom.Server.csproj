@@ -1,19 +1,44 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>fef388b9-e1db-4866-81cd-fb3a86884d2e</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="6.0.10" />
+    <Content Remove="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
-	<ProjectReference Include="..\Sparc.Blossom.Web\Sparc.Blossom.Web.csproj">
-		<GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-	</ProjectReference>
+    <None Remove="App.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="App.Typography.scss" />
+    <Content Include="App.Variables.scss" />
+    <Content Include="Pages\Guide.scss" />
+    <Content Include="Shared\NavMenu.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.0" />
+    <PackageReference Include="Sparc.Ibis" Version="7.0.5" />
+    <PackageReference Include="Sparc.Kernel" Version="7.0.0" />
+    <PackageReference Include="Sparc.Notifications.Twilio" Version="7.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Styles\Global\" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿@page "/"
-@namespace Sparc.Blossom.Server
-@using Sparc.Blossom.Web
+@using Microsoft.AspNetCore.Components.Web
+@namespace Sparc.Blossom.Server.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <!DOCTYPE html>
@@ -10,14 +10,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blossom</title>
     <base href="~/" />
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/app.css" rel="stylesheet" />
+    <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
     <app>
-        <component type="typeof(Sparc.Blossom.Web.App)" render-mode="WebAssemblyPrerendered" />
+        <component type="typeof(Sparc.Blossom.Server.App)" render-mode="ServerPrerendered" />
     </app>
 
-    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="_framework/blazor.server.js"></script>
 </body>
 </html>

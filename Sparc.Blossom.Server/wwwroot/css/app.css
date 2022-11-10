@@ -33,69 +33,70 @@ body p.small {
 @font-face {
   font-family: "CircularStd";
   font-weight: 400;
-  src: url(wwwroot/fonts/CircularStd-Book.ttf) format("truetype");
+  src: url(../fonts/CircularStd-Book.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 400;
   font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BookItalic.ttf) format("truetype");
+  src: url(../fonts/CircularStd-BookItalic.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 500;
-  src: url(wwwroot/fonts/CircularStd-Medium.ttf) format("truetype");
+  src: url(../fonts/CircularStd-Medium.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 500;
   font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-MediumItalic.ttf) format("truetype");
+  src: url(../fonts/CircularStd-MediumItalic.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 600;
-  src: url(wwwroot/fonts/CircularStd-Bold.ttf) format("truetype");
+  src: url(../fonts/CircularStd-Bold.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 600;
   font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BoldItalic.ttf) format("truetype");
+  src: url(../fonts/CircularStd-BoldItalic.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 900;
-  src: url(wwwroot/fonts/CircularStd-Black.ttf) format("truetype");
+  src: url(../fonts/CircularStd-Black.ttf) format("truetype");
 }
 @font-face {
   font-family: "CircularStd";
   font-weight: 900;
   font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BlackItalic.ttf) format("truetype");
+  src: url(../fonts/CircularStd-BlackItalic.ttf) format("truetype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
   font-weight: 300;
-  src: url(wwwroot/fonts/Nimbus-Sans-Extd-Light.ttf) format("truetype");
+  src: url(../fonts/Nimbus-Sans-Extd-Light.ttf) format("truetype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
   font-weight: 400;
-  src: url(wwwroot/fonts/Nimbus-Sans-Extd-Regular.ttf) format("truetype");
+  src: url(../fonts/Nimbus-Sans-Extd-Regular.ttf) format("truetype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
   font-weight: 700;
-  src: url(wwwroot/fonts/Nimbus-Sans-Extd-Bold.ttf) format("truetype");
+  src: url(../fonts/Nimbus-Sans-Extd-Bold.ttf) format("truetype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
   font-weight: 900;
-  src: url(wwwroot/fonts/Nimbus-Sans-Extd-Black.ttf) format("truetype");
+  src: url(../fonts/Nimbus-Sans-Extd-Black.ttf) format("truetype");
 }
 nav {
   width: 100%;
+  box-sizing: border-box;
   padding: 12px 50px;
   background: #020201;
   display: flex;
@@ -138,6 +139,7 @@ nav .links-wrapper button.join-community {
   /*font-family: 'NimbusSansExtd';*/
   font-family: Helvetica;
   font-weight: 400;
+  overflow-x: hidden;
 }
 .home section {
   padding: 150px 0;
@@ -315,4 +317,8 @@ nav .links-wrapper button.join-community {
 }
 .guide--categories .category h2 {
   margin-bottom: 31px;
+}
+
+body {
+  margin: 0;
 }
