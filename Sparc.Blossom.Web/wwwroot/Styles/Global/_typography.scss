@@ -4,11 +4,13 @@
 
     h1, h2, h3, h4 {
         font-family: 'NimbusSansExtd', sans-serif;
+        font-weight: 400;
         line-height: 115%;
     }
 
     p {
         font-family: 'NimbusSans', sans-serif;
+        font-weight: 400;
         line-height: 115%;
     }
 
@@ -48,14 +50,15 @@
 //fonts
 @font-face {
     font-family: 'NimbusSans';
-    font-weight: 300;
-    src: url(wwwroot/fonts/Nimbus-Sans-Light.ttf) format('opentype');
+    font-weight: 400;
+    src: url(wwwroot/fonts/Nimbus-Sans-Regular.ttf) format('opentype');
 }
 
 @font-face {
     font-family: 'NimbusSans';
     font-weight: 400;
-    src: url(wwwroot/fonts/Nimbus-Sans-Regular.ttf) format('opentype');
+    font-style: italic;
+    src: url(wwwroot/fonts/Nimbus-Sans-RegularItalic.ttf) format('opentype');
 }
 
 @font-face {
@@ -66,8 +69,9 @@
 
 @font-face {
     font-family: 'NimbusSans';
-    font-weight: 900;
-    src: url(wwwroot/fonts/Nimbus-Sans-Black.ttf) format('opentype');
+    font-weight: 700;
+    font-style: italic;
+    src: url(wwwroot/fonts/Nimbus-Sans-BoldItalic.ttf) format('opentype');
 }
  
 @font-face {
