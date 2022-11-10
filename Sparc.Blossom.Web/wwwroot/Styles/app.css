@@ -105,7 +105,7 @@ nav .links-wrapper .links a {
   line-height: 100%;
   text-decoration: none;
 }
-nav .links-wrapper button.join-community {
+nav .links-wrapper button.explore-blossom {
   padding: 0 25px;
   border: solid 2px #F6F4F3;
   border-radius: 50px;
@@ -123,6 +123,7 @@ footer {
   display: flex;
   justify-content: space-around;
   gap: 20px;
+  position: relative;
 }
 footer .footer--column p.title-2 {
   margin-bottom: 27px;
@@ -146,7 +147,12 @@ footer .footer--column .column-links a {
   padding: 150px 0;
 }
 .home--hero {
+  width: 100%;
   margin: 0 auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 .home--hero .hero--image {
   width: 100%;
@@ -162,8 +168,16 @@ footer .footer--column .column-links a {
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
+.home--hero button.scroll-down {
+  transform: rotate(90);
+}
+.home .float-wrapper {
+  position: relative;
+  top: 100vw;
+}
 .home--intro {
   padding-bottom: 312px;
+  background: #020201;
 }
 .home--intro .header {
   width: 809px;
@@ -198,26 +212,50 @@ footer .footer--column .column-links a {
 .home--intro .projectlogo-carousel img {
   height: 55px;
 }
+.home section.home--about {
+  padding: 0px;
+}
 .home--about {
+  height: 550px;
   background: #D0CECD;
   display: flex;
   justify-content: center;
   gap: 90px;
   color: #140903;
+  position: relative;
+}
+.home--about .petals {
+  width: 50%;
+  position: relative;
 }
 .home--about .petals img {
   width: 263px;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
 }
 .home--about .about--wrapper {
-  width: 632px;
+  width: 50%;
   text-align: center;
+  overflow-y: auto;
+}
+.home--about .about--wrapper::-webkit-scrollbar {
+  display: none;
 }
 .home--about .about--wrapper h4 {
   text-decoration: underline;
 }
+.home--about .about--wrapper .spacer {
+  height: 0px;
+}
 .home--about .about--wrapper > div {
+  width: 632px;
   margin-bottom: 40px;
   padding: 77px 55px;
+}
+.home--about .about--wrapper div:first-child {
+  padding-top: 177px;
 }
 .home--about .about--wrapper div:nth-child(4) {
   margin-bottom: 0px;
@@ -232,9 +270,14 @@ footer .footer--column .column-links a {
   background: transparent;
   color: #140903;
 }
+.home--about .about--wrapper::-webkit-scrollbar {
+  display: none;
+}
 .home--projects {
   margin: 0 auto;
   text-align: center;
+  background: #020201;
+  position: relative;
 }
 .home--projects .header {
   margin-bottom: 60px;
@@ -257,6 +300,12 @@ footer .footer--column .column-links a {
   padding: 18px 18px 61px 18px;
   border: 1px solid #FFFFFF;
   border-radius: 20px;
+}
+.home--projects .project-carousel .project-wrapper .github-card a {
+  text-decoration: none;
+}
+.home--projects .project-carousel .project-wrapper .github-card a:hover {
+  cursor: pointer;
 }
 .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
   width: 337px;
@@ -285,6 +334,13 @@ footer .footer--column .column-links a {
   top: 50px;
   z-index: 10;
 }
+.home--projects .project-carousel .arrows img {
+  opacity: 0.75;
+  /*backdrop-filter: blur(4px);*/
+}
+.home--projects .project-carousel .arrows .carousel-forward {
+  transform: rotate(180deg);
+}
 .home--cta {
   width: 100%;
   margin: 0px 80px;
@@ -293,6 +349,7 @@ footer .footer--column .column-links a {
   justify-content: center;
   gap: 20px;
   flex-wrap: wrap;
+  background: #020201;
 }
 .home--cta .header {
   max-width: 630px;

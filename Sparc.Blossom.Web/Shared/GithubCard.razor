@@ -1,13 +1,21 @@
 ﻿<div class="github-card">
-    <img class="project-photo" src="@GetPath(Name)" />
+    <a href="@ProjectUrl" target="_blank">
+        <img class="project-photo" src="@GetPath(Name)" />
+    </a>
     <div class="github-wrapper">
-        <p class="subtitle-1">@Name</p>
-        <img class="github-logo" src="/images/Github.png" />
+        <a href="@ProjectUrl" target="_blank">
+            <p class="subtitle-1">@Name</p>
+        </a>
+        <a href="@GithubUrl" target="_blank">
+            <img class="github-logo" src="/images/Github.png" />
+        </a>
     </div>
 </div>
 
 @code {
     [Parameter] public string? Name { get; set; }
+    [Parameter] public string? ProjectUrl { get; set; }
+    [Parameter] public string? GithubUrl { get; set; }
 
     public string GetPath(string? name)
     {
