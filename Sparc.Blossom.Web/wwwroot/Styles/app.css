@@ -1,8 +1,13 @@
 ﻿body {
-  font-family: NimbusSansExtd;
+  font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-body h1, body h2, body h3, body h4, body p {
+body h1, body h2, body h3, body h4 {
+  font-family: "NimbusSansExtd", sans-serif;
+  line-height: 115%;
+}
+body p {
+  font-family: "NimbusSans", sans-serif;
   line-height: 115%;
 }
 body h1 {
@@ -31,48 +36,24 @@ body p.small {
 }
 
 @font-face {
-  font-family: "CircularStd";
+  font-family: "NimbusSans";
+  font-weight: 300;
+  src: url(wwwroot/fonts/Nimbus-Sans-Light.ttf) format("opentype");
+}
+@font-face {
+  font-family: "NimbusSans";
   font-weight: 400;
-  src: url(wwwroot/fonts/CircularStd-Book.ttf) format("truetype");
+  src: url(wwwroot/fonts/Nimbus-Sans-Regular.ttf) format("opentype");
 }
 @font-face {
-  font-family: "CircularStd";
-  font-weight: 400;
-  font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BookItalic.ttf) format("truetype");
+  font-family: "NimbusSans";
+  font-weight: 700;
+  src: url(wwwroot/fonts/Nimbus-Sans-Bold.ttf) format("opentype");
 }
 @font-face {
-  font-family: "CircularStd";
-  font-weight: 500;
-  src: url(wwwroot/fonts/CircularStd-Medium.ttf) format("truetype");
-}
-@font-face {
-  font-family: "CircularStd";
-  font-weight: 500;
-  font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-MediumItalic.ttf) format("truetype");
-}
-@font-face {
-  font-family: "CircularStd";
-  font-weight: 600;
-  src: url(wwwroot/fonts/CircularStd-Bold.ttf) format("truetype");
-}
-@font-face {
-  font-family: "CircularStd";
-  font-weight: 600;
-  font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BoldItalic.ttf) format("truetype");
-}
-@font-face {
-  font-family: "CircularStd";
+  font-family: "NimbusSans";
   font-weight: 900;
-  src: url(wwwroot/fonts/CircularStd-Black.ttf) format("truetype");
-}
-@font-face {
-  font-family: "CircularStd";
-  font-weight: 900;
-  font-style: italic;
-  src: url(wwwroot/fonts/CircularStd-BlackItalic.ttf) format("truetype");
+  src: url(wwwroot/fonts/Nimbus-Sans-Black.ttf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
@@ -114,16 +95,17 @@ nav .links-wrapper {
 }
 nav .links-wrapper .links a {
   margin-right: 50px;
-  font-family: "NimbusSansExtd";
+  font-family: "NimbusSansExtd", sans-serif;
   color: #F6F4F3;
   font-size: 16px;
+  line-height: 100%;
   text-decoration: none;
 }
 nav .links-wrapper button.join-community {
   padding: 0 25px;
   border: solid 2px #F6F4F3;
   border-radius: 50px;
-  font-family: "NimbusSansExtd";
+  font-family: "NimbusSansExtd", sans-serif;
   background: transparent;
   color: #F6F4F3;
   font-size: 16px;
@@ -153,7 +135,8 @@ footer .footer--column .column-links a {
 .home {
   background: #020201;
   color: #F6F4F3;
-  font-family: "NimbusSansExtd";
+  font-family: "NimbusSansExtd", sans-serif;
+  font-weight: 400;
 }
 .home section {
   padding: 150px 0;
@@ -172,6 +155,8 @@ footer .footer--column .column-links a {
   width: 809px;
   margin: 0 auto;
   text-align: center;
+  font-family: "NimbusSansExtd", sans-serif;
+  font-weight: 400;
 }
 .home--intro {
   padding-bottom: 312px;
@@ -180,6 +165,8 @@ footer .footer--column .column-links a {
   width: 809px;
   margin: 0 auto;
   text-align: center;
+  font-family: "NimbusSansExtd", sans-serif;
+  font-weight: 400;
 }
 .home--intro .interactive-block {
   width: 1054px;
@@ -236,7 +223,7 @@ footer .footer--column .column-links a {
   padding: 8px 58px;
   border: solid 2px #140903;
   border-radius: 50px;
-  font-family: "NimbusSansExtd";
+  font-family: "NimbusSansExtd", sans-serif;
   font-size: 26px;
   background: transparent;
   color: #140903;
@@ -349,6 +336,7 @@ footer .footer--column .column-links a {
 .guide--hero .header {
   width: 809px;
   margin: 0 auto;
+  font-family: "NimbusSansExtd", sans-serif;
 }
 .guide--hero .header h1 {
   margin-bottom: 10px;
@@ -385,8 +373,10 @@ footer .footer--column .column-links a {
   margin-bottom: 102px;
 }
 .guide--categories .category .subtitle-1 {
+  font-family: "NimbusSans", sans-serif;
   color: #A19D9A;
 }
 .guide--categories .category h2 {
   margin-bottom: 31px;
+  font-family: "NimbusSansExtd", sans-serif;
 }

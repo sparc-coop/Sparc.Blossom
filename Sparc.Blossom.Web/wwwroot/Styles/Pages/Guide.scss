@@ -13,6 +13,7 @@
         .header {
             width: 809px;
             margin: 0 auto;
+            font-family: 'NimbusSansExtd', sans-serif;
 
             h1 {
                 margin-bottom: 10px;
@@ -57,11 +58,13 @@
             margin-bottom: 102px;
 
             .subtitle-1 {
+                font-family: 'NimbusSans', sans-serif;
                 color: $grey-400;
             }
 
             h2 {
                 margin-bottom: 31px;
+                font-family: 'NimbusSansExtd', sans-serif;
             }
         }
     }

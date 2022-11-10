@@ -3,7 +3,8 @@
 .home {
     background: $background;
     color: $grey-100;
-    font-family: 'NimbusSansExtd';
+    font-family: 'NimbusSansExtd', sans-serif;
+    font-weight: 400;
 
     section {
         padding: 150px 0;
@@ -25,6 +26,8 @@
             width: 809px;
             margin: 0 auto;
             text-align: center;
+            font-family: 'NimbusSansExtd', sans-serif;
+            font-weight: 400;
         }
     }
 
@@ -35,6 +38,8 @@
             width: 809px;
             margin: 0 auto;
             text-align: center;
+            font-family: 'NimbusSansExtd', sans-serif;
+            font-weight: 400;
         }
 
         .interactive-block {
@@ -103,7 +108,7 @@
                 padding: 8px 58px;
                 border: solid 2px $grey-900;
                 border-radius: 50px;
-                font-family: 'NimbusSansExtd';
+                font-family: 'NimbusSansExtd', sans-serif;
                 font-size: 26px;
                 background: transparent;
                 color: $grey-900;
@@ -154,7 +159,7 @@
                         }
 
                         img.github-logo {
-                            width: 29px; 
+                            width: 29px;
                             height: 29px;
                             color: $white;
                         }
