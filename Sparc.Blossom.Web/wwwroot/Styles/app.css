@@ -150,12 +150,14 @@ footer .footer--column .column-links a {
   width: 100%;
   margin: 0 auto;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   z-index: 0;
 }
 .home--hero .hero--image {
   width: 100%;
+  margin-bottom: 35px;
   text-align: center;
 }
 .home--hero .hero--image img {
@@ -206,7 +208,7 @@ footer .footer--column .column-links a {
   width: 100vw;
   margin-top: 107px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 69px;
 }
 .home--intro .projectlogo-carousel img {
