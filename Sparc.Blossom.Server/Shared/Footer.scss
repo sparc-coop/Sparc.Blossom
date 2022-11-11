@@ -1,0 +1,31 @@
+﻿@import "../App.variables.scss";
+
+footer {
+    width: 100%;
+    padding: 150px 0;
+    background: $background;
+    color: $white;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    position: relative;
+
+    .footer--column {
+        p.title-2 {
+            font-family: 'NimbusSansExtd';
+            font-weight: 400;
+            margin-bottom: 27px;
+        }
+
+        .column-links {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-bottom: 9px;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}
