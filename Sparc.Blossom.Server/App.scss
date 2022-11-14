@@ -4,10 +4,13 @@
 
 //Shared
 @import "Shared/NavMenu";
+@import "Shared/Footer";
 
 //Pages
 @import "Pages/Index";
 @import "Pages/Guide";
+@import "Pages/BlogList";
+@import "Pages/Blog";
 
 
 body {

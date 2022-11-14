@@ -88,3 +88,15 @@
         </div>
     </section>
 </div>
+
+@code {
+    string? EmailAddress;
+
+    async Task SendEmail()
+    {
+        if (EmailAddress != null)
+        {
+            await RegisterForCommunity.ExecuteAsync(new(EmailAddress));
+        }
+    }
+}

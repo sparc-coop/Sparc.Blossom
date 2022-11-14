@@ -133,6 +133,20 @@ nav .links-wrapper button.join-community {
   font-size: 16px;
 }
 
+.footer {
+  background: #000000;
+  color: #FFFFFF;
+  margin: 0;
+  padding: 80px;
+}
+.footer li {
+  list-style-type: none;
+}
+.footer a {
+  text-decoration: none;
+  color: #FFFFFF;
+}
+
 .home {
   background: #020201;
   color: #F6F4F3;
