@@ -150,6 +150,7 @@ footer .footer--column .column-links a {
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 .home section {
   padding: 150px 0;
@@ -285,9 +286,6 @@ footer .footer--column .column-links a {
   margin-bottom: 40px;
   padding: 77px 55px;
 }
-.home--about .about--wrapper div:first-child {
-  padding-top: 120px;
-}
 .home--about .about--wrapper div:nth-child(4) {
   margin-bottom: 0px;
   padding-bottom: 0px;
@@ -384,6 +382,7 @@ footer .footer--column .column-links a {
 }
 .home--cta {
   width: 100%;
+  margin: 0px 80px;
   padding: 150px 80px;
   display: flex;
   justify-content: center;

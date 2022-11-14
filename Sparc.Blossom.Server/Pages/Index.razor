@@ -80,9 +80,9 @@
             </div>
             <div class="project-carousel">
                 <div class="project-wrapper">
-                    <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue"/>
+                    <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue" />
                     <GithubCard Name="Sparc" ProjectUrl="https://www.sparc.coop/" GithubUrl="https://github.com/sparc-coop/sparc" />
-                    <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris"/>
+                    <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris" />
                     <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/conseris" />
                     <GithubCard Name="Sparc" ProjectUrl="https://www.sparc.coop/" GithubUrl="https://github.com/sparc-coop/sparc" />
                     <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris" />
@@ -92,40 +92,6 @@
                     <img src="/images/Double Arrow.png" class="carousel-forward" />
                 </div>
             </div>
-<<<<<<<< HEAD:Sparc.Blossom.Server/Pages/Index.razor
-        </div>
-        </section>
-    <section class="home--projects">
-        <div class="header">
-            <h3>Explore our work</h3>
-            <p class="subtitle-2">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
-        </div>
-        <div class="carousel"></div>
-    </section>
-        <section class="home--cta">
-            <div class="header">
-            <h3>Join Sparc Community</h3>
-            <p class="subtitle-2">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
-        </div>
-        <div class="cta-input">
-            <input type="text" placeholder="Your Email Address" />
-            <button class="sign-up"><img src="images/Group 343.png" /></button>
-        </div>
-    </section>
-</div>
-
-@code {
-    string? EmailAddress;
-
-    async Task SendEmail()
-    {
-        if (EmailAddress != null)
-        {
-            await RegisterForCommunity.ExecuteAsync(new(EmailAddress));
-        }
-    }
-}
-========
         </section>
         <section class="home--cta">
             <div class="header">
@@ -139,4 +105,16 @@
         <Footer />
     </div>
 </div>
->>>>>>>> feature/ui-updates:Sparc.Blossom.Web/Pages/Index.razor
+
+
+@code {
+    string? EmailAddress;
+
+    async Task SendEmail()
+    {
+        if (EmailAddress != null)
+        {
+            await RegisterForCommunity.ExecuteAsync(new(EmailAddress));
+        }
+    }
+}
