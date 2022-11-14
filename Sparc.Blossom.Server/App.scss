@@ -15,4 +15,9 @@
 
 body {
     margin: 0;
+    background: $background;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }

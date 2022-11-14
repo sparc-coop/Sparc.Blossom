@@ -1,10 +1,9 @@
-﻿@import "../App.Variables.scss";
+﻿@import "../App.variables.scss";
 
 .guide {
     width: 100%;
     padding: 0 188px;
     padding-top: 125px;
-    padding-bottom: 335px;
 
     &--hero {
         width: 1039px;
@@ -14,6 +13,7 @@
         .header {
             width: 809px;
             margin: 0 auto;
+            font-family: 'NimbusSansExtd', sans-serif;
 
             h1 {
                 margin-bottom: 10px;
@@ -34,8 +34,8 @@
                 border: 2px solid $grey-100;
                 border-radius: 100px;
                 background: transparent;
-                color: $white;
-                font-size: 41px;
+                color: $grey-200;
+                font-size: 33px;
             }
 
             button {
@@ -58,11 +58,13 @@
             margin-bottom: 102px;
 
             .subtitle-1 {
+                font-family: 'NimbusSans', sans-serif;
                 color: $grey-400;
             }
 
             h2 {
                 margin-bottom: 31px;
+                font-family: 'NimbusSansExtd', sans-serif;
             }
         }
     }

@@ -1,4 +1,4 @@
-﻿@import "../App.variables.scss";
+﻿@import "../Global/_variables.scss";
 
 footer {
     width: 100%;
@@ -12,8 +12,6 @@ footer {
 
     .footer--column {
         p.title-2 {
-            font-family: 'NimbusSansExtd';
-            font-weight: 400;
             margin-bottom: 27px;
         }
 
@@ -22,7 +20,6 @@ footer {
             flex-direction: column;
 
             a {
-                margin-bottom: 9px;
                 color: $white;
                 text-decoration: none;
             }

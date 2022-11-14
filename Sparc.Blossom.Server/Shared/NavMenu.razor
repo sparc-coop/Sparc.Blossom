@@ -1,15 +1,26 @@
-﻿<nav>
+﻿@using Microsoft.AspNetCore.Components;
+
+<nav>
     <div class="logo">
         <a href="/"><img src="/images/Blossom Color White.png" /></a>
     </div>
     <div class="links-wrapper">
         <div class="links">
-            <a href="/">Home</a>
-            <a href="/Guide">Guide</a>
-            <a href="/Contact">Contact</a>
+            @*<a href="/Guide">Guide</a>
+            <a href="/Contact">Contact</a>*@
         </div>
         <div class="join">
-            <button class="join-community">Join Community</button>
+            @*<button class="join-community">Join Blossom</button>*@
+            <button class="explore-blossom" @onclick="@GoToGithub">Explore Blossom</button>
         </div>
     </div>
 </nav>
+
+@inject NavigationManager Navigation
+
+@code {
+    private void GoToGithub()
+    {
+        Navigation.NavigateTo("https://github.com/sparc-coop/blossom");
+    }
+}
