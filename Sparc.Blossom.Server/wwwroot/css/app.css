@@ -36,6 +36,32 @@ body p.medium {
 body p.small {
   font-size: 14px;
 }
+@media only screen and (max-width: 460px) {
+  body h1 {
+    font-size: 44px;
+  }
+  body h2 {
+    font-size: 36px;
+  }
+  body h3 {
+    font-size: 28px;
+  }
+  body h4 {
+    font-size: 23px;
+  }
+  body .title-1, body .subtitle-1 {
+    font-size: 18px;
+  }
+  body .title-2, body .subtitle-2 {
+    font-size: 16px;
+  }
+  body p.medium {
+    font-size: 16px;
+  }
+  body p.small {
+    font-size: 14px;
+  }
+}
 
 @font-face {
   font-family: "NimbusSans";
@@ -81,15 +107,15 @@ body p.small {
 }
 nav {
   width: 100vw;
-  padding: 12px 50px;
+  margin: 0;
+  padding-top: 12px;
+  padding-bottom: 12px;
   background: #020201;
   border-top: 1px solid #FFFFFF;
   display: flex;
   justify-content: space-between;
   position: fixed;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
   z-index: 100;
 }
 nav .logo img {
@@ -118,6 +144,26 @@ nav .links-wrapper button.explore-blossom {
   color: #F6F4F3;
   font-size: 16px;
 }
+@media only screen and (max-width: 800px) {
+  nav {
+    padding: 9px 0;
+    gap: 20px;
+  }
+  nav .logo img {
+    margin-left: 20px;
+    width: 120px;
+  }
+  nav .links-wrapper {
+    display: flex;
+    margin: auto 0;
+  }
+  nav .links-wrapper button.explore-blossom {
+    margin-right: 20px;
+    padding: 2px 18px;
+    font-size: 13px;
+    flex-wrap: wrap;
+  }
+}
 
 footer {
   width: 100%;
@@ -143,6 +189,17 @@ footer .footer--column .column-links a {
   color: #FFFFFF;
   text-decoration: none;
 }
+@media only screen and (max-width: 460px) {
+  footer {
+    gap: 0px;
+  }
+  footer .footer--column p.title-2 {
+    font-size: 14px;
+  }
+  footer .footer--column .column-links a {
+    font-size: 12px;
+  }
+}
 
 .home {
   width: 100%;
@@ -163,6 +220,9 @@ footer .footer--column .column-links a {
   transform: translate(-50%, -50%);
   z-index: 0;
 }
+.home--hero .container {
+  padding: 0 15px;
+}
 .home--hero .hero--image {
   width: 100%;
   margin-bottom: 35px;
@@ -179,6 +239,7 @@ footer .footer--column .column-links a {
   font-weight: 400;
 }
 .home--hero .header h1 {
+  margin: 0;
   margin-bottom: 15px;
 }
 .home--hero .header p {
@@ -187,18 +248,22 @@ footer .footer--column .column-links a {
   font-weight: 400;
   line-height: 140%;
 }
-.home--hero button.scroll-down {
-  transform: rotate(90);
-}
 .home .float-wrapper {
   width: 100%;
   position: relative;
-  top: 100vw;
+}
+.home .float-wrapper .float-spacer {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
 }
 .home--intro {
   width: 100%;
   padding-bottom: 312px;
   background: #020201;
+}
+.home--intro .container {
+  padding: 0 15px;
 }
 .home--intro .header {
   width: 1054px;
@@ -248,10 +313,13 @@ footer .footer--column .column-links a {
   width: 100%;
   height: 550px;
   background: #D0CECD;
+  color: #140903;
+}
+.home--about .container {
+  height: 100%;
   display: flex;
   justify-content: center;
   gap: 90px;
-  color: #140903;
   position: relative;
 }
 .home--about .petals {
@@ -385,11 +453,13 @@ footer .footer--column .column-links a {
 .home--cta {
   width: 100%;
   padding: 150px 80px;
+  background: #020201;
+}
+.home--cta .container {
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
-  background: #020201;
 }
 .home--cta .header {
   max-width: 630px;
@@ -424,6 +494,241 @@ footer .footer--column .column-links a {
 }
 .home--cta .cta-input button.sign-up img {
   width: 100%;
+}
+@media only screen and (max-width: 460px) {
+  .home section {
+    width: 100%;
+    padding: 80px 0;
+  }
+  .home--hero .hero--image {
+    width: 100%;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .home--hero .hero--image img {
+    width: 80%;
+  }
+  .home--hero .header {
+    max-width: 100%;
+  }
+  .home .float-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  .home--intro {
+    width: 100%;
+    padding-bottom: 312px;
+    background: #020201;
+  }
+  .home--intro .header {
+    width: 100%;
+    max-width: 370px;
+  }
+  .home--intro .interactive-block {
+    max-width: 370px;
+    height: 200px;
+    margin-top: 40px;
+    border-radius: 25px;
+  }
+  .home--intro .interactive-block img {
+    max-width: 200px;
+  }
+  .home--intro .projectlogo-carousel {
+    margin: 0 -15px;
+    margin-top: 80px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    overflow: hidden;
+  }
+  .home--intro .projectlogo-carousel img {
+    height: 25px;
+  }
+  .home section.home--about {
+    padding: 0px;
+  }
+  .home--about {
+    width: 100%;
+    height: 550px;
+    background: #D0CECD;
+    display: flex;
+    justify-content: center;
+    gap: 90px;
+    color: #140903;
+    position: relative;
+  }
+  .home--about .petals {
+    width: 50%;
+    position: relative;
+  }
+  .home--about .petals img {
+    width: 263px;
+    position: absolute;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+  .home--about .about--wrapper {
+    width: 50%;
+    text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .home--about .about--wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .home--about .about--wrapper h4 {
+    text-decoration: underline;
+  }
+  .home--about .about--wrapper .spacer {
+    height: 0px;
+  }
+  .home--about .about--wrapper > div {
+    width: 632px;
+    margin-bottom: 40px;
+    padding: 77px 55px;
+  }
+  .home--about .about--wrapper div:first-child {
+    padding-top: 120px;
+  }
+  .home--about .about--wrapper div:nth-child(4) {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .home--about .about--wrapper button.learn-more {
+    padding: 8px 58px;
+    border: solid 2px #140903;
+    border-radius: 50px;
+    font-family: "NimbusSansExtd", sans-serif;
+    font-size: 26px;
+    background: transparent;
+    color: #140903;
+  }
+  .home--about .about--wrapper::-webkit-scrollbar {
+    display: none;
+  }
+  .home--projects {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background: #020201;
+    position: relative;
+  }
+  .home--projects .header {
+    margin-bottom: 60px;
+  }
+  .home--projects .header h3, .home--projects .header p {
+    margin: 0;
+  }
+  .home--projects .header h3 {
+    margin-bottom: 8px;
+  }
+  .home--projects .project-carousel {
+    width: 100%;
+    padding: 20px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .home--projects .project-carousel .project-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card {
+    width: 413px;
+    height: 336px;
+    padding-bottom: 9px;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card a {
+    text-decoration: none;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card a:hover {
+    cursor: pointer;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+    width: 377px;
+    margin: 18px;
+    border-radius: 15px;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+    margin: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    vertical-align: middle;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper p.subtitle-1 {
+    margin: auto 0;
+    color: #FFFFFF;
+  }
+  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
+    width: 29px;
+    height: 29px;
+    margin: auto 0;
+    color: #FFFFFF;
+  }
+  .home--projects .project-carousel .arrows {
+    width: 100%;
+    height: 275px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50px;
+    z-index: 10;
+  }
+  .home--projects .project-carousel .arrows img {
+    opacity: 0.75;
+    /*backdrop-filter: blur(4px);*/
+  }
+  .home--projects .project-carousel .arrows .carousel-forward {
+    transform: rotate(180deg);
+  }
+  .home--cta {
+    width: 100%;
+    padding: 150px 80px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: #020201;
+  }
+  .home--cta .header {
+    max-width: 630px;
+  }
+  .home--cta .header h3 {
+    font-size: 52px;
+  }
+  .home--cta .cta-input {
+    margin: auto 0;
+    display: flex;
+    gap: 15px;
+  }
+  .home--cta .cta-input input {
+    width: 560px;
+    height: 55px;
+    padding: 0 35px;
+    border: 2px solid #F6F4F3;
+    border-radius: 100px;
+    background: transparent;
+    color: #D0CECD;
+    font-family: "NimbusSansExtd";
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .home--cta .cta-input button.sign-up {
+    width: 55px;
+    height: 55px;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+  }
+  .home--cta .cta-input button.sign-up img {
+    width: 100%;
+  }
 }
 
 .guide {
