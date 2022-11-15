@@ -40,24 +40,24 @@ body p.small {
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
-  src: url(../fonts/Nimbus-Sans-Regular.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-RegularItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-RegularItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
-  src: url(../fonts/Nimbus-Sans-Bold.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Bold.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-BoldItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-BoldItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
@@ -150,7 +150,6 @@ footer .footer--column .column-links a {
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
-  overflow-x: hidden;
 }
 .home section {
   padding: 150px 0;
@@ -427,18 +426,23 @@ footer .footer--column .column-links a {
 
 .guide {
   width: 100%;
-  padding: 0 188px;
-  padding-top: 125px;
+  max-width: 1038px;
+  padding: 125px 20px;
+  margin: 0 auto;
+  color: #FFFFFF;
 }
 .guide--hero {
-  width: 1039px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 .guide--hero .header {
-  width: 809px;
   margin: 0 auto;
   font-family: "NimbusSansExtd", sans-serif;
+}
+.guide--hero .header p {
+  max-width: 705px;
+  margin: 0 auto;
 }
 .guide--hero .header h1 {
   margin-bottom: 10px;
@@ -451,8 +455,10 @@ footer .footer--column .column-links a {
   gap: 19px;
 }
 .guide--hero .ask-questions input {
-  width: 900px;
+  width: 90%;
+  max-width: 900px;
   height: 100px;
+  box-sizing: border-box;
   padding: 0 47px;
   border: 2px solid #F6F4F3;
   border-radius: 100px;
@@ -489,4 +495,18 @@ body {
 }
 body::-webkit-scrollbar {
   display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.ibis-translate {
+  padding: 0;
+  margin: 0;
+}
+
+.ibis-translating {
+  visibility: visible;
+  opacity: 0.3;
 }

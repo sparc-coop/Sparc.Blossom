@@ -13,10 +13,11 @@
     </section>
     <section class="guide--categories">
         <div class="category">
-            <p class="subtitle-1">begin</p>
+            <p class="subtitle-1">Begin here</p>
             <div class="wrapper">
                 <h2>Get to know Blossom</h2>
-                <h2>Install</h2>
+                <h2 @onclick="@(e=> ToggleSection("install"))">Install</h2>
+                <div class="guide--content"></div>
                 <h2>Tutorial</h2>
                 <h2> Customization</h2>
             </div>
@@ -39,3 +40,18 @@
     </section>
 </div>
 <Footer />
+
+
+@code {
+    private void ToggleSection(string sectionName)
+    {
+        if (sectionName == "in")
+        {
+            Console.WriteLine("in");
+        }
+        else
+        {
+            Console.WriteLine("out");
+        }
+    }
+}
