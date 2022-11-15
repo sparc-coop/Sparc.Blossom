@@ -415,6 +415,7 @@ footer .footer--column .column-links a {
 }
 .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
   width: 377px;
+  height: 257.5px;
   margin: 18px;
   border-radius: 15px;
 }
