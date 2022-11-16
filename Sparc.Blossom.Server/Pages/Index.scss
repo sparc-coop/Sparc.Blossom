@@ -188,7 +188,7 @@
             padding-top: 60px;
             text-align: center;
 
-            button.learn-more {
+            .learn-more {
                 padding: 8px 58px;
                 border: solid 2px $grey-900;
                 border-radius: 50px;
@@ -196,6 +196,7 @@
                 font-size: 26px;
                 background: transparent;
                 color: $grey-900;
+                text-decoration: none;
             }
         }
     }
@@ -237,14 +238,8 @@
                     padding-bottom: 9px;
                     border: 1px solid $white;
                     border-radius: 20px;
-
-                    a {
-                        text-decoration: none;
-
-                        &:hover {
-                            cursor: pointer;
-                        }
-                    }
+                    cursor: pointer;
+                    text-decoration: none;
 
                     img.project-photo {
                         width: 377px;
@@ -264,32 +259,45 @@
                             color: $white;
                         }
 
-                        img.github-logo {
+                        .github-logo {
                             width: 29px;
                             height: 29px;
                             margin: auto 0;
                             color: $white;
+                            transition-duration: 0.4s;
+
+                            &:hover {
+                                transform: translateY(-2px);
+                                transition-duration: 0.2s;
+                            }
                         }
                     }
                 }
             }
 
-            .arrows {
-                width: 100%;
-                height: 275px;
-                display: flex;
-                justify-content: space-between;
+            .arrows-container {
+                backdrop-filter: blur(4px);
+                border-top-right-radius: 125px;
+                border-bottom-right-radius: 125px;
+                width: 126px;
+                height: 306px;
+                /*                display: flex;
+                justify-content: space-between;*/
                 position: absolute;
                 top: 50px;
                 z-index: 10;
 
                 img {
-                    opacity: .75;
-                    /*backdrop-filter: blur(4px);*/
+                    opacity: .3;
+                    height: 306px;
+                    border-top-right-radius: 125px;
+                    border-bottom-right-radius: 125px;
+                    cursor: pointer;
                 }
 
-                .carousel-forward {
+                &.carousel-forward {
                     transform: rotate(180deg);
+                    right: 0;
                 }
             }
         }

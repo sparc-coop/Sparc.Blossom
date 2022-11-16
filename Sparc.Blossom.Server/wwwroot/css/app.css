@@ -134,15 +134,16 @@ nav .links-wrapper .links a {
   line-height: 100%;
   text-decoration: none;
 }
-nav .links-wrapper button.explore-blossom {
+nav .links-wrapper .explore-blossom {
   margin-right: 50px;
-  padding: 0 25px;
+  padding: 6px 25px;
   border: solid 2px #F6F4F3;
   border-radius: 50px;
   font-family: "NimbusSansExtd", sans-serif;
   background: transparent;
   color: #F6F4F3;
   font-size: 16px;
+  text-decoration: none;
 }
 @media only screen and (max-width: 800px) {
   nav {
@@ -360,7 +361,7 @@ footer .footer--column .column-links a {
   padding-top: 60px;
   text-align: center;
 }
-.home--about .button-wrapper button.learn-more {
+.home--about .button-wrapper .learn-more {
   padding: 8px 58px;
   border: solid 2px #140903;
   border-radius: 50px;
@@ -368,6 +369,7 @@ footer .footer--column .column-links a {
   font-size: 26px;
   background: transparent;
   color: #140903;
+  text-decoration: none;
 }
 .home--projects {
   width: 100%;
@@ -403,12 +405,8 @@ footer .footer--column .column-links a {
   padding-bottom: 9px;
   border: 1px solid #FFFFFF;
   border-radius: 20px;
-}
-.home--projects .project-carousel .project-wrapper .github-card a {
-  text-decoration: none;
-}
-.home--projects .project-carousel .project-wrapper .github-card a:hover {
   cursor: pointer;
+  text-decoration: none;
 }
 .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
   width: 377px;
@@ -426,27 +424,39 @@ footer .footer--column .column-links a {
   margin: auto 0;
   color: #FFFFFF;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
+.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo {
   width: 29px;
   height: 29px;
   margin: auto 0;
   color: #FFFFFF;
+  transition-duration: 0.4s;
 }
-.home--projects .project-carousel .arrows {
-  width: 100%;
-  height: 275px;
-  display: flex;
-  justify-content: space-between;
+.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo:hover {
+  transform: translateY(-2px);
+  transition-duration: 0.2s;
+}
+.home--projects .project-carousel .arrows-container {
+  backdrop-filter: blur(4px);
+  border-top-right-radius: 125px;
+  border-bottom-right-radius: 125px;
+  width: 126px;
+  height: 306px;
+  /*                display: flex;
+  justify-content: space-between;*/
   position: absolute;
   top: 50px;
   z-index: 10;
 }
-.home--projects .project-carousel .arrows img {
-  opacity: 0.75;
-  /*backdrop-filter: blur(4px);*/
+.home--projects .project-carousel .arrows-container img {
+  opacity: 0.3;
+  height: 306px;
+  border-top-right-radius: 125px;
+  border-bottom-right-radius: 125px;
+  cursor: pointer;
 }
-.home--projects .project-carousel .arrows .carousel-forward {
+.home--projects .project-carousel .arrows-container.carousel-forward {
   transform: rotate(180deg);
+  right: 0;
 }
 .home--cta {
   width: 100%;
