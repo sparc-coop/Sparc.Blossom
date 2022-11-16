@@ -1,4 +1,4 @@
-﻿@page "/Guide"
+﻿@page "/guide"
 
 <div class="guide">
     <section class="guide--hero">
@@ -14,18 +14,35 @@
     <section class="guide--categories">
         <div class="category">
             <p class="subtitle-1">Begin here</p>
-            <div class="wrapper">
-                <h2>Get to know Blossom</h2>
-                <h2 @onclick="@(e=> ToggleSection("install"))">Install</h2>
-                <div class="guide--content"></div>
-                <h2>Tutorial</h2>
-                <h2> Customization</h2>
+            <div class="guide--heading">
+                @if (Section == "what-is-blossom")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("what-is-blossom"))">Get to know Blossom</h2>
             </div>
+            <div class="guide--heading">
+                @if(Section == "what-is-blossom")
+                {
+                    <Sparc.Blossom.Server.GuideContent.GetToKnowBlossom />
+                }
+                <h2 @onclick="@(e=> ToggleSection("install"))">Install</h2>
+            </div>
+                @if(Section == "install")
+                {
+                    <div class="guide--wrapper">
+                        <img src="/images/Arrow_left.png" />
+                        <div class="guide--content"></div>
+                        <img src="/images/Arrow_right.png" />
+                    </div>
+                }
+                <h2>Tutorial</h2>
+                <h2> Customization</h2>            
         </div>
         <div class="category">        
             <p class="subtitle-1">enjoy</p>
             <div class="wrapper">
-                <h2>Tips and Tricks</h2>
+                <h2>Tips and Tricks</h2> 
                 <h2>Tools</h2>
                 <h2>Features</h2>
             </div>
@@ -43,15 +60,28 @@
 
 
 @code {
+    public string Show = "";
+    public string Section = "";
+    public string SubSection = "one";
+
     private void ToggleSection(string sectionName)
     {
-        if (sectionName == "in")
+        if (Section == sectionName)
         {
-            Console.WriteLine("in");
+            Section = "";
         }
         else
         {
-            Console.WriteLine("out");
+            Section = sectionName;
         }
+       
+        //if (Show == "show")
+        //{
+        //    Show = "";
+        //}
+        //else
+        //{
+        //    Show = "show";
+        //}
     }
 }
