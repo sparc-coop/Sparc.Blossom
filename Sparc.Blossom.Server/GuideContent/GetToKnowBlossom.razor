@@ -54,7 +54,7 @@
     {
 
         await JSRuntime.InvokeVoidAsync("nextSection", null, "sub-section-1");
-
+        
 
     }
 
@@ -67,7 +67,7 @@
             await JSRuntime.InvokeVoidAsync("backSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
         }
     }
-
+    
     protected async Task Next()
     {
         int currentSection = SectionNumber;
