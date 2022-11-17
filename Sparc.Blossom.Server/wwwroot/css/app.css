@@ -460,10 +460,11 @@ footer .footer--column .column-links a {
 }
 .home--cta {
   width: 100%;
-  padding: 150px 80px;
+  padding: 150px 0;
   background: #020201;
 }
 .home--cta .container {
+  padding: 0 80px;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -533,6 +534,7 @@ footer .footer--column .column-links a {
     max-width: 370px;
   }
   .home--intro .interactive-block {
+    width: 100%;
     max-width: 370px;
     height: 200px;
     margin-top: 40px;
@@ -558,184 +560,115 @@ footer .footer--column .column-links a {
   }
   .home--about {
     width: 100%;
-    height: 550px;
-    background: #D0CECD;
-    display: flex;
-    justify-content: center;
-    gap: 90px;
-    color: #140903;
-    position: relative;
-  }
-  .home--about .petals {
-    width: 50%;
-    position: relative;
-  }
-  .home--about .petals img {
-    width: 263px;
-    position: absolute;
-    top: 50%;
-    left: 75%;
-    transform: translate(-50%, -50%);
-  }
-  .home--about .about--wrapper {
-    width: 50%;
-    text-align: center;
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
-  .home--about .about--wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .home--about .about--wrapper h4 {
-    text-decoration: underline;
-  }
-  .home--about .about--wrapper .spacer {
-    height: 0px;
-  }
-  .home--about .about--wrapper > div {
-    width: 632px;
-    margin-bottom: 40px;
-    padding: 77px 55px;
-  }
-  .home--about .about--wrapper div:first-child {
-    padding-top: 120px;
-  }
-  .home--about .about--wrapper div:nth-child(4) {
-    margin-bottom: 0px;
-    padding-bottom: 0px;
-  }
-  .home--about .about--wrapper button.learn-more {
-    padding: 8px 58px;
-    border: solid 2px #140903;
+    height: 100%;
+    border: none;
     border-radius: 50px;
-    font-family: "NimbusSansExtd", sans-serif;
-    font-size: 26px;
-    background: transparent;
+    background: #D0CECD;
     color: #140903;
   }
-  .home--about .about--wrapper::-webkit-scrollbar {
-    display: none;
+  .home--about .container {
+    height: 100%;
+    padding: 80px 20px;
   }
-  .home--projects {
+  .home--about .feature {
+    width: 100%;
+    height: 100%;
+    margin: 60px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .home--about .feature .image-wrapper {
+    margin: 0 auto;
+  }
+  .home--about .feature .image-wrapper img.feature-image {
+    width: 200px;
+    height: 200px;
+  }
+  .home--about .feature .content-wrapper {
     width: 100%;
     margin: 0 auto;
-    text-align: center;
-    background: #020201;
-    position: relative;
+    padding: 0;
+  }
+  .home--about .feature.reverse {
+    flex-direction: column;
+  }
+  .home--about div:nth-child(4) {
+    margin-bottom: 0;
+  }
+  .home--about .button-wrapper .learn-more {
+    padding: 8px 35px;
+    font-size: 18px;
   }
   .home--projects .header {
     margin-bottom: 60px;
-  }
-  .home--projects .header h3, .home--projects .header p {
-    margin: 0;
-  }
-  .home--projects .header h3 {
-    margin-bottom: 8px;
-  }
-  .home--projects .project-carousel {
-    width: 100%;
-    padding: 20px 0;
-    position: relative;
-    overflow: hidden;
+    padding: 0 20px;
   }
   .home--projects .project-carousel .project-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 24px;
+    justify-content: start;
+    gap: 15px;
+  }
+  .home--projects .project-carousel .project-wrapper:first-child {
+    padding-left: 20px;
   }
   .home--projects .project-carousel .project-wrapper .github-card {
-    width: 413px;
-    height: 336px;
+    width: 100%;
+    height: auto;
     padding-bottom: 9px;
-    border: 1px solid #FFFFFF;
-    border-radius: 20px;
-  }
-  .home--projects .project-carousel .project-wrapper .github-card a {
-    text-decoration: none;
-  }
-  .home--projects .project-carousel .project-wrapper .github-card a:hover {
-    cursor: pointer;
-  }
-  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
-    width: 377px;
-    margin: 18px;
     border-radius: 15px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
-    margin: 0 18px;
-    display: flex;
-    justify-content: space-between;
-    vertical-align: middle;
+  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper p.subtitle-1 {
-    margin: auto 0;
-    color: #FFFFFF;
+  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+    margin: 0 10px;
   }
   .home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
-    width: 29px;
-    height: 29px;
-    margin: auto 0;
-    color: #FFFFFF;
+    width: 20px;
+    height: 20px;
   }
-  .home--projects .project-carousel .arrows {
-    width: 100%;
-    height: 275px;
-    display: flex;
+  .home--projects .project-carousel .arrows-container {
+    width: 62px;
+    height: 150px;
+    top: 40px;
+  }
+  .home--projects .project-carousel .arrows-container img {
+    height: 150px;
+  }
+  .home section.home--cta {
+    padding: 0;
+    padding-top: 60px;
+  }
+  .home--cta .container {
+    padding: 0 20px;
+    flex-direction: column;
     justify-content: space-between;
-    position: absolute;
-    top: 50px;
-    z-index: 10;
-  }
-  .home--projects .project-carousel .arrows img {
-    opacity: 0.75;
-    /*backdrop-filter: blur(4px);*/
-  }
-  .home--projects .project-carousel .arrows .carousel-forward {
-    transform: rotate(180deg);
-  }
-  .home--cta {
-    width: 100%;
-    padding: 150px 80px;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    background: #020201;
+    gap: 0;
+    flex-wrap: nowrap;
   }
   .home--cta .header {
-    max-width: 630px;
+    width: 100%;
   }
   .home--cta .header h3 {
-    font-size: 52px;
+    font-size: 28px;
   }
   .home--cta .cta-input {
     margin: auto 0;
-    display: flex;
     gap: 15px;
   }
   .home--cta .cta-input input {
-    width: 560px;
-    height: 55px;
-    padding: 0 35px;
-    border: 2px solid #F6F4F3;
-    border-radius: 100px;
-    background: transparent;
-    color: #D0CECD;
-    font-family: "NimbusSansExtd";
-    font-weight: 400;
-    font-size: 20px;
+    width: 100%;
+    height: 30px;
+    padding: 0 25px;
+    font-size: 16px;
   }
   .home--cta .cta-input button.sign-up {
-    width: 55px;
-    height: 55px;
-    padding: 0;
-    margin: 0;
-    background: transparent;
-    border: none;
-  }
-  .home--cta .cta-input button.sign-up img {
-    width: 100%;
+    width: 36px;
+    height: 36px;
   }
 }
 
