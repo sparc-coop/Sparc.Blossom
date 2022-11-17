@@ -2,15 +2,15 @@
 
 nav {
     width: 100vw;
-    padding: 12px 50px;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
     background: $background;
     border-top: 1px solid $white;
     display: flex;
     justify-content: space-between;
     position: fixed;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
     z-index: 100;
 
     .logo {
@@ -19,7 +19,7 @@ nav {
             width: 142px;
         }
     }
-
+    
     .links-wrapper {
         display: flex;
         margin: auto 0;
@@ -35,15 +35,40 @@ nav {
             }
         }
 
-        button.explore-blossom {
+        .explore-blossom {
             margin-right: 50px;
-            padding: 0 25px;
+            padding: 6px 25px;
             border: solid 2px $grey-100;
             border-radius: 50px;
             font-family: 'NimbusSansExtd', sans-serif;
             background: transparent;
             color: $grey-100;
             font-size: 16px;
+            text-decoration: none;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        padding: 9px 0;
+        gap: 20px;
+
+        .logo {
+            img {
+                margin-left: 20px;
+                width: 120px;
+            }
+        }
+
+        .links-wrapper {
+            display: flex;
+            margin: auto 0;
+
+            button.explore-blossom {
+                margin-right: 20px;
+                padding: 2px 18px;
+                font-size: 13px;
+                flex-wrap: wrap;
+            }
         }
     }
 }

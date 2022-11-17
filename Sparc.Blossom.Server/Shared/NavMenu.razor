@@ -9,18 +9,10 @@
             @*<a href="/Guide">Guide</a>
             <a href="/Contact">Contact</a>*@
         </div>
-        <div class="join">
-            @*<button class="join-community">Join Blossom</button>*@
-            <button class="explore-blossom" @onclick="@GoToGithub">Explore Blossom</button>
+        <div class="join">          
+            <a href="https://github.com/sparc-coop/blossom" target="_blank" class="explore-blossom">
+                Explore Blossom
+            </a>
         </div>
     </div>
 </nav>
-
-@inject NavigationManager Navigation
-
-@code {
-    private void GoToGithub()
-    {
-        Navigation.NavigateTo("https://github.com/sparc-coop/blossom");
-    }
-}

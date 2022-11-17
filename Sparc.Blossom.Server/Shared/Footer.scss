@@ -28,4 +28,20 @@ footer {
             }
         }
     }
+
+    @media only screen and (max-width: 460px) {
+        gap: 0px;
+
+        .footer--column {
+            p.title-2 {
+                font-size: 14px;
+            }
+
+            .column-links {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
 }

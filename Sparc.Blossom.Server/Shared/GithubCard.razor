@@ -1,16 +1,12 @@
-﻿<div class="github-card">
-    <a href="@ProjectUrl" target="_blank">
-        <img class="project-photo" src="@GetPath(Name)" />
-    </a>
+﻿<a href="@ProjectUrl" target="_blank" class="github-card">
+    <img class="project-photo" src="@GetPath(Name)" />
     <div class="github-wrapper">
-        <a href="@ProjectUrl" target="_blank">
-            <p class="subtitle-1">@Name</p>
-        </a>
-        <a href="@GithubUrl" target="_blank">
+        <p class="subtitle-1">@Name</p>
+        <a @onclick:stopPropagation="true" href="@GithubUrl" target="_blank">
             <img class="github-logo" src="/images/Github.png" />
         </a>
     </div>
-</div>
+</a>
 
 @code {
     [Parameter] public string? Name { get; set; }
@@ -20,8 +16,7 @@
     public string GetPath(string? name)
     {
         string path;
-        //path = "/images/projects/Github_Project_" + name + ".png";
-        path = "/images/projects/Project_Photo_" + name + ".png";
+        path = "/images/projects/landing/" + name + "_Landing.png";
         return path;
     }
 }
