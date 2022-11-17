@@ -66,24 +66,24 @@ body p.small {
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
-  src: url(../fonts/Nimbus-Sans-Regular.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-RegularItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-RegularItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
-  src: url(../fonts/Nimbus-Sans-Bold.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Bold.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-BoldItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-BoldItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
@@ -295,26 +295,20 @@ footer .footer--column .column-links a {
   left: 50%;
   transform: translate(-50%, 0);
 }
-.home--intro .projectlogo-carousel {
+.home .projectlogo-carousel {
   width: 100%;
-  margin-top: 107px;
-  margin-bottom: 100px;
   padding: 0 0 100px 0;
   display: flex;
-  background: #000000;
   justify-content: space-between;
-  gap: 69px;
-  overflow: hidden;
-}
-.home .projectlogo-carousel .mud-carousel {
-  height: 50px;
+  background: #000000;
+  /*.mud-carousel {
+          height: 50px;
+      }*/
 }
 .home .projectlogo-carousel img {
   width: auto;
   height: 44px;
   margin: 0 20px;
-.home--intro .projectlogo-carousel img {
-  height: 55px;
 }
 .home section.home--about {
   padding: 120px 0;
@@ -746,3 +740,17 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+button {
+  cursor: pointer;
+}
+
+/*.ibis-translate {
+    padding: 0;
+    margin: 0;
+}
+
+.ibis-translating {
+    visibility: visible;
+    opacity: 0.3;
+}*/
