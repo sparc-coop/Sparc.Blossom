@@ -21,37 +21,75 @@
                 }
                 <h2 @onclick="@(e=> ToggleSection("what-is-blossom"))">Get to know Blossom</h2>
             </div>
+            @if (Section == "what-is-blossom")
+            {
+                <Sparc.Blossom.Server.GuideContent.GetToKnowBlossom />
+            }
             <div class="guide--heading">
-                @if(Section == "what-is-blossom")
+                @if (Section == "install")
                 {
-                    <Sparc.Blossom.Server.GuideContent.GetToKnowBlossom />
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
                 }
                 <h2 @onclick="@(e=> ToggleSection("install"))">Install</h2>
             </div>
                 @if(Section == "install")
                 {
-                    <div class="guide--wrapper">
-                        <img src="/images/Arrow_left.png" />
-                        <div class="guide--content"></div>
-                        <img src="/images/Arrow_right.png" />
-                    </div>
+                    <Sparc.Blossom.Server.GuideContent.Install />
                 }
-                <h2>Tutorial</h2>
-                <h2> Customization</h2>            
+            <div class="guide--heading">
+                @if (Section == "tutorial")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("tutorial"))">Tutorial</h2>
+            </div>
+            <div class="guide--heading">
+                @if (Section == "customization")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("customization"))">Customization</h2>
+            </div>          
         </div>
         <div class="category">        
             <p class="subtitle-1">enjoy</p>
-            <div class="wrapper">
-                <h2>Tips and Tricks</h2> 
-                <h2>Tools</h2>
-                <h2>Features</h2>
+            <div class="guide--heading">
+                @if (Section == "tipstricks")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("tipstricks"))">Tips and Tricks</h2>
+            </div>
+            <div class="guide--heading">
+                @if (Section == "tools")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("tools"))">Tools</h2>
+            </div>
+            <div class="guide--heading">
+                @if (Section == "features")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("features"))">Features</h2>
             </div>
         </div>
         <div class="category">
             <p class="subtitle-1">errors</p>
-            <div class="wrapper">
-                <h2>Troubleshooting</h2>
-                <h2>Contact us</h2>
+            <div class="guide--heading">
+                @if (Section == "troubleshooting")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("troubleshooting"))">Troubleshooting</h2>
+            </div>
+            <div class="guide--heading">
+                @if (Section == "contact")
+                {
+                    <img src="images/Asterisk Four Lines.png" class="asterisk" />
+                }
+                <h2 @onclick="@(e=> ToggleSection("contact"))">Contact us</h2>
             </div>
         </div>
     </section>

@@ -73,7 +73,7 @@
             display: flex;
         }
 
-        img {
+        .asterisk {
             display: inline;
             vertical-align: middle;
             margin: 10px 30px 0 0;
@@ -91,12 +91,12 @@
     &--wrapper {
         display: flex;
         justify-content: space-between;
+        padding: 20px 0 60px 0;
 
-        img {
-            width: 87px;
-            align-self: self-start;
+        .arrow {
+            align-self: center;
             cursor: pointer;
-            margin-top: 20%;
+            margin: 0 10px;
         }
     }
 
@@ -109,13 +109,21 @@
         box-sizing: border-box;
         color: $black;
         display: none;
+        position: relative;
 
         &.show-section {
             display: block;
-        }  
-        
-        &#sub-section-1 {
-            //display: block;
         }
+
+        .slide-number {
+            color: $grey-200;
+            background: $black;
+            padding: 7px 15px;
+            border-radius: 36px;
+            position: absolute;
+            top: 24px;
+            right: 28px;
+        }
+
     }
 }
