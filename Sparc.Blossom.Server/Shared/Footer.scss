@@ -1,0 +1,47 @@
+﻿@import "../App.Variables.scss";
+
+footer {
+    width: 100%;
+    padding: 150px 0;
+    background: $background;
+    color: $white;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    position: relative;
+
+    .footer--column {
+        p.title-2 {
+            font-family: 'NimbusSansExtd';
+            font-weight: 400;
+            margin-bottom: 27px;
+        }
+
+        .column-links {
+            display: flex;
+            flex-direction: column;
+
+            a {
+                margin-bottom: 9px;
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+
+    @media only screen and (max-width: 460px) {
+        gap: 0px;
+
+        .footer--column {
+            p.title-2 {
+                font-size: 14px;
+            }
+
+            .column-links {
+                a {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}

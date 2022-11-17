@@ -1,15 +1,18 @@
-﻿<nav>
+﻿@using Microsoft.AspNetCore.Components;
+
+<nav>
     <div class="logo">
         <a href="/"><img src="/images/Blossom Color White.png" /></a>
     </div>
     <div class="links-wrapper">
         <div class="links">
-            <a href="/">Home</a>
-            <a href="/Guide">Guide</a>
-            <a href="/Contact">Contact</a>
+            @*<a href="/Guide">Guide</a>
+            <a href="/Contact">Contact</a>*@
         </div>
-        <div class="join">
-            <button class="join-community">Join Community</button>
+        <div class="join">          
+            <a href="https://github.com/sparc-coop/blossom" target="_blank" class="explore-blossom">
+                Explore Blossom
+            </a>
         </div>
     </div>
 </nav>

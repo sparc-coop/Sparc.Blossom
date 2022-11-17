@@ -1,7 +1,5 @@
-using Sparc.Blossom.Server.Contact;
 using Sparc.Ibis;
 using Sparc.Kernel;
-using Sparc.Notifications.Twilio;
 using System.Globalization;
 
 
@@ -12,10 +10,7 @@ builder.Services.AddServerSideBlazor();
 
 builder.AddSparcKernel();
 builder.Services
-    .AddIbis()
-    .AddTwilio(builder.Configuration)
-    .AddScoped<RegisterForCommunity>();
-
+    .AddIbis();
 
 var app = builder.Build();
 

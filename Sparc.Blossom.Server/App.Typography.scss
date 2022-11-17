@@ -1,8 +1,16 @@
 ﻿body {
-    font-family: NimbusSansExtd;
+    font-family: 'NimbusSansExtd', sans-serif;
     font-weight: 400;
 
-    h1, h2, h3, h4, p {
+    h1, h2, h3, h4 {
+        font-family: 'NimbusSansExtd', sans-serif;
+        font-weight: 400;
+        line-height: 115%;
+    }
+
+    p {
+        font-family: 'NimbusSans', sans-serif;
+        font-weight: 400;
         line-height: 115%;
     }
 
@@ -37,61 +45,69 @@
     p.small {
         font-size: 14px;
     }
+
+    @media only screen and (max-width: 460px) {
+        h1 {
+            font-size: 44px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 23px;
+        }
+
+        .title-1, .subtitle-1 {
+            font-size: 18px;
+        }
+
+        .title-2, .subtitle-2 {
+            font-size: 16px;
+        }
+
+        p.medium {
+            font-size: 16px;
+        }
+
+        p.small {
+            font-size: 14px;
+        }
+    }
 }
 
 //fonts
 @font-face {
-    font-family: 'CircularStd';
+    font-family: 'NimbusSans';
     font-weight: 400;
-    src: url(wwwroot/fonts/CircularStd-Book.ttf) format('truetype');
+    src: url(wwwroot/fonts/Nimbus-Sans-Regular.otf) format('opentype');
 }
 
 @font-face {
-    font-family: 'CircularStd';
+    font-family: 'NimbusSans';
     font-weight: 400;
     font-style: italic;
-    src: url(wwwroot/fonts/CircularStd-BookItalic.ttf) format('truetype');
+    src: url(wwwroot/fonts/Nimbus-Sans-RegularItalic.otf) format('opentype');
 }
 
 @font-face {
-    font-family: 'CircularStd';
-    font-weight: 500;
-    src: url(wwwroot/fonts/CircularStd-Medium.ttf) format('truetype');
+    font-family: 'NimbusSans';
+    font-weight: 700;
+    src: url(wwwroot/fonts/Nimbus-Sans-Bold.otf) format('opentype');
 }
 
 @font-face {
-    font-family: 'CircularStd';
-    font-weight: 500;
+    font-family: 'NimbusSans';
+    font-weight: 700;
     font-style: italic;
-    src: url(wwwroot/fonts/CircularStd-MediumItalic.ttf) format('truetype');
+    src: url(wwwroot/fonts/Nimbus-Sans-BoldItalic.otf) format('opentype');
 }
-
-@font-face {
-    font-family: 'CircularStd';
-    font-weight: 600;
-    src: url(wwwroot/fonts/CircularStd-Bold.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'CircularStd';
-    font-weight: 600;
-    font-style: italic;
-    src: url(wwwroot/fonts/CircularStd-BoldItalic.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'CircularStd';
-    font-weight: 900;
-    src: url(wwwroot/fonts/CircularStd-Black.ttf) format('truetype');
-}
-
-@font-face {
-    font-family: 'CircularStd';
-    font-weight: 900;
-    font-style: italic;
-    src: url(wwwroot/fonts/CircularStd-BlackItalic.ttf) format('truetype');
-}
-
+ 
 @font-face {
     font-family: 'NimbusSansExtd';
     font-weight: 300;
