@@ -295,17 +295,19 @@ footer .footer--column .column-links a {
   left: 50%;
   transform: translate(-50%, 0);
 }
-.home--intro .projectlogo-carousel {
+.home .projectlogo-carousel {
   width: 100%;
-  margin-top: 107px;
-  margin-bottom: 100px;
+  padding: 0 0 100px 0;
   display: flex;
-  justify-content: space-between;
-  gap: 69px;
-  overflow: hidden;
+  background: #000000;
 }
-.home--intro .projectlogo-carousel img {
-  height: 55px;
+.home .projectlogo-carousel .mud-carousel {
+  height: 50px;
+}
+.home .projectlogo-carousel img {
+  width: auto;
+  height: 44px;
+  margin: 0 20px;
 }
 .home section.home--about {
   padding: 120px 0;
@@ -441,8 +443,6 @@ footer .footer--column .column-links a {
   border-bottom-right-radius: 125px;
   width: 126px;
   height: 306px;
-  /*                display: flex;
-  justify-content: space-between;*/
   position: absolute;
   top: 50px;
   z-index: 10;
