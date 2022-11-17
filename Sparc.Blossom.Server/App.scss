@@ -9,6 +9,9 @@
 //Pages
 @import "Pages/Index";
 @import "Pages/Guide";
+@import "Pages/BlogList";
+@import "Pages/Blog";
+
 
 body {
     margin: 0;
@@ -18,3 +21,17 @@ body {
         display: none;
     }
 }
+
+button {
+    cursor: pointer;
+}
+
+/*.ibis-translate {
+    padding: 0;
+    margin: 0;
+}
+
+.ibis-translating {
+    visibility: visible;
+    opacity: 0.3;
+}*/

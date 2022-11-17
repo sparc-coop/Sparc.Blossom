@@ -299,11 +299,20 @@ footer .footer--column .column-links a {
   width: 100%;
   margin-top: 107px;
   margin-bottom: 100px;
+  padding: 0 0 100px 0;
   display: flex;
+  background: #000000;
   justify-content: space-between;
   gap: 69px;
   overflow: hidden;
 }
+.home .projectlogo-carousel .mud-carousel {
+  height: 50px;
+}
+.home .projectlogo-carousel img {
+  width: auto;
+  height: 44px;
+  margin: 0 20px;
 .home--intro .projectlogo-carousel img {
   height: 55px;
 }

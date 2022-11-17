@@ -1,4 +1,4 @@
-﻿@import "../App.variables.scss";
+﻿@import "../App.Variables.scss";
 
 .home {
     width: 100%;
@@ -108,19 +108,29 @@
                 transform: translate(-50%, 0);
             }
         }
+    }
 
-        .projectlogo-carousel {
-            width: 100%;
+    .projectlogo-carousel {
+        width: 100%;
+        padding: 0 0 100px 0;
             margin-top: 107px;
             margin-bottom: 100px;
-            display: flex;
+        display: flex;
+        background: $black;
             justify-content: space-between;
             gap: 69px;
             overflow: hidden;
 
+        .mud-carousel {
+            height: 50px;
             img {
                 height: 55px;
-            }
+        }
+
+        img {
+            width: auto;
+            height: 44px;
+            margin: 0 20px;
         }
     }
 

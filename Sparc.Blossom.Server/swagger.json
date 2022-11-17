@@ -4,6 +4,7 @@
     "title": "Sparc.Blossom.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
     "version": "v1"
   },
+<<<<<<< HEAD
   "paths": {
     "/api/RegisterForCommunity": {
       "post": {
@@ -88,6 +89,10 @@
         "additionalProperties": false
       }
     },
+=======
+  "paths": { },
+  "components": {
+>>>>>>> main
     "securitySchemes": {
       "bearer": {
         "type": "http",

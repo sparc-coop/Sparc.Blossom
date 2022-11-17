@@ -19,5 +19,31 @@
     </app>
 
     <script src="_framework/blazor.server.js"></script>
+<<<<<<< HEAD
+=======
+    <script>
+        function nextSection(id, newId) {
+            if (id != null) {
+                var oldItem = document.getElementById(id);
+                oldItem.classList.remove("show-section");
+            }
+            
+            if(newId != null)
+            {
+                var element = document.getElementById(newId);
+                element.classList.add("show-section");
+            }
+
+        };
+        
+        function backSection(id) {
+            const collection = document.getElementsByClassName("show-section");
+            collection.classList.remove("show-section");
+            
+            var element = document.getElementById(id);
+            element.classList.add("show-section");
+        };
+    </script>
+>>>>>>> main
 </body>
 </html>
