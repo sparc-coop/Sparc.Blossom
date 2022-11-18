@@ -489,6 +489,55 @@ footer .footer--column .column-links a {
   font-family: "NimbusSansExtd", sans-serif;
 }
 
+.blog-list {
+  color: white;
+  text-align: center;
+  width: 100%;
+}
+.blog-list .blog-post-list {
+  color: white;
+  text-align: left;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.blog-list .blog-post-list .blog-post {
+  width: 413px;
+  margin: 10.5px;
+  max-height: 433px;
+  display: flex;
+  flex-direction: column;
+}
+.blog-list .blog-post-list .blog-post img {
+  width: 100%;
+  height: 277px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.blog-list .blog-post-list .blog-post h2 {
+  margin: 7.5px;
+  font-family: "NimbusSansExtd";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+}
+.blog-list .blog-post-list .blog-post p {
+  font-family: "NimbusSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 31px;
+  margin: 7.5px;
+}
+.blog-list .blog-post-list .no-img {
+  border: 1px solid white;
+  border-radius: 20px;
+  justify-content: flex-end;
+  height: 433px;
+}
+
 body {
   margin: 0;
   background: #020201;

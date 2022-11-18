@@ -31,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="BuildWebCompiler2022" Version="1.14.8" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.0" />
     <PackageReference Include="Sparc.Ibis" Version="7.0.5" />
     <PackageReference Include="Sparc.Kernel" Version="7.0.0" />

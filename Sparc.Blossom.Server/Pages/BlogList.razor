@@ -1,12 +1,42 @@
 ﻿@page "/blogs"
 
 <div class="blog-list">
-    
+<h1 class="header">21 Days of Blossom</h1>
+<div class="blog-post-list">
+    <article class="blog-post">
+            <img src="https://via.placeholder.com/150" />
+        <h2>Title Here</h2>
+        <p>Hello here is article text...</p>
+    </article>
+    <article class="blog-post">
+            <img src="https://via.placeholder.com/150" />
+        <h2>Title Here</h2>
+        <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database...</p>
+    </article>
+    <article class="blog-post no-img">
+        <h2>Title Here</h2>
+        <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database...</p>
+    </article>
+        <article class="blog-post">
+                <img src="https://via.placeholder.com/150" />
+        <h2>Title Here</h2>
+        <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database...</p>
+    </article>
+        <article class="blog-post">
+            <img src="https://via.placeholder.com/150" />
+            <h2>Title Here</h2>
+            <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database...</p>
+        </article>
+</div>
 </div>
 
 @code {
+    [Parameter] public string title { get; set; } = null!;
+    public string Content = "";
+    IbisChannel? Channel;
+
     protected override async Task OnInitializedAsync()
     {
-
+        //Channel = await Ibis.GetAllAsync("blog-testing", null, true);
     }
 }
