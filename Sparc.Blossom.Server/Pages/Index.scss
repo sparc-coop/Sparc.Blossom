@@ -116,7 +116,7 @@
     .projectlogo-carousel {
         width: 100%;
         margin: 0 auto;
-        padding: 0 0 100px 0;
+        padding: 100px 0 50px 0;
         display: flex;
         justify-content: space-between;
         background: $black;
@@ -285,8 +285,6 @@
                 border-bottom-right-radius: 125px;
                 width: 126px;
                 height: 306px;
-                /*                display: flex;
-                justify-content: space-between;*/
                 position: absolute;
                 top: 50px;
                 z-index: 10;
@@ -563,27 +561,15 @@
 
             .header {
                 width: 100%;
+                padding: 30px;
 
                 h3 {
                     font-size: 28px;
                 }
             }
 
-            .cta-input {
-                margin: auto 0;
-                gap: 15px;
-
-                input {
-                    width: 100%;
-                    height: 30px;
-                    padding: 0 25px;
-                    font-size: 16px;
-                }
-
-                button.sign-up {
-                    width: 36px;
-                    height: 36px;
-                }
+            a {
+                padding: 14px 60px;
             }
         }
     }
