@@ -11,16 +11,23 @@
     <title>Blossom</title>
     <base href="~/" />
     <link href="css/app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/gruvbox-dark-pale.min.css">
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
     <app>
         <component type="typeof(Sparc.Blossom.Server.App)" render-mode="ServerPrerendered" />
     </app>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="_framework/blazor.server.js"></script>
 
     <script>
+        function highlightSnippet() {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightBlock(el);
+            });
+        }
+      
         function nextSection(id, newId) {
             if (id != null) {
                 var oldItem = document.getElementById(id);

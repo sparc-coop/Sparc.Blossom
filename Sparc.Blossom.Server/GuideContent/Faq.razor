@@ -1,0 +1,152 @@
+﻿<div class="guide--wrapper">
+    @if (SectionNumber > 1)
+    {
+        <img @onclick="Back" src="/images/Arrow_left.png" class="arrow" />
+    }
+    <div class="guide--content show-section" id="sub-section-1">
+        <div class="slide-number">1/</div>
+        <h4>Can I create multiple Features per file, like MVC Controllers do?</h4>
+        <p>
+            Each feature is self-contained into a single class for a reason. A class is a great container for all of the things a Feature needs:
+            <ul>
+                <li>
+                    A name (the class name)
+                </li>
+                <li>
+                    An input and output data format (the one-line records above the class are a nice in-file representation of these)
+                </li>
+                <li>
+                    A set of dependencies (automatically injected into the class constructor by the framework)
+                </li>
+                <li>
+                    A single function to execute that uses all the other ingredients (the overridden ExecuteAsync() function inherited from the Feature class)
+                </li>
+            </ul>          
+            In addition, one Feature / one class per file ensures that all of the logic to execute that Feature resides in a single place. 
+            This is contrary to the more typical layered approach with separate repositories, managers, controllers, actions, but has 
+            proven to be a creative and organizational catalyst, as it enables pure focus on the logic that you are working on at the time, 
+            rather than having to hunt all over the code for the stack of functions that are executed.
+        </p>
+    </div>
+    <div class="guide--content" id="sub-section-2">
+        <div class="slide-number">2/</div>
+        <h4>Why do you use Records for your Input and Output data?</h4>
+        <p>
+            C# Records are a great way to create a separate data type that is:
+            <ul>
+                <li>
+                    only used once,
+                </li>
+                <li>
+                    has no behavior, and
+                </li>
+                <li>
+                    are never mutated.
+                </li>
+            </ul>
+            This happens to be the very definition of a well-constructed DTO (Data Transformation Object).
+
+            Since a Feature's Input and Output data classes meet all of these requirements, we can take 
+            advantage of a simple one-line construct to create these types, eliminating most of the boilerplate ceremony:
+            <pre>
+                <code class="language-csharp">
+public record GetProductsRequest(string SearchTerm, bool ShowDeletedProducts);
+                </code>
+            </pre>
+            It is a good practice to return a specific data type for the specific API endpoint you are calling, and to receive a specific data type into the API endpoint, rather than using the Entities or shared data types directly. This is the case even when the API needs to return something very close to the Entity itself. Specific data types per API endpoint enable the following benefits:
+            <ul>
+                <li>
+                    you're protected from accidentally exposing more information than you wanted to (eg. a secure User ID in an entity),
+                </li>
+                <li>
+                    the core Entities are protected from needing to evolve as the API evolves,
+                </li>
+                <li>
+                    the shape of each API can evolve separately from all the Entities or other API methods
+                </li>
+            </ul>
+            If you don't like records, you can use classes!
+        </p>
+    </div>
+    <div class="guide--content" id="sub-section-3">
+        <div class="slide-number">3/</div>
+        <h4>What if my Feature doesn't have any Input Data?</h4>
+        <p>
+            If you need to call an API method that only returns Output Data without any Input Data required, inherit your 
+            Feature from Feature&lt;[your output data type]&gt; instead. This enables the following changes to your Feature:
+            <ul>
+                <li>
+                    The ExecuteAsync function has no input parameters:
+                    <pre>
+                    <code class="language-csharp">
+public override async Task&lt;GetAllOrdersResponse&gt; ExecuteAsync() {}
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    The client API will also automatically take no parameters:
+                    <pre>
+                    <code class="language-csharp">
+var orders = await Api.GetAllOrdersAsync();
+                    </code>
+                    </pre>
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="guide--content" id="sub-section-4">
+        <div class="slide-number">4/</div>
+        <h4>What if my Feature doesn't have any Output Data?</h4>
+        <p>
+            It is our opinion that all Features should have some form of Output Data, so that the projects using this API can 
+            know the result of their call. This can be as simple as a bool or ActionResult return if you like, but in most 
+            cases there is always something slightly more substantial that can be returned. There is currently no Feature 
+            type in Sparc.Kernel that returns no Output Data.
+        </p>
+    </div>
+    <div class="guide--content" id="sub-section-5">
+        <div class="slide-number">5/5</div>
+        <h4>How do I authenticate my Features?</h4>
+        <p>
+            All Features inheriting from Feature&lt;TIn, TOut> or Feature&lt;TOut> are automatically authenticated with the 
+            [Authorize] attribute of ASP.NET Core. This is a design decision made on purpose, as most API endpoints in the real 
+            world should be private and authenticated.
+
+            The simplest way to set up authentication in your Sparc solution is to use one of Sparc's authentication plugins 
+            (Azure AD B2C, Active Directory, or Self-Hosted).
+
+            However, Sparc.Kernel also contains a non-authenticated Feature option called PublicFeature. Public Features are 
+            useful for true public API endpoints (such as a community-accessible list for non-logged-in users).
+
+            To make a feature public, simply inherit from PublicFeature&lt;TIn, TOut> or PublicFeature&lt;TOut> rather than 
+            Feature&lt;TIn, TOut>or Feature&lt;TOut>.
+
+            Public Features are also useful in the initial stages of building your app, before any authentication is set up.
+        </p>
+    </div>
+    @if (SectionNumber < 5)
+    {
+        <img @onclick="Next" src="/images/Arrow_right.png" class="arrow" />
+    }
+</div>
+
+@code {
+    public int SectionNumber = 1;
+
+    protected async Task Back()
+    {
+        if (SectionNumber > 1)
+        {
+            int currentSection = SectionNumber;
+            SectionNumber--;
+            await JSRuntime.InvokeVoidAsync("backSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+        }
+    }
+
+    protected async Task Next()
+    {
+        int currentSection = SectionNumber;
+        SectionNumber++;
+        await JSRuntime.InvokeVoidAsync("nextSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+    }
+}

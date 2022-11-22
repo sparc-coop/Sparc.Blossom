@@ -3,13 +3,12 @@
 .guide {
     width: 100%;
     max-width: 1038px;
+    box-sizing: border-box;
     padding: 125px 20px;
     margin: 0 auto;
     color: $white;
 
     &--hero {
-        width: 100%;
-        margin: 0 auto;
         text-align: center;
 
         .header {
@@ -22,7 +21,8 @@
             }
 
             h1 {
-                margin-bottom: 10px;
+                width: 50%;
+                margin: 20px auto;
             }
         }
 
@@ -71,6 +71,7 @@
 
         .guide--heading {
             display: flex;
+            padding: 12px 0;
         }
 
         .asterisk {
@@ -125,5 +126,55 @@
             right: 28px;
         }
 
+        li {
+            padding: 8px 0;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: unset;
+        }
+
+        h4 {
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 20px;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        a {
+            margin: 0 6px;
+            text-decoration: none;
+        }
+
+        aside {
+            padding: 12px 16px;
+        }
+
+        code {
+            border-radius: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 1560px) {
+        padding: 80px 20px;
+
+        .ask-questions {
+            margin-bottom: 100px;
+
+            input {
+                max-width: 700px;
+                height: 76px;
+            }
+
+            button {
+                width: 76px;
+                height: 76px;
+            }
+        }
     }
 }

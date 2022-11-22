@@ -252,7 +252,7 @@ footer .footer--column .column-links a {
 }
 .home--hero .hero--image {
   width: 100%;
-  margin-bottom: 35px;
+  margin: 60px 0 35px;
   text-align: center;
 }
 .home--hero .hero--image img {
@@ -522,6 +522,22 @@ footer .footer--column .column-links a {
   .home section.home--about {
     padding-top: 80px;
   }
+  .home--hero {
+    padding: 100px 0;
+    line-height: 100%;
+  }
+  .home--hero .hero--image {
+    margin: 0;
+  }
+  .home--hero .hero--image img {
+    width: 430px;
+  }
+  .home--hero .header {
+    width: 80%;
+  }
+  .home--hero .header h1 {
+    font-size: 50px;
+  }
   .home--about .feature {
     margin: 60px 0;
     gap: 60px;
@@ -549,10 +565,13 @@ footer .footer--column .column-links a {
     text-align: center;
   }
   .home--hero .hero--image img {
-    width: 80%;
+    width: 62%;
   }
   .home--hero .header {
-    width: 100%;
+    width: 80%;
+  }
+  .home--hero .header h1 {
+    line-height: 100%;
   }
   .home .float-wrapper {
     width: 100%;
@@ -698,9 +717,10 @@ footer .footer--column .column-links a {
   .home section {
     width: 100%;
     padding: 80px 0;
+    box-sizing: border-box;
   }
   .home--hero .hero--image {
-    width: 100%;
+    width: unset;
     margin-bottom: 15px;
     text-align: center;
   }
@@ -708,7 +728,10 @@ footer .footer--column .column-links a {
     width: 80%;
   }
   .home--hero .header {
-    max-width: 100%;
+    width: 100%;
+  }
+  .home--hero .header h1 {
+    font-size: 45px;
   }
   .home .float-wrapper {
     width: 100%;
@@ -747,6 +770,7 @@ footer .footer--column .column-links a {
   }
   .home section.home--about {
     padding: 0px;
+    margin-top: -50px;
   }
   .home--about {
     width: 100%;
@@ -854,13 +878,12 @@ footer .footer--column .column-links a {
 .guide {
   width: 100%;
   max-width: 1038px;
+  box-sizing: border-box;
   padding: 125px 20px;
   margin: 0 auto;
   color: #FFFFFF;
 }
 .guide--hero {
-  width: 100%;
-  margin: 0 auto;
   text-align: center;
 }
 .guide--hero .header {
@@ -872,7 +895,8 @@ footer .footer--column .column-links a {
   margin: 0 auto;
 }
 .guide--hero .header h1 {
-  margin-bottom: 10px;
+  width: 50%;
+  margin: 20px auto;
 }
 .guide--hero .ask-questions {
   margin-top: 50px;
@@ -913,6 +937,7 @@ footer .footer--column .column-links a {
 }
 .guide .category .guide--heading {
   display: flex;
+  padding: 12px 0;
 }
 .guide .category .asterisk {
   display: inline;
@@ -958,6 +983,48 @@ footer .footer--column .column-links a {
   position: absolute;
   top: 24px;
   right: 28px;
+}
+.guide--content li {
+  padding: 8px 0;
+}
+.guide--content p {
+  font-size: 17px;
+  line-height: unset;
+}
+.guide--content h4 {
+  margin: 0;
+  padding-bottom: 20px;
+}
+.guide--content h5 {
+  font-size: 20px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+.guide--content a {
+  margin: 0 6px;
+  text-decoration: none;
+}
+.guide--content aside {
+  padding: 12px 16px;
+}
+.guide--content code {
+  border-radius: 10px;
+}
+@media only screen and (max-width: 1560px) {
+  .guide {
+    padding: 80px 20px;
+  }
+  .guide .ask-questions {
+    margin-bottom: 100px;
+  }
+  .guide .ask-questions input {
+    max-width: 700px;
+    height: 76px;
+  }
+  .guide .ask-questions button {
+    width: 76px;
+    height: 76px;
+  }
 }
 
 body {
