@@ -1,6 +1,36 @@
 ﻿@page "/blog/{blogId}"
 
-<div>
-
+<div class="blog-page">
+    <section class="pagnation">
+        <a href="">Previous</a>
+        <a href="">Next</a>
+    </section>
+    <article class="blog-article">
+    <h1>@BlogId</h1>
+    <h2>Subtitle</h2>
+    <div class="share-links"></div>
+    @if (Channel != null)
+    {
+        @foreach (var textContent in Channel.Content)
+        {
+            <section class="blog-post-content">
+                <div class="post-left">01 Title</div>
+                <div class="post-right">@textContent.Html</div>
+            </section>
+        }
+    }
+    </article>
 </div>
 
+@code {
+    [Parameter] public string BlogId { get; set; } = null;
+    //[Parameter] public string title { get; set; } = null!;
+    public string Content = "";
+    IbisChannel? Channel;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //"blog-testing"
+        Channel = await Ibis.GetAllAsync(BlogId, null, true);
+    }
+}

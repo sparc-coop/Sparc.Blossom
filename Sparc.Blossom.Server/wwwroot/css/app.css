@@ -538,6 +538,54 @@ footer .footer--column .column-links a {
   height: 433px;
 }
 
+.blog-page {
+  color: white;
+  margin-left: 80px;
+}
+.blog-page .pagnation {
+  display: flex;
+  justify-content: space-around;
+}
+.blog-page .blog-article {
+  margin-left: 80px;
+}
+.blog-page .blog-article h1 {
+  font-family: "NimbusSansExtd";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 62px;
+  margin-bottom: 16px;
+}
+.blog-page .blog-article h2 {
+  font-family: "NimbusSans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 21px;
+  margin-top: 16px;
+}
+.blog-page .blog-article .blog-post-content {
+  margin-top: 160px;
+  margin-right: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  font-family: "NimbusSans";
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 150%;
+}
+.blog-page .blog-article .blog-post-content .post-left {
+  margin: 0px 80px 20px 0px;
+}
+.blog-page .blog-article .blog-post-content .post-right {
+  margin: 0px;
+}
+.blog-page .blog-article .blog-post-content p {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
   margin: 0;
   background: #020201;

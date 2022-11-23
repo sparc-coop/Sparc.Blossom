@@ -1,5 +1,57 @@
 ﻿@import "../App.Variables.scss";
 
 .blog-page {
+    color: white;
+    margin-left: 80px;
 
+    .pagnation {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .blog-article {
+        margin-left: 80px;
+
+        h1 {
+            font-family: 'NimbusSansExtd';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 52px;
+            line-height: 62px;
+            margin-bottom: 16px;
+        }
+
+        h2 {
+            font-family: 'NimbusSans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 21px;
+            margin-top: 16px;
+        }
+
+        .blog-post-content {
+            margin-top: 160px;
+            margin-right: 80px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            font-family: 'NimbusSans';
+            font-weight: 300;
+            font-size: 17px;
+            line-height: 150%;
+
+            .post-left {
+                margin: 0px 80px 20px 0px;
+            }
+
+            .post-right {
+                margin: 0px;
+            }
+
+            p {
+                margin: 0px;
+                padding: 0px;
+            }
+        }
+    }
 }

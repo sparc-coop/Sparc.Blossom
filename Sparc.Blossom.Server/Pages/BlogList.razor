@@ -2,6 +2,7 @@
 
 <div class="blog-list">
 <h1 class="header">21 Days of Blossom</h1>
+<h2>Subtitle</h2>
 <div class="blog-post-list">
     <article class="blog-post">
             <img src="https://via.placeholder.com/150" />
@@ -37,6 +38,6 @@
 
     protected override async Task OnInitializedAsync()
     {
-        //Channel = await Ibis.GetAllAsync("blog-testing", null, true);
+        Channel = await Ibis.GetAllAsync("blog-testing", null, true);
     }
 }
