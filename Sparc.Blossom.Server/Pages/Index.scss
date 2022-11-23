@@ -6,6 +6,7 @@
     color: $grey-100;
     font-family: 'NimbusSansExtd', sans-serif;
     font-weight: 400;
+    overflow-x: hidden;
 
     section {
         padding: 150px 0;
@@ -13,6 +14,7 @@
 
     &--hero {
         width: 100%;
+        height: 100vh;
         margin: 0 auto;
         position: fixed;
         top: 50%;
@@ -22,15 +24,18 @@
 
         .container {
             padding: 0 15px;
+            padding-top: 80px;
         }
 
         .hero--image {
             width: 100%;
+            margin: 0 auto;
             margin-bottom: 35px;
             text-align: center;
 
             img {
-                width: 551px;
+                width: 25%;
+                max-width: 550px;
             }
         }
 
@@ -66,9 +71,12 @@
         }
     }
 
+    section.home--intro {
+        padding-bottom: 73px;
+    }
+
     &--intro {
         width: 100%;
-        padding-bottom: 312px;
         background: $background;
 
         .container {
@@ -76,7 +84,8 @@
         }
 
         .header {
-            width: 1054px;
+            width: 80%;
+            max-width: 1054px;
             margin: 0 auto;
             text-align: center;
             font-family: 'NimbusSansExtd', sans-serif;
@@ -92,6 +101,17 @@
         }
 
         .interactive-block {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 40px;
+            text-align: center;
+
+            img {
+                width: 90%;
+                max-width: 1140px;
+            }
+        }
+        /*.interactive-block {
             width: 1054px;
             height: 500px;
             margin: 0 auto;
@@ -107,23 +127,52 @@
                 left: 50%;
                 transform: translate(-50%, 0);
             }
-        }
+        }*/
     }
 
     .projectlogo-carousel {
         width: 100%;
-        padding: 0 0 100px 0;
-        display: flex;
+        height: 55px;
+        margin: 0;
+        padding-bottom: 184px;
+        overflow: hidden;
         background: $black;
 
-        .mud-carousel {
-            height: 50px;
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 70px;
+            width: calc(250px * 14);
+            animation: scroll 40s linear infinite;
+
+            .logo-wrapper {
+                margin: auto 0;
+
+                img {
+                    height: 55px;
+                    width: auto;
+                }
+            }
+        }
+        /*width: 100%;
+    padding: 0 0 100px 0;
+    display: flex;
+    background: $black;
+
+    img {
+        width: auto;
+        height: 44px;
+        margin: 0 20px;
+    }*/
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
         }
 
-        img {
-            width: auto;
-            height: 44px;
-            margin: 0 20px;
+        100% {
+            transform: translateX(calc(-250px * 7));
         }
     }
 
@@ -224,25 +273,38 @@
         }
 
         .project-carousel {
-            width: 100%;
-            padding: 20px 0;
-            position: relative;
+            width: 100vw;
+            height: auto;
+            margin: 0;
+            padding: 30px 0;
             overflow: hidden;
+            position: relative;
+            background: transparent;
 
-            .project-wrapper {
-                width: 100%;
+            .project-container {
                 display: flex;
-                justify-content: center;
-                gap: 24px;
+                gap: 30px;
+                width: calc(413px * 6);
+                animation: scroll 40s linear infinite;
 
-                .github-card {
+                &:hover {
+                    animation-play-state: paused;
+                }
+
+                .project-card {
                     width: 413px;
                     height: 336px;
                     padding-bottom: 9px;
-                    border: 1px solid $white;
+                    border: 2px solid #FFFFFF;
                     border-radius: 20px;
                     cursor: pointer;
                     text-decoration: none;
+                    perspective: 100px;
+                    transition: transform 300ms ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-20px);
+                    }
 
                     img.project-photo {
                         width: 377px;
@@ -259,18 +321,18 @@
 
                         p.subtitle-1 {
                             margin: auto 0;
-                            color: $white;
+                            color: #FFFFFF;
                         }
 
                         .github-logo {
                             width: 29px;
                             height: 29px;
                             margin: auto 0;
-                            color: $white;
+                            color: #FFFFFF;
                             transition-duration: 0.4s;
 
                             &:hover {
-                                transform: translateY(-2px);
+                                transform: translateY(-4px);
                                 transition-duration: 0.2s;
                             }
                         }
@@ -298,7 +360,7 @@
 
                 &.carousel-forward {
                     transform: rotate(180deg);
-                    right: 0;
+                    right: 0vh;
                 }
             }
         }
@@ -310,22 +372,43 @@
         background: $background;
 
         .container {
-            padding: 0 80px;
+            height: auto;
+            padding: 0 45px;
             display: flex;
-            justify-content: center;
-            gap: 40px;
             flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
         }
 
         .header {
-            max-width: 630px;
+            width: 630px;
+            margin: auto 0;
 
             h3 {
+                margin: 0;
+                margin-bottom: 25px;
+                padding: 0;
                 font-size: 52px;
+            }
+
+            button {
+                padding: 16px 80px;
+                background: #3BD7FF;
+                border: none;
+                border-radius: 50px;
+                font-family: 'NimbusSansExtd', sans-serif;
+                font-size: 26px;
             }
         }
 
-        .cta-input {
+        .cta-image {
+            margin: auto 0;
+
+            img {
+                max-width: 634px;
+            }
+        }
+        /*.cta-input {
             margin: auto 0;
             display: flex;
             gap: 15px;
@@ -355,7 +438,7 @@
                     width: 100%;
                 }
             }
-        }
+        }*/
     }
 
     @media only screen and (max-width: 460px) {
@@ -487,7 +570,7 @@
             }
 
             .project-carousel {
-                .project-wrapper {
+                .project-container {
                     justify-content: start;
                     gap: 15px;
 
@@ -496,7 +579,7 @@
                     }
 
 
-                    .github-card {
+                    .project-card {
                         width: 100%;
                         height: auto;
                         padding-bottom: 9px;

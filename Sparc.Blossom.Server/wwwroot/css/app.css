@@ -66,24 +66,24 @@ body p.small {
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
-  src: url(../fonts/Nimbus-Sans-Regular.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-RegularItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-RegularItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
-  src: url(../fonts/Nimbus-Sans-Bold.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-Bold.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
   font-style: italic;
-  src: url(../fonts/Nimbus-Sans-BoldItalic.ttf) format("opentype");
+  src: url(../fonts/Nimbus-Sans-BoldItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSansExtd";
@@ -208,12 +208,14 @@ footer .footer--column .column-links a {
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
 }
 .home section {
   padding: 150px 0;
 }
 .home--hero {
   width: 100%;
+  height: 100vh;
   margin: 0 auto;
   position: fixed;
   top: 50%;
@@ -223,14 +225,17 @@ footer .footer--column .column-links a {
 }
 .home--hero .container {
   padding: 0 15px;
+  padding-top: 80px;
 }
 .home--hero .hero--image {
   width: 100%;
+  margin: 0 auto;
   margin-bottom: 35px;
   text-align: center;
 }
 .home--hero .hero--image img {
-  width: 551px;
+  width: 25%;
+  max-width: 550px;
 }
 .home--hero .header {
   width: 809px;
@@ -258,16 +263,36 @@ footer .footer--column .column-links a {
   height: 100vh;
   background: transparent;
 }
+.home section.home--intro {
+  padding-bottom: 73px;
+}
 .home--intro {
   width: 100%;
-  padding-bottom: 312px;
   background: #020201;
+  /*.interactive-block {
+      width: 1054px;
+      height: 500px;
+      margin: 0 auto;
+      margin-top: 40px;
+      border: solid 1px $grey-100;
+      border-radius: 50px;
+      position: relative;
+
+      img {
+          width: 542px;
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translate(-50%, 0);
+      }
+  }*/
 }
 .home--intro .container {
   padding: 0 15px;
 }
 .home--intro .header {
-  width: 1054px;
+  width: 80%;
+  max-width: 1054px;
   margin: 0 auto;
   text-align: center;
   font-family: "NimbusSansExtd", sans-serif;
@@ -280,34 +305,54 @@ footer .footer--column .column-links a {
   margin-bottom: 8px;
 }
 .home--intro .interactive-block {
-  width: 1054px;
-  height: 500px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 40px;
-  border: solid 1px #F6F4F3;
-  border-radius: 50px;
-  position: relative;
+  text-align: center;
 }
 .home--intro .interactive-block img {
-  width: 542px;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
+  width: 90%;
+  max-width: 1140px;
 }
 .home .projectlogo-carousel {
   width: 100%;
+  height: 55px;
+  margin: 0;
+  padding-bottom: 184px;
+  overflow: hidden;
+  background: #000000;
+  /*width: 100%;
   padding: 0 0 100px 0;
   display: flex;
-  background: #000000;
+  background: $black;
+
+  img {
+      width: auto;
+      height: 44px;
+      margin: 0 20px;
+  }*/
 }
-.home .projectlogo-carousel .mud-carousel {
-  height: 50px;
+.home .projectlogo-carousel .container {
+  display: flex;
+  flex-direction: row;
+  gap: 70px;
+  width: 3500px;
+  animation: scroll 40s linear infinite;
 }
-.home .projectlogo-carousel img {
+.home .projectlogo-carousel .container .logo-wrapper {
+  margin: auto 0;
+}
+.home .projectlogo-carousel .container .logo-wrapper img {
+  height: 55px;
   width: auto;
-  height: 44px;
-  margin: 0 20px;
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1750px);
+  }
 }
 .home section.home--about {
   padding: 120px 0;
@@ -390,51 +435,62 @@ footer .footer--column .column-links a {
   margin-bottom: 8px;
 }
 .home--projects .project-carousel {
-  width: 100%;
-  padding: 20px 0;
-  position: relative;
+  width: 100vw;
+  height: auto;
+  margin: 0;
+  padding: 30px 0;
   overflow: hidden;
+  position: relative;
+  background: transparent;
 }
-.home--projects .project-carousel .project-wrapper {
-  width: 100%;
+.home--projects .project-carousel .project-container {
   display: flex;
-  justify-content: center;
-  gap: 24px;
+  gap: 30px;
+  width: 2478px;
+  animation: scroll 40s linear infinite;
 }
-.home--projects .project-carousel .project-wrapper .github-card {
+.home--projects .project-carousel .project-container:hover {
+  animation-play-state: paused;
+}
+.home--projects .project-carousel .project-container .project-card {
   width: 413px;
   height: 336px;
   padding-bottom: 9px;
-  border: 1px solid #FFFFFF;
+  border: 2px solid #FFFFFF;
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
+  perspective: 100px;
+  transition: transform 300ms ease-in-out;
 }
-.home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+.home--projects .project-carousel .project-container .project-card:hover {
+  transform: translateY(-20px);
+}
+.home--projects .project-carousel .project-container .project-card img.project-photo {
   width: 377px;
   height: 257.5px;
   margin: 18px;
   border-radius: 15px;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+.home--projects .project-carousel .project-container .project-card .github-wrapper {
   margin: 0 18px;
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper p.subtitle-1 {
+.home--projects .project-carousel .project-container .project-card .github-wrapper p.subtitle-1 {
   margin: auto 0;
   color: #FFFFFF;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo {
+.home--projects .project-carousel .project-container .project-card .github-wrapper .github-logo {
   width: 29px;
   height: 29px;
   margin: auto 0;
   color: #FFFFFF;
   transition-duration: 0.4s;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo:hover {
-  transform: translateY(-2px);
+.home--projects .project-carousel .project-container .project-card .github-wrapper .github-logo:hover {
+  transform: translateY(-4px);
   transition-duration: 0.2s;
 }
 .home--projects .project-carousel .arrows-container {
@@ -456,53 +512,75 @@ footer .footer--column .column-links a {
 }
 .home--projects .project-carousel .arrows-container.carousel-forward {
   transform: rotate(180deg);
-  right: 0;
+  right: 0vh;
 }
 .home--cta {
   width: 100%;
   padding: 150px 0;
   background: #020201;
+  /*.cta-input {
+      margin: auto 0;
+      display: flex;
+      gap: 15px;
+
+      input {
+          width: 560px;
+          height: 55px;
+          padding: 0 35px;
+          border: 2px solid $grey-100;
+          border-radius: 100px;
+          background: transparent;
+          color: $grey-200;
+          font-family: 'NimbusSansExtd';
+          font-weight: 400;
+          font-size: 20px;
+      }
+
+      button.sign-up {
+          width: 55px;
+          height: 55px;
+          padding: 0;
+          margin: 0;
+          background: transparent;
+          border: none;
+
+          img {
+              width: 100%;
+          }
+      }
+  }*/
 }
 .home--cta .container {
-  padding: 0 80px;
+  height: auto;
+  padding: 0 45px;
   display: flex;
-  justify-content: center;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
 }
 .home--cta .header {
-  max-width: 630px;
+  width: 630px;
+  margin: auto 0;
 }
 .home--cta .header h3 {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
   font-size: 52px;
 }
-.home--cta .cta-input {
-  margin: auto 0;
-  display: flex;
-  gap: 15px;
-}
-.home--cta .cta-input input {
-  width: 560px;
-  height: 55px;
-  padding: 0 35px;
-  border: 2px solid #F6F4F3;
-  border-radius: 100px;
-  background: transparent;
-  color: #D0CECD;
-  font-family: "NimbusSansExtd";
-  font-weight: 400;
-  font-size: 20px;
-}
-.home--cta .cta-input button.sign-up {
-  width: 55px;
-  height: 55px;
-  padding: 0;
-  margin: 0;
-  background: transparent;
+.home--cta .header button {
+  padding: 16px 80px;
+  background: #3BD7FF;
   border: none;
+  border-radius: 50px;
+  font-family: "NimbusSansExtd", sans-serif;
+  font-size: 26px;
 }
-.home--cta .cta-input button.sign-up img {
-  width: 100%;
+.home--cta .cta-image {
+  margin: auto 0;
+}
+.home--cta .cta-image img {
+  max-width: 634px;
 }
 @media only screen and (max-width: 460px) {
   .home section {
@@ -605,29 +683,29 @@ footer .footer--column .column-links a {
     margin-bottom: 60px;
     padding: 0 20px;
   }
-  .home--projects .project-carousel .project-wrapper {
+  .home--projects .project-carousel .project-container {
     justify-content: start;
     gap: 15px;
   }
-  .home--projects .project-carousel .project-wrapper:first-child {
+  .home--projects .project-carousel .project-container:first-child {
     padding-left: 20px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card {
+  .home--projects .project-carousel .project-container .project-card {
     width: 100%;
     height: auto;
     padding-bottom: 9px;
     border-radius: 15px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+  .home--projects .project-carousel .project-container .project-card img.project-photo {
     width: 200px;
     height: auto;
     margin: 10px;
     border-radius: 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+  .home--projects .project-carousel .project-container .project-card .github-wrapper {
     margin: 0 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
+  .home--projects .project-carousel .project-container .project-card .github-wrapper img.github-logo {
     width: 20px;
     height: 20px;
   }
@@ -674,18 +752,23 @@ footer .footer--column .column-links a {
 
 .guide {
   width: 100%;
-  padding: 0 188px;
-  padding-top: 125px;
+  max-width: 1038px;
+  padding: 125px 20px;
+  margin: 0 auto;
+  color: #FFFFFF;
 }
 .guide--hero {
-  width: 1039px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
 }
 .guide--hero .header {
-  width: 809px;
   margin: 0 auto;
   font-family: "NimbusSansExtd", sans-serif;
+}
+.guide--hero .header p {
+  max-width: 705px;
+  margin: 0 auto;
 }
 .guide--hero .header h1 {
   margin-bottom: 10px;
@@ -698,8 +781,10 @@ footer .footer--column .column-links a {
   gap: 19px;
 }
 .guide--hero .ask-questions input {
-  width: 900px;
+  width: 90%;
+  max-width: 900px;
   height: 100px;
+  box-sizing: border-box;
   padding: 0 47px;
   border: 2px solid #F6F4F3;
   border-radius: 100px;
@@ -718,18 +803,51 @@ footer .footer--column .column-links a {
 .guide--hero .ask-questions button img {
   width: 100%;
 }
-.guide--categories .category {
+.guide .category {
   margin-bottom: 102px;
 }
-.guide--categories .category .subtitle-1 {
+.guide .category .subtitle-1 {
   font-family: "NimbusSans", sans-serif;
   color: #A19D9A;
 }
-.guide--categories .category h2 {
-  margin-bottom: 31px;
-  font-family: "NimbusSansExtd", sans-serif;
+.guide .category .guide--heading {
+  display: flex;
 }
-
+.guide .category img {
+  display: inline;
+  vertical-align: middle;
+  margin: 10px 30px 0 0;
+  align-self: self-start;
+}
+.guide .category h2 {
+  margin: 0;
+  font-family: "NimbusSansExtd", sans-serif;
+  cursor: pointer;
+  display: inline;
+}
+.guide--wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.guide--wrapper img {
+  width: 87px;
+  align-self: self-start;
+  cursor: pointer;
+  margin-top: 20%;
+}
+.guide--content {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #D0CECD;
+  border-radius: 20px;
+  padding: 60px;
+  box-sizing: border-box;
+  color: #000000;
+  display: none;
+}
+.guide--content.show-section {
+  display: block;
+}
 body {
   margin: 0;
   background: #020201;
@@ -737,3 +855,17 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+
+button {
+  cursor: pointer;
+}
+
+/*.ibis-translate {
+    padding: 0;
+    margin: 0;
+}
+
+.ibis-translating {
+    visibility: visible;
+    opacity: 0.3;
+}*/
