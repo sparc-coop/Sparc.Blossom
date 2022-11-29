@@ -13,15 +13,23 @@
     <link href="css/app.css" rel="stylesheet" />
     <link rel="preconnect" href="https://player.vimeo.com">
     <link rel="preconnect" href="https://vod-progressive.akamaized.net">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/base16/gruvbox-dark-pale.min.css">
     <component type="typeof(HeadOutlet)" render-mode="ServerPrerendered" />
 </head>
 <body>
     <app>
         <component type="typeof(Sparc.Blossom.Server.App)" render-mode="ServerPrerendered" />
     </app>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
     <script src="_framework/blazor.server.js"></script>
+
     <script>
+        function highlightSnippet() {
+            document.querySelectorAll('pre code').forEach((el) => {
+                hljs.highlightBlock(el);
+            });
+        }
+      
         function nextSection(id, newId) {
             if (id != null) {
                 var oldItem = document.getElementById(id);
@@ -33,16 +41,20 @@
                 var element = document.getElementById(newId);
                 element.classList.add("show-section");
             }
-
         };
         
-        function backSection(id) {
-            const collection = document.getElementsByClassName("show-section");
-            collection.classList.remove("show-section");
-            
-            var element = document.getElementById(id);
-            element.classList.add("show-section");
+        function backSection(id, newId) {
+            if (id != null) {
+                var oldItem = document.getElementById(id);
+                oldItem.classList.remove("show-section");
+            }
+
+            if (newId != null) {
+                var element = document.getElementById(newId);
+                element.classList.add("show-section");
+            }
         };
     </script>
+
 </body>
 </html>

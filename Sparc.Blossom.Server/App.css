@@ -40,24 +40,24 @@ body p.small {
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
-  src: url(wwwroot/fonts/Nimbus-Sans-Regular.ttf) format("opentype");
+  src: url(wwwroot/fonts/Nimbus-Sans-Regular.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 400;
   font-style: italic;
-  src: url(wwwroot/fonts/Nimbus-Sans-RegularItalic.ttf) format("opentype");
+  src: url(wwwroot/fonts/Nimbus-Sans-RegularItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
-  src: url(wwwroot/fonts/Nimbus-Sans-Bold.ttf) format("opentype");
+  src: url(wwwroot/fonts/Nimbus-Sans-Bold.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSans";
   font-weight: 700;
   font-style: italic;
-  src: url(wwwroot/fonts/Nimbus-Sans-BoldItalic.ttf) format("opentype");
+  src: url(wwwroot/fonts/Nimbus-Sans-BoldItalic.otf) format("opentype");
 }
 @font-face {
   font-family: "NimbusSansExtd";

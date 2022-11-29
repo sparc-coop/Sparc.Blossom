@@ -1,0 +1,237 @@
+﻿<div class="guide--wrapper">
+    @if (SectionNumber > 1)
+    {
+        <img @onclick="Back" src="/images/Arrow_left.png" class="arrow" />
+    }
+    <div class="guide--content show-section" id="sub-section-1">
+        <div class="slide-number">1/6</div>
+        <p>The Blossom.Features library is the main framework library for the Features Project in your Blossom solution.</p>
+        <h4>What is a Features Project?</h4>
+        <p>
+            A Features Project is the core of your application, and arguably is your entire application. The UI platforms can be viewed as a plugin that enables a visible interface to access this project.
+
+            A Features Project is also the main back end API for your application.
+
+            This project should ideally strive to contain all of the application's logic, including:
+            <ul>
+                <li>
+                    entities,
+                </li>
+                <li>
+                    operations on those entities,
+                </li>
+                <li>
+                    the entire API surface (including URL routes, dependencies, input and output data classes)
+                </li>
+                <li>
+                    all plugins (persistence, authentication, notification, etc.)
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="guide--content " id="sub-section-2">
+        <div class="slide-number">2/6</div>
+        <h4>What is a Feature?</h4>
+        <p>
+            A Feature is a single operation that your app can perform, along with all of the necessary dependencies 
+            around that operation (persistence, authentication, notification, etc.).
+
+            <h5>Where did the idea of a Feature come from?</h5>
+            Almost all programming in the world can be abstracted down to the following formula:
+            <pre><code class="language-csharp">In -> Modify() -> Out</code></pre>
+
+            Every function, every group of functions, every program, every project, every solution, is a long linear chain of this basic formula.
+
+            The closer that we can get to this basic formula, the simpler our architecture becomes.
+
+            So with that in mind, the basic ingredients of a Feature are the following:
+
+            In:
+            <ul>
+                <li>
+                    The Name of the Feature
+                </li>
+                <li>
+                    The Input Data that the Feature needs
+                </li>
+                <li>
+                    The Dependencies that the Feature uses to do its job                    
+                </li>
+            </ul>
+            
+            Modify:
+            <ul>
+                <li>
+                    The Logic that the Feature executes, using the Data and Dependencies to produce an Output
+                </li>
+            </ul>
+
+            Out:
+            <ul>
+                <li>
+                    The Result that the Feature spits out at the end of its job
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="guide--content " id="sub-section-3">
+        <div class="slide-number">3/6</div>
+        <h4>What does a Feature look like?</h4>
+        <pre>
+            <code class="language-csharp">
+// This is the form of your Input Data
+public record GetOrderRequest(string CustomerId, string PurchaseOrderNumber);
+
+// This is the form of your Output Data
+public record GetOrderResponse(string OrderId, List&ltOrderDetail&gt Lines, decimal Tax, decimal Shipping);
+
+// Inherit your class from Feature&ltInputType, OutputType&gt to enable all the goodness.
+// Name your Feature well. It will become the permanent URL of your API (i.e. /api/GetOrder)
+public class GetOrder : Feature&ltGetOrderRequest, GetOrderResponse>
+{
+    // Inject your Dependencies into the constructor
+    public GetOrder(IRepository&ltOrder&gt orders) => Orders = orders;
+
+    // Receive the Input Data as a parameter, use it in the body of the function, 
+    // and return the Output Data as the result
+    public override async Task&ltGetOrderResponse&gt ExecuteAsync(GetOrderRequest request)
+    {
+        var order = Orders.Query.FirstOrDefault(o => 
+            o.CustomerId == request.CustomerId 
+            && o.PurchaseOrderNumber == request.PurchaseOrderNumber);
+        return new(order.Id, order.Lines, order.CalculateTax(), order.CalculateShipping());
+    }
+}
+            </code>
+        </pre>
+    </div>
+    <div class="guide--content " id="sub-section-4">
+        <div class="slide-number">4/6</div>
+        <h4>
+            What are the benefits of using Features?
+        </h4>
+        <p>
+            Sparc.Kernel automatically turns every Feature you write into a separate API endpoint, with its own URL and full authentication support, with no additional configuration needed on your part.
+
+            When the project containing the example Feature above is built, Sparc.Kernel automatically creates the following:
+            
+            <ul>
+                <li>
+                    A protected API endpoint at /api/GetOrder
+                </li>
+                <li>
+                    An auto-generated client class with a method for each Feature, which automatically calls the API at the correct URL and with the correct authentication headers:
+                    <pre>
+                        <code class="language-csharp">
+public async Task&ltGetOrderResponse&gt GetOrderAsync(GetOrderRequest request);
+                        </code>
+                    </pre>
+                </li>
+            </ul>
+        </p>
+    </div>
+    <div class="guide--content " id="sub-section-5">
+        <div class="slide-number">5/6</div>
+        <h4>
+            How do I call a Feature from my UI/Web/Mobile/Desktop project?
+        </h4>
+        <p>
+            <ol>
+                <li>
+                    Inject the auto-generated Api class into your Blazor page/component 
+                    (you can also do this once for the entire application in the Imports.razor file):
+                    <pre>
+                        <code class="language-csharp">
+@@inject PointOfSaleApi Api
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    Call the appropriate method on the Api class (note: it will be named [FeatureName]Async):
+                    <pre>
+                        <code class="language-csharp">
+var request = new(customerId, poNum);
+var order = await Api.GetOrderAsync(request);
+                        </code>
+                    </pre>
+                </li>
+            </ol>
+        </p>
+    </div>
+    <div class="guide--content " id="sub-section-6">
+        <div class="slide-number">6/6</div>
+        <h4>Get Started with a Features Project</h4>
+        <p>
+            <ol>
+                <li>
+                    Create a new ASP.NET Core Empty project (preferably called [YourProject].Features).
+                </li>
+                <li>
+                    Add the Sparc.Kernel Nuget package to your newly created project:
+                </li>
+                <li>
+                    Add the following setting to your appsettings.json file, using the local URL and port of your Web project:
+                    <pre>
+                        <code class="language-json">
+{ "WebClientUrl": "https://localhost:7147" }
+                        </code>
+                    </pre>
+                    <aside>
+                        (Alternatively, you may pass the URL directly as a string in the Startup code below, but we prefer to 
+                        keep it in appsettings.json, since it will change once deployed.)
+                    </aside>
+                </li>
+                <li>
+                    Add the following two lines of code to your Program.cs file, in the appropriate methods:
+                    <pre>
+                        <code class="language-csharp">
+public static void Main(string[] args)
+{
+    ...
+    // Add this line of code
+    builder.AddSparcKernel(builder.Configuration["WebClientUrl"]);
+    ...
+    // Add this line of code
+    app.UseSparcKernel();
+    ...
+}
+                        </code>
+                    </pre>
+                </li>
+                <li>
+                    Create your Entities and Features.
+                </li>
+            </ol>
+        </p>
+    </div>
+    @if (SectionNumber < 6)
+    {
+        <img @onclick="Next" src="/images/Arrow_right.png" class="arrow" />
+    }
+</div>
+
+@code {
+    public int SectionNumber = 1;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await JSRuntime.InvokeVoidAsync("highlightSnippet");
+    }
+
+    protected async Task Back()
+    {
+        if (SectionNumber > 1)
+        {
+            int currentSection = SectionNumber;
+            SectionNumber--;
+            await JSRuntime.InvokeVoidAsync("backSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+        }
+    }
+
+    protected async Task Next()
+    {
+        int currentSection = SectionNumber;
+        SectionNumber++;
+        await JSRuntime.InvokeVoidAsync("nextSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+    }
+}
