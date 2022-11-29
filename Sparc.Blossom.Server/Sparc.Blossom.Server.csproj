@@ -24,6 +24,7 @@
     <Content Include="App.Variables.scss" />
     <Content Include="Pages\Guide.scss" />
     <Content Include="Shared\NavMenu.scss" />
+	<Content Include="Shared\Footer.scss" />
   </ItemGroup>
 
   <ItemGroup>

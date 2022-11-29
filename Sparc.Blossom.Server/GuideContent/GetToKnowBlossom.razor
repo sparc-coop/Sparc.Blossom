@@ -1,7 +1,11 @@
 ﻿<div class="guide--wrapper">
-    <img @onclick="Back" src="/images/Arrow_left.png" />
-    <div class="guide--content" id="sub-section-1">
-        <h4>What is blossom?</h4>
+    @if (SectionNumber > 1)
+    {
+        <img @onclick="Back" src="/images/Arrow_left.png" class="arrow"/>
+    }
+    <div class="guide--content show-section" id="sub-section-1">
+        <div class="slide-number">1/2</div>
+        <h4>What is Blossom?</h4>
         <p>
             Blossom is an opinionated framework-of-a-framework for .NET 6.0 Web,
             Mobile, and Desktop development using a single shared codebase
@@ -9,8 +13,8 @@
         </p>
         <h4>OK, what is it really?</h4>
         <p>
-            Sparc.Kernel is a hand-crafted framework full of architectural conventions that attempt
-            to remove as much of the boilerplate connective tissue as possible.
+            Blossom is a hand-crafted framework full of architectural conventions that 
+            attempt to remove as much of the boilerplate connective tissue as possible.
 
             Its chief aim is to remove all the drivel it possibly can, so that you may focus more of
             your creative programming energy on what really matters for your app:
@@ -22,6 +26,7 @@
         </p>
     </div>
     <div class="guide--content" id="sub-section-2">
+        <div class="slide-number">2/2</div>
         <h4>How is a Blossom solution structured?</h4>
         <p>
             A typical Sparc solution has three main components:
@@ -44,19 +49,14 @@
             </ul>
         </p>
     </div>
-    <img @onclick="Next" src="/images/Arrow_right.png" />
+    @if(SectionNumber < 2)
+    {
+        <img @onclick="Next" src="/images/Arrow_right.png" class="arrow" />
+    }
 </div>
 
 @code {
     public int SectionNumber = 1;
-
-    protected override async Task OnAfterRenderAsync(bool firstRender)
-    {
-
-        await JSRuntime.InvokeVoidAsync("nextSection", null, "sub-section-1");
-        
-
-    }
 
     protected async Task Back()
     {
