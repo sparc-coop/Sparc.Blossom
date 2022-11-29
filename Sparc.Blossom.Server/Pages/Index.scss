@@ -10,31 +10,15 @@
 
     section {
         padding: 150px 0;
-    }
 
-    section.home--hero {
-        padding-top: 50px;
-        padding-bottom: 0;
-    }
-
-    &--hero {
-        width: 100%;
-        height: 100vh;
-        margin: 0 auto;
-        /*position: fixed;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%, -60%);
-        z-index: 0;*/
-
-        .container {
-            padding: 0 15px;
-        }
-
-        .hero-image {
-            padding: 56.25% 0 0 0;
+        &.home--video {
             position: relative;
-            margin-bottom: -20%;
+            padding: 10vh 15px 0;
+            height: 60vh;
+            max-height: 550px;
+            width: auto;
+            max-width: 550px;
+            margin: 0 auto;
 
             iframe {
                 position: absolute;
@@ -44,41 +28,40 @@
                 height: 100%;
             }
         }
-        /*.hero-image {
+
+        &.home--hero {
+            padding: 0 15px 150px;
             width: 100%;
-            margin: 0 auto;
-            margin-bottom: 35px;
-            text-align: center;
-
-            img {
-                width: 40%;
-                max-width: 450px;
-            }
-        }*/
-
-        .header {
-            width: 100%;
-            max-width: 809px;
-            margin: 0 auto;
-            text-align: center;
-            font-family: 'NimbusSansExtd', sans-serif;
-            font-weight: 400;
-            position: relative;
-
-            h1 {
-                margin: 0;
-                margin-bottom: 15px;
-                outline: none;
-            }
-
-            p {
-                margin: 0;
-                font-family: 'NimbusSansExtd';
-                font-weight: 400;
-                line-height: 140%;
-            }
         }
     }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .header {
+        width: 100%;
+        max-width: 809px;
+        margin: 0 auto;
+        text-align: center;
+        font-family: 'NimbusSansExtd', sans-serif;
+        font-weight: 400;
+        position: relative;
+
+        h1 {
+            margin: 0;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        p {
+            margin: 0;
+            font-family: 'NimbusSansExtd';
+            font-weight: 400;
+            line-height: 140%;
+        }
+    }
+
 
     .float-wrapper {
         width: 100%;

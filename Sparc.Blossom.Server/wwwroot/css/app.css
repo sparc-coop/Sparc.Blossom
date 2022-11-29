@@ -355,47 +355,30 @@ footer .footer--column .column-links a {
 .home section {
   padding: 150px 0;
 }
-.home section.home--hero {
-  padding-top: 50px;
-  padding-bottom: 0;
-}
-.home--hero {
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  /*position: fixed;
-  top: 60%;
-  left: 50%;
-  transform: translate(-50%, -60%);
-  z-index: 0;*/
-  /*.hero-image {
-      width: 100%;
-      margin: 0 auto;
-      margin-bottom: 35px;
-      text-align: center;
-
-      img {
-          width: 40%;
-          max-width: 450px;
-      }
-  }*/
-}
-.home--hero .container {
-  padding: 0 15px;
-}
-.home--hero .hero-image {
-  padding: 56.25% 0 0 0;
+.home section.home--video {
   position: relative;
-  margin-bottom: -20%;
+  padding: 10vh 15px 0;
+  height: 60vh;
+  max-height: 550px;
+  width: auto;
+  max-width: 550px;
+  margin: 0 auto;
 }
-.home--hero .hero-image iframe {
+.home section.home--video iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 }
-.home--hero .header {
+.home section.home--hero {
+  padding: 0 15px 150px;
+  width: 100%;
+}
+.home .container {
+  padding: 0 15px;
+}
+.home .header {
   width: 100%;
   max-width: 809px;
   margin: 0 auto;
@@ -404,12 +387,12 @@ footer .footer--column .column-links a {
   font-weight: 400;
   position: relative;
 }
-.home--hero .header h1 {
+.home .header h1 {
   margin: 0;
   margin-bottom: 15px;
   outline: none;
 }
-.home--hero .header p {
+.home .header p {
   margin: 0;
   font-family: "NimbusSansExtd";
   font-weight: 400;
