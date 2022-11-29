@@ -68,6 +68,7 @@
             h1 {
                 margin: 0;
                 margin-bottom: 15px;
+                outline: none;
             }
 
             p {
@@ -156,7 +157,7 @@
         margin: 0;
         padding-bottom: 184px;
         overflow: hidden;
-        background: $black;
+        background: $background;
 
         .container {
             display: flex;
@@ -677,7 +678,7 @@
             margin: 0;
             padding-bottom: 80px;
             overflow: hidden;
-            background: $black;
+            background: $background;
 
             .container {
                 display: flex;

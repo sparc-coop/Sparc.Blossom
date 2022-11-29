@@ -136,7 +136,7 @@ nav {
   margin: 0;
   padding-top: 12px;
   padding-bottom: 12px;
-  background: #020201;
+  background: #0A0A0A;
   border-top: 1px solid #FFFFFF;
   display: flex;
   justify-content: space-between;
@@ -195,7 +195,7 @@ nav .links-wrapper .explore-blossom {
 footer {
   width: 100%;
   padding: 150px 0;
-  background: #020201;
+  background: #0A0A0A;
   color: #FFFFFF;
   display: flex;
   justify-content: space-around;
@@ -230,7 +230,7 @@ footer .footer--column .column-links a {
 
 .home {
   width: 100%;
-  background: #020201;
+  background: #0A0A0A;
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
@@ -407,6 +407,7 @@ footer .footer--column .column-links a {
 .home--hero .header h1 {
   margin: 0;
   margin-bottom: 15px;
+  outline: none;
 }
 .home--hero .header p {
   margin: 0;
@@ -429,7 +430,7 @@ footer .footer--column .column-links a {
 }
 .home--intro {
   width: 100%;
-  background: #020201;
+  background: #0A0A0A;
   /*.interactive-block {
       width: 1054px;
       height: 500px;
@@ -481,7 +482,7 @@ footer .footer--column .column-links a {
   margin: 0;
   padding-bottom: 184px;
   overflow: hidden;
-  background: #000000;
+  background: #0A0A0A;
 }
 .home .projectlogo-carousel .container {
   display: flex;
@@ -573,7 +574,7 @@ footer .footer--column .column-links a {
   width: 100%;
   margin: 0 auto;
   text-align: center;
-  background: #020201;
+  background: #0A0A0A;
   position: relative;
 }
 .home--projects .header {
@@ -672,7 +673,7 @@ footer .footer--column .column-links a {
   .home--cta {
     width: 100%;
     padding: 150px 0;
-    background: #020201;
+    background: #0A0A0A;
     position: relative;
   }
   .home--cta .container {
@@ -794,7 +795,7 @@ footer .footer--column .column-links a {
   }
   .home--intro {
     width: 100%;
-    background: #020201;
+    background: #0A0A0A;
     /*.interactive-block {
         width: 100%;
         max-width: 650px;
@@ -824,7 +825,7 @@ footer .footer--column .column-links a {
     margin: 0;
     padding-bottom: 80px;
     overflow: hidden;
-    background: #000000;
+    background: #0A0A0A;
   }
   .home .projectlogo-carousel .container {
     display: flex;
@@ -935,7 +936,7 @@ footer .footer--column .column-links a {
   .home--cta {
     width: 100vw;
     padding: 150px 0;
-    background: #020201;
+    background: #0A0A0A;
   }
   .home--cta .container {
     width: 100%;
@@ -997,7 +998,7 @@ footer .footer--column .column-links a {
   .home--intro {
     width: 100%;
     padding-bottom: 312px;
-    background: #020201;
+    background: #0A0A0A;
     /*.interactive-block {
         width: 100%;
         max-width: 650px;
@@ -1169,7 +1170,7 @@ footer .footer--column .column-links a {
   .home--intro {
     width: 100%;
     padding-bottom: 312px;
-    background: #020201;
+    background: #0A0A0A;
   }
   .home--intro .header {
     width: 100%;
@@ -1406,7 +1407,7 @@ footer .footer--column .column-links a {
 }
 .guide--content .slide-number {
   color: #D0CECD;
-  background: #000000;
+  background: #0A0A0A;
   padding: 7px 15px;
   border-radius: 36px;
   position: absolute;
@@ -1458,7 +1459,7 @@ footer .footer--column .column-links a {
 
 body {
   margin: 0;
-  background: #020201;
+  background: #0A0A0A;
 }
 body::-webkit-scrollbar {
   display: none;
