@@ -357,6 +357,7 @@ footer .footer--column .column-links a {
 }
 .home section.home--hero {
   padding-top: 50px;
+  padding-bottom: 0;
 }
 .home--hero {
   width: 100%;
@@ -423,6 +424,7 @@ footer .footer--column .column-links a {
   background: transparent;
 }
 .home section.home--intro {
+  padding-top: 0;
   padding-bottom: 73px;
 }
 .home--intro {
