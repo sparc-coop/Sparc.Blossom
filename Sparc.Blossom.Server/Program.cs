@@ -1,5 +1,4 @@
 using Sparc.Ibis;
-using Sparc.Kernel;
 using System.Globalization;
 
 
@@ -8,9 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 
-builder.AddSparcKernel();
-builder.Services
-    .AddIbis();
+builder.Services.AddIbis();
 
 var app = builder.Build();
 
