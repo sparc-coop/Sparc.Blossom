@@ -6,6 +6,7 @@
     color: $grey-100;
     font-family: 'NimbusSansExtd', sans-serif;
     font-weight: 400;
+    overflow-x: hidden;
 
     section {
         padding: 150px 0;
@@ -13,24 +14,28 @@
 
     &--hero {
         width: 100%;
+        height: 100vh;
         margin: 0 auto;
         position: fixed;
-        top: 50%;
+        top: 60%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -60%);
         z-index: 0;
 
         .container {
             padding: 0 15px;
+            padding-top: 80px;
         }
 
         .hero--image {
             width: 100%;
-            margin: 60px 0 35px;
+            margin: 0 auto;
+            margin-bottom: 35px;
             text-align: center;
 
             img {
-                width: 551px;
+                width: 40%;
+                max-width: 450px;
             }
         }
 
@@ -67,9 +72,12 @@
         }
     }
 
+    section.home--intro {
+        padding-bottom: 73px;
+    }
+
     &--intro {
         width: 100%;
-        padding-bottom: 312px;
         background: $background;
 
         .container {
@@ -77,7 +85,7 @@
         }
 
         .header {
-            width: 100%;
+            width: 80%;
             max-width: 1054px;
             margin: 0 auto;
             text-align: center;
@@ -95,7 +103,17 @@
 
         .interactive-block {
             width: 100%;
-            max-width: 1054px;
+            margin: 0 auto;
+            margin-top: 40px;
+            text-align: center;
+
+            img {
+                width: 90%;
+                max-width: 1140px;
+            }
+        }
+        /*.interactive-block {
+            width: 1054px;
             height: 500px;
             margin: 0 auto;
             margin-top: 40px;
@@ -110,21 +128,42 @@
                 left: 50%;
                 transform: translate(-50%, 0);
             }
-        }
+        }*/
     }
 
     .projectlogo-carousel {
         width: 100%;
-        margin: 0 auto;
-        padding: 100px 0 50px 0;
-        display: flex;
-        justify-content: space-between;
+        height: 55px;
+        margin: 0;
+        padding-bottom: 184px;
+        overflow: hidden;
         background: $black;
 
-        img {
-            width: auto;
-            height: 44px;
-            margin: 0 20px;
+        .container {
+            display: flex;
+            flex-direction: row;
+            gap: 70px;
+            width: calc(250px * 14);
+            animation: scroll 40s linear infinite;
+
+            .logo-wrapper {
+                margin: auto 0;
+
+                img {
+                    height: 55px;
+                    width: auto;
+                }
+            }
+        }
+    }
+
+    @keyframes scroll {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(calc(-250px * 7));
         }
     }
 
@@ -225,25 +264,38 @@
         }
 
         .project-carousel {
-            width: 100%;
-            padding: 20px 0;
-            position: relative;
+            width: 100vw;
+            height: auto;
+            margin: 0;
+            padding: 30px 0;
             overflow: hidden;
+            position: relative;
+            background: transparent;
 
-            .project-wrapper {
-                width: 100%;
+            .project-container {
                 display: flex;
-                justify-content: center;
-                gap: 24px;
+                gap: 30px;
+                width: calc(413px * 6);
+                animation: scroll 40s linear infinite;
 
-                .github-card {
+                &:hover {
+                    animation-play-state: paused;
+                }
+
+                .project-card {
                     width: 413px;
                     height: 336px;
                     padding-bottom: 9px;
-                    border: 1px solid $white;
+                    border: 2px solid #FFFFFF;
                     border-radius: 20px;
                     cursor: pointer;
                     text-decoration: none;
+                    perspective: 100px;
+                    transition: transform 300ms ease-in-out;
+
+                    &:hover {
+                        transform: translateY(-20px);
+                    }
 
                     img.project-photo {
                         width: 377px;
@@ -260,18 +312,18 @@
 
                         p.subtitle-1 {
                             margin: auto 0;
-                            color: $white;
+                            color: #FFFFFF;
                         }
 
                         .github-logo {
                             width: 29px;
                             height: 29px;
                             margin: auto 0;
-                            color: $white;
+                            color: #FFFFFF;
                             transition-duration: 0.4s;
 
                             &:hover {
-                                transform: translateY(-2px);
+                                transform: translateY(-4px);
                                 transition-duration: 0.2s;
                             }
                         }
@@ -299,38 +351,72 @@
 
                 &.carousel-forward {
                     transform: rotate(180deg);
-                    right: 0;
+                    right: 0vh;
                 }
             }
         }
     }
 
-    &--cta {
+    section.home--cta {
+        padding: 0;
+    }
+    /*    &--cta {
         width: 100%;
         padding: 150px 0;
         background: $background;
+        position: relative;
 
         .container {
-            padding: 0 80px;
+            height: 550px;
+            padding: 0 45px;
             display: flex;
-            justify-content: center;
             gap: 40px;
-            flex-wrap: wrap;
+            justify-content: center;
         }
 
         .header {
+            width: 45%;
             max-width: 630px;
+            margin: auto 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(55%, -50%);
 
             h3 {
+                margin: 0;
+                margin-bottom: 25px;
+                padding: 0;
                 font-size: 52px;
                 margin: 0 0 40px 0;
             }
+
+            button {
+                padding: 16px 80px;
+                background: #3BD7FF;
+                border: none;
+                border-radius: 50px;
+                font-family: 'NimbusSansExtd', sans-serif;
+                font-size: 26px;
+            }
         }
 
-        img {
-            width: 630px;
-            align-self: self-start;
+        .cta-image {
+            width: 45%;
+            max-width: 630px;
+            margin: auto 0;
+            position: absolute;
+            top: 50%;
+            transform: translate(-55%, -50%);
+
+            img {
+                width: 100%;
+            }
         }
+*/
+    /*.cta-input {
+            margin: auto 0;
+            display: flex;
+            gap: 15px;
 
         a {
             padding: 16px 80px;
@@ -389,10 +475,407 @@
             div:nth-child(4) {
                 margin-bottom: 30px;
             }
+        }*/
+
+
+    @media only screen and (min-width: 800px) {
+        &--cta {
+            width: 100%;
+            padding: 150px 0;
+            background: $background;
+            position: relative;
+
+            .container {
+                height: 550px;
+                padding: 0 45px;
+                display: flex;
+                gap: 40px;
+                justify-content: center;
+            }
+
+            .header {
+                width: 45%;
+                max-width: 630px;
+                margin: auto 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(55%, -50%);
+
+                h3 {
+                    margin: 0;
+                    margin-bottom: 50px;
+                    padding: 0;
+                    font-size: 52px;
+                }
+
+                .visit-sparc {
+                    padding: 16px 80px;
+                    background: #3BD7FF;
+                    border: none;
+                    border-radius: 50px;
+                    font-family: 'NimbusSansExtd', sans-serif;
+                    font-size: 26px;
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+
+            .cta-image {
+                width: 45%;
+                max-width: 630px;
+                margin: auto 0;
+                position: absolute;
+                top: 50%;
+                transform: translate(-55%, -50%);
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1384x) {
+        &--cta {
+            .header {
+                width: 50%;
+
+                h3 {
+                    font-size: 36px;
+                }
+
+                .visit-sparc {
+                    padding: 8px 25px;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1100px) {
+        section.home--about {
+            padding-top: 80px;
+        }
+
+        &--hero {
+            .header {
+                h1 {
+                    font-size: 46px;
+                }
+            }
+        }
+
+        &--about {
+            .feature {
+                margin: 60px 0;
+                gap: 60px;
+
+                .image-wrapper {
+                    img.feature-image {
+                        width: 310px;
+                        height: 310px;
+                    }
+                }
+
+                .content-wrapper {
+                    padding: 30px 0;
+                }
+            }
+
+            div:nth-child(4) {
+                margin-bottom: 30px;
+            }
+        }
+
+        &--cta {
+            .header {
+                h3 {
+                    font-size: 41px;
+                }
+
+                .visit-sparc {
+                    padding: 12px 50px;
+                    font-size: 22px;
+                }
+            }
         }
     }
 
     @media only screen and (max-width: 800px) {
+        section {
+            width: 100%;
+            padding: 80px 0;
+        }
+
+        &--hero {
+            .hero--image {
+                width: 80%;
+                margin: 0 auto;
+                margin-bottom: 15px;
+                text-align: center;
+
+                img {
+                    width: 70%;
+                }
+            }
+
+            .header {
+                width: 100%;
+            }
+        }
+
+        .float-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        &--intro {
+            width: 100%;
+            background: $background;
+
+            .header {
+                width: 100%;
+            }
+
+            .interactive-block {
+                width: 100%;
+                max-width: 650px;
+                margin-top: 40px;
+
+                img {
+                    width: 100%;
+                }
+            }
+            /*.interactive-block {
+            width: 100%;
+            max-width: 650px;
+            height: 400px;
+            margin-top: 40px;
+            border-radius: 25px;
+
+            img {
+                max-width: 400px;
+            }
+        }*/
+        }
+
+        .projectlogo-carousel {
+            width: 100%;
+            height: 35px;
+            margin: 0;
+            padding-bottom: 80px;
+            overflow: hidden;
+            background: $black;
+
+            .container {
+                display: flex;
+                flex-direction: row;
+                gap: 70px;
+                width: calc(250px * 14);
+                animation: scroll 40s linear infinite;
+
+                .logo-wrapper {
+                    img {
+                        height: 35px;
+                    }
+                }
+            }
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-250px * 7));
+            }
+        }
+
+
+        section.home--about {
+            padding: 0px;
+        }
+
+        &--about {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 50px;
+            background: $grey-200;
+            color: $grey-900;
+
+            .container {
+                height: 100%;
+                padding: 80px 20px;
+            }
+
+            .feature {
+                width: 100%;
+                height: 100%;
+                margin: 60px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 0;
+
+                .image-wrapper {
+                    margin: 0 auto;
+
+                    img.feature-image {
+                        width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                .content-wrapper {
+                    width: 100%;
+                    margin: 0 auto;
+                    padding: 0;
+                }
+
+                &.reverse {
+                    flex-direction: column;
+                }
+            }
+
+            div:nth-child(4) {
+                margin-bottom: 0;
+            }
+
+            .button-wrapper {
+                .learn-more {
+                    padding: 8px 35px;
+                    font-size: 18px;
+                }
+            }
+        }
+
+        &--projects {
+            .header {
+                margin-bottom: 60px;
+                padding: 0 20px;
+            }
+
+            .project-carousel {
+                .project-container {
+                    justify-content: start;
+                    gap: 15px;
+
+                    &:first-child {
+                        padding-left: 20px;
+                    }
+
+
+                    .project-card {
+                        width: 100%;
+                        height: auto;
+                        padding-bottom: 9px;
+                        border-radius: 15px;
+
+                        img.project-photo {
+                            width: 200px;
+                            height: auto;
+                            margin: 10px;
+                            border-radius: 10px;
+                        }
+
+                        .github-wrapper {
+                            margin: 0 10px;
+
+                            img.github-logo {
+                                width: 20px;
+                                height: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .arrows-container {
+                    width: 62px;
+                    height: 150px;
+                    top: 40px;
+
+                    img {
+                        height: 150px;
+                    }
+                }
+            }
+        }
+
+        section.home--cta {
+            padding: 0;
+            padding-top: 60px;
+        }
+
+        &--cta {
+            width: 100vw;
+            padding: 150px 0;
+            background: $background;
+
+            .container {
+                width: 100%;
+                margin: 0;
+                padding: 0;
+            }
+
+            .header {
+                width: 85%;
+                max-width: 630px;
+                margin: 0 auto;
+                padding: 0;
+                padding-bottom: 20px;
+
+                h3 {
+                    margin: 25px 0;
+                    margin-bottom: 50px;
+                    padding: 0;
+                    font-size: 36px;
+                }
+
+                .visit-sparc {
+                    padding: 12px 50px;
+                    background: #3BD7FF;
+                    border: none;
+                    border-radius: 50px;
+                    font-family: 'NimbusSansExtd', sans-serif;
+                    font-size: 18px;
+                    text-decoration: none;
+                    color: $black;
+                }
+            }
+
+            .cta-image {
+                width: 85%;
+                max-width: 630px;
+                margin: 0 auto;
+                padding: 0;
+
+                img {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+            }
+        }
+        /*.cta-input {
+            margin: auto 0;
+            gap: 15px;
+
+            input {
+                width: 100%;
+                height: 30px;
+                padding: 0 25px;
+                font-size: 16px;
+            }
+
+            button.sign-up {
+                width: 36px;
+                height: 36px;
+            }
+        }*/
+    }
+
+    @media only screen and (max-width: 460px) {
         section {
             width: 100%;
             padding: 80px 0;
@@ -407,15 +890,15 @@
                 text-align: center;
 
                 img {
-                    width: 62%;
+                    width: 70%;
                 }
             }
 
             .header {
-                width: 80%;
+                max-width: 100%;
 
                 h1 {
-                    line-height: 100%;
+                    font-size: 41px;
                 }
             }
         }
@@ -433,8 +916,7 @@
             .header {
                 width: 100%;
             }
-
-            .interactive-block {
+            /*.interactive-block {
                 width: 100%;
                 max-width: 650px;
                 height: 400px;
@@ -444,7 +926,7 @@
                 img {
                     max-width: 400px;
                 }
-            }
+            }*/
 
             .projectlogo-carousel {
                 margin: 0 -15px;
@@ -519,6 +1001,10 @@
             }
         }
 
+        section.home--projects {
+            padding: 80px 0;
+        }
+
         &--projects {
             .header {
                 margin-bottom: 60px;
@@ -526,7 +1012,7 @@
             }
 
             .project-carousel {
-                .project-wrapper {
+                .project-container {
                     justify-content: start;
                     gap: 15px;
 
@@ -535,7 +1021,7 @@
                     }
 
 
-                    .github-card {
+                    .project-card {
                         width: 100%;
                         height: auto;
                         padding-bottom: 9px;
@@ -548,12 +1034,21 @@
                             border-radius: 10px;
                         }
 
+                        &:hover {
+                            transform: translateY(-10px);
+                        }
+
                         .github-wrapper {
                             margin: 0 10px;
 
                             img.github-logo {
                                 width: 20px;
                                 height: 20px;
+
+                                &:hover {
+                                    transform: translateY(-2px);
+                                    transition-duration: 0.2s;
+                                }
                             }
                         }
                     }
@@ -578,19 +1073,21 @@
 
         &--cta {
             .container {
-                padding: 0 20px;
-                flex-direction: column;
-                justify-content: space-between;
                 gap: 0;
-                flex-wrap: nowrap;
+                padding: 0;
             }
 
             .header {
-                width: 100%;
-                padding: 30px;
+                width: 85%;
+                margin: 0 auto;
 
                 h3 {
                     font-size: 28px;
+                    margin-bottom: 30px;
+                }
+
+                .visit-sparc {
+                    padding: 8px 40px;
                 }
             }
 
