@@ -173,7 +173,7 @@ nav .links-wrapper .explore-blossom {
 }
 @media only screen and (max-width: 800px) {
   nav {
-    padding: 9px 0;
+    padding: 20px 0;
     gap: 20px;
   }
   nav .logo img {
@@ -186,7 +186,7 @@ nav .links-wrapper .explore-blossom {
   }
   nav .links-wrapper .explore-blossom {
     margin-right: 20px;
-    padding: 2px 18px;
+    padding: 8px 18px;
     font-size: 13px;
     flex-wrap: wrap;
   }
@@ -410,6 +410,11 @@ footer .footer--column .column-links a {
 .home section.home--intro {
   padding-top: 0;
   padding-bottom: 73px;
+}
+@media screen and (max-width: 457px) {
+  .home section.home--intro {
+    padding-bottom: 0;
+  }
 }
 .home--intro {
   width: 100%;
@@ -1166,9 +1171,6 @@ footer .footer--column .column-links a {
     margin-top: 40px;
     border-radius: 25px;
   }
-  .home--intro .interactive-block img {
-    max-width: 200px;
-  }
   .home--intro .projectlogo-carousel {
     margin: 0 -15px;
     margin-top: 80px;
@@ -1270,6 +1272,7 @@ footer .footer--column .column-links a {
     padding: 60px 0;
   }
   .home--cta .container {
+    box-sizing: border-box;
     padding: 0 20px;
     flex-direction: column;
     justify-content: space-between;
