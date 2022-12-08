@@ -80,7 +80,8 @@
     {
 
 
-        Channel = await Ibis.GetAllAsync("blog-testing", asHtml: false, take: 2);
+        var channel = await Ibis.GetAllAsync("blog-testing", asHtml: false, take: 2);
+
 
         //if (ChannelId != null)
         //{
