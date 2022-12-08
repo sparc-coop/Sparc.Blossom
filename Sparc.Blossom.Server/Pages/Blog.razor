@@ -1,36 +1,55 @@
 ﻿@page "/blog/{blogId}"
 
 <div class="blog-page">
-    <section class="pagnation">
-        <a href="">Previous</a>
-        <a href="">Next</a>
-    </section>
+    <div class="background"><img src="images/Pattern_1.png" alt="" /></div>
     <article class="blog-article">
+        <section class="pagnation">
+            <div>〈 Previous</div>
+            <div>Next 〉</div>
+        </section>
     <h1>@BlogId</h1>
     <h2>Subtitle</h2>
     <div class="share-links"></div>
-    @if (Channel != null)
+    @if (Content != null)
     {
-        @foreach (var textContent in Channel.Content)
-        {
             <section class="blog-post-content">
                 <div class="post-left">01 Title</div>
-                <div class="post-right">@textContent.Html</div>
+                <div class="post-right">@Content.Html</div>
             </section>
-        }
+        
     }
+        <section class="blog-post-content">
+            <div class="post-left">01 Title</div>
+            <div class="post-right">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis dolor at purus tincidunt luctus. Nullam aliquet ante eu massa blandit tincidunt et ut nunc. Nullam vehicula, diam ut tristique aliquam, tellus nisl varius orci, in luctus ipsum diam eget purus. Vivamus et felis neque. Phasellus eget tincidunt elit. Phasellus convallis imperdiet tincidunt. Nunc porttitor ultricies quam fermentum suscipit. Vivamus congue, lectus sed faucibus rutrum, sapien dolor efficitur leo, id ultricies libero sapien at arcu.
+
+                Proin at facilisis leo. Morbi nec tincidunt elit. Nam lacinia nec purus ac posuere. Pellentesque non sollicitudin ex. Mauris viverra tortor consequat est pellentesque, id dapibus dolor tempus. Nulla auctor lacus orci, sed lacinia diam euismod eu. Curabitur euismod auctor leo, sit amet commodo sem eleifend at. Praesent vel tempus mauris. Proin metus justo, pellentesque eu ligula sit amet, pharetra gravida mauris. Nullam aliquam euismod magna, vitae viverra libero pretium non. Aliquam rhoncus tempor lacinia. Nunc vitae eros lacus. Sed eu neque pellentesque dolor pretium tempus.
+
+                Ut pharetra ex leo. Ut non tempus nisl, ut tristique lacus. Donec quis finibus turpis. Etiam et ligula eu urna pretium consectetur. Etiam vel fringilla dui, eu blandit ipsum. Curabitur quis elementum augue, quis consequat sapien. Praesent a velit neque. Donec erat massa, condimentum nec iaculis et, mattis quis dolor. Nunc sed facilisis enim. Nunc et mi nisl. Pellentesque hendrerit massa nulla, hendrerit auctor risus suscipit in. Integer consequat ante justo, in commodo velit pulvinar efficitur. Proin id massa bibendum, auctor risus gravida, luctus ipsum. Vestibulum euismod elementum augue. Phasellus elementum, ante sed porta vulputate, nulla quam fermentum arcu, id condimentum velit enim non enim.
+            </div>
+        </section>
     </article>
 </div>
 
 @code {
     [Parameter] public string BlogId { get; set; } = null;
+
+    [Parameter] public string TagId { get; set; } = null;
     //[Parameter] public string title { get; set; } = null!;
-    public string Content = "";
+    //public string Content = "";
     IbisChannel? Channel;
+    IbisContent? Content;
 
     protected override async Task OnInitializedAsync()
     {
         //"blog-testing"
-        Channel = await Ibis.GetAllAsync(BlogId, null, true);
+        //Channel = await Ibis.GetAllAsync(BlogId, null, true);
+
+        //Content = await Ibis.GetAsync(BlogId, "");
+    }
+
+    private void NavigateToNextBlogEntry(string blogId, string tagId)
+    {
+        
     }
 }

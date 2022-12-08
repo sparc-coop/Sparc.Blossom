@@ -4,13 +4,33 @@
     color: white;
     margin-left: 80px;
 
-    .pagnation {
-        display: flex;
-        justify-content: space-around;
+    .background {
+        opacity: 0.2;
+        position: fixed;
+        top: -165px;
+        left: 60vw;
+        z-index: 1;
+
+        img {
+            height: 60vh;
+            width: 55vw;
+            object-fit: contain;
+        }
     }
 
     .blog-article {
         margin-left: 80px;
+
+        .pagnation {
+            display: flex;
+            justify-content: space-between;
+            color: white;
+            margin: 100px 100px 100px 0px;
+
+            div, a {
+                color: white;
+            }
+        }
 
         h1 {
             font-family: 'NimbusSansExtd';

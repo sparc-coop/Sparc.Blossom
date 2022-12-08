@@ -1,0 +1,50 @@
+﻿@page "/blogs/{ChannelId}"
+
+<div class="blog-list">
+    <div class="background"><img src="images//Pattern_1.png" alt="" /></div>
+    <div class="container">
+        <header>
+            <h2>Sparc Blogs</h2>
+        </header>
+
+        <div class="blog-wrapper">
+            @if (Content.Any())
+            {           
+                @foreach (var post in Content)
+                {
+                    <div @onclick="@(e => GoTo(post))">
+                        <BlogPost Post="post" />
+                    </div>
+                }
+                
+            }
+
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public string? ChannelId { get; set; } = null!;
+    List<string> DefaultChannels = new() { "law-of-100-blog" };
+    List<IbisContent> Content = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (ChannelId != null)
+        {
+            var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
+            //Content.AddRange(channel!.Content);
+        }
+        else
+        {
+            foreach (var channel in DefaultChannels)
+            {
+                var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
+                //Content.AddRange(channelContent!.Content);
+            }
+            //Content = Content.OrderByDescending(x => x.Timestamp).ToList();
+        }
+    }
+
+    public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");
+}

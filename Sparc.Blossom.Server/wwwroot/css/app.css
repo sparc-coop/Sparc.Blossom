@@ -493,6 +493,34 @@ footer .footer--column .column-links a {
   color: white;
   text-align: center;
   width: 100%;
+  height: 100%;
+  padding-top: 0px;
+  padding-bottom: 100px;
+}
+.blog-list .background {
+  opacity: 0.3;
+  position: fixed;
+  top: -125px;
+  left: 60vw;
+  z-index: 1;
+}
+.blog-list .background img {
+  height: 60vh;
+  width: 60vw;
+  object-fit: contain;
+}
+.blog-list h1 {
+  font-size: 64px;
+  font-family: "NimbusSansExtd";
+  line-height: 95%;
+  margin-top: 120px;
+  margin-bottom: 8px;
+}
+.blog-list h2 {
+  font-size: 20px;
+  line-height: 26px;
+  font-family: "NimbusSansExtd";
+  margin-bottom: 113px;
 }
 .blog-list .blog-post-list {
   color: white;
@@ -501,11 +529,13 @@ footer .footer--column .column-links a {
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
 }
 .blog-list .blog-post-list .blog-post {
   width: 413px;
+  height: 445px;
   margin: 10.5px;
-  max-height: 433px;
   display: flex;
   flex-direction: column;
 }
@@ -514,8 +544,12 @@ footer .footer--column .column-links a {
   height: 277px;
   border-radius: 20px;
   object-fit: cover;
+  opacity: 1;
 }
-.blog-list .blog-post-list .blog-post h2 {
+.blog-list .blog-post-list .blog-post .empty-img {
+  height: 277px;
+}
+.blog-list .blog-post-list .blog-post h3 {
   margin: 7.5px;
   font-family: "NimbusSansExtd";
   font-style: normal;
@@ -527,9 +561,12 @@ footer .footer--column .column-links a {
   font-family: "NimbusSans";
   font-style: normal;
   font-weight: 400;
-  font-size: 26px;
-  line-height: 31px;
+  font-size: 21px;
+  line-height: 25px;
   margin: 7.5px;
+  overflow: hidden;
+  max-height: 145px;
+  height: 145px;
 }
 .blog-list .blog-post-list .no-img {
   border: 1px solid white;
@@ -537,17 +574,43 @@ footer .footer--column .column-links a {
   justify-content: flex-end;
   height: 433px;
 }
+.blog-list .blog-post-list .no-img h3 {
+  font-size: 33px;
+  line-height: 40px;
+}
+.blog-list .blog-post-list .no-img p {
+  font-size: 26px;
+  line-height: 31px;
+  max-height: 125px;
+}
 
 .blog-page {
   color: white;
   margin-left: 80px;
 }
-.blog-page .pagnation {
-  display: flex;
-  justify-content: space-around;
+.blog-page .background {
+  opacity: 0.2;
+  position: fixed;
+  top: -165px;
+  left: 60vw;
+  z-index: 1;
+}
+.blog-page .background img {
+  height: 60vh;
+  width: 55vw;
+  object-fit: contain;
 }
 .blog-page .blog-article {
   margin-left: 80px;
+}
+.blog-page .blog-article .pagnation {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  margin: 100px 100px 100px 0px;
+}
+.blog-page .blog-article .pagnation div, .blog-page .blog-article .pagnation a {
+  color: white;
 }
 .blog-page .blog-article h1 {
   font-family: "NimbusSansExtd";
