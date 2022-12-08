@@ -35,7 +35,7 @@
 
     protected override async Task OnInitializedAsync()
     {
-        Channel = await Ibis.GetAllAsync("testing-blog", asHtml: true, take: 2);
+        //Channel = await Ibis.GetAllAsync("testing-blog", asHtml: true, take: 2);
     }
     public void GoTo(IbisContent content) => Nav.NavigateTo($"/blog/{ChannelId}/{content.Tag}");
 }

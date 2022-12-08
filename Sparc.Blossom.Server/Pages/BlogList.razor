@@ -1,4 +1,5 @@
 ﻿@page "/blogs"
+@page "/blogs/{ChannelId}"
 
 <div class="blog-list">
     <div class="background"><img src="images//Pattern_1.png" alt="" /></div>
@@ -41,6 +42,7 @@
         {
             foreach (var item in Channel.Content)
             {
+
                 if (img == true)
                 {
                     <article class="blog-post">
@@ -51,7 +53,7 @@
                 } else
                 {
                     <article class="blog-post no-img">
-                        <h2 @onclick="() => NavigateToBlogEntry(Channel.Name, item.Tag)">@Channel.Name</h2>
+                        <h2 @onclick="() => NavigateToBlogEntry(ChannelId, item.Tag)">Title</h2>
                         <p>@item.Text.Substring(0, item.Text.Length < 100 ? item.Text.Length : 100) ...</p>
                     </article>
                 }
@@ -65,38 +67,35 @@
 @inject NavigationManager Navigation
 
 @code {
-    [Parameter] public string title { get; set; } = null!;
     //public string Content = "";
     IbisChannel? Channel;
-    List<IbisContent>? blogContent;
+    //List<IbisContent>? blogContent;
     public bool img = false;
-    [Parameter] public string? ChannelId { get; set; } = null!;
+    [Parameter] public string? ChannelId { get; set; } = "blog-testing";
     List<string> DefaultChannels = new() { "law-of-100-blog" };
     List<IbisContent> Content = new();
-    IbisContent? testContent;
+    //IbisContent? testContent;
 
     protected override async Task OnInitializedAsync()
     {
 
 
-        //Channel = await Ibis.GetAllAsync("law-of-100-blog", asHtml: true, take: 2);
+        Channel = await Ibis.GetAllAsync("blog-testing", asHtml: false, take: 2);
+
         //if (ChannelId != null)
         //{
-        //    var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
+        //    var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true);
         //    Content.AddRange(channel!.Content);
         //}
         //else
         //{
         //    foreach (var channel in DefaultChannels)
         //    {
-        //        var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
+        //        var channelContent = await Ibis.GetAllAsync(channel, asHtml: true);
         //        Content.AddRange(channelContent!.Content);
         //    }
         //    Content = Content.OrderByDescending(x => x.Timestamp).ToList();
         //}
-
-
-        //Channel = await Ibis.GetAllAsync("blog-testing", asHtml: false, take: 10);
 
         //testContent = await Ibis.GetAsync("", "test");
 

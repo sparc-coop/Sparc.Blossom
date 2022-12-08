@@ -12,9 +12,9 @@
             {           
                 @foreach (var post in Content)
                 {
-                    <div @onclick="@(e => GoTo(post))">
+                    @*<div @onclick="@(e => GoTo(post))">
                         <BlogPost Post="post" />
-                    </div>
+                    </div>*@
                 }
                 
             }
@@ -32,19 +32,19 @@
     {
         if (ChannelId != null)
         {
-            var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
+            //var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
             //Content.AddRange(channel!.Content);
         }
         else
         {
             foreach (var channel in DefaultChannels)
             {
-                var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
+               // var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
                 //Content.AddRange(channelContent!.Content);
             }
             //Content = Content.OrderByDescending(x => x.Timestamp).ToList();
         }
     }
 
-    public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");
+    //public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");
 }
