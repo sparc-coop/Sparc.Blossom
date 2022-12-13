@@ -2,111 +2,43 @@
 @page "/blogs/{ChannelId}"
 
 <div class="blog-list">
-    <div class="background"><img src="images//Pattern_1.png" alt="" /></div>
-<h1 class="header">21 Days of Blossom</h1>
-<h2>Subtitle</h2>
-<div class="blog-post-list">
-    <BlogCard img="true" />
-        <BlogCard img="false" />
-        <BlogCard img="false" />
-        <BlogCard img="true" />
-
-    @*    <article class="blog-post">
-            <img src="https://via.placeholder.com/150" />
-            <h3>Title Here</h3>
-            <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database at the beginning of developing your app</p>
-        </article>
-
-        <article class="blog-post no-img">
-            <h3>Channel.Name</h3>
-            <p>Here is text</p>
-        </article>
-
-        <article class="blog-post no-img">
-            <h3>Channel.Name</h3>
-            <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database at the beginning of developing your app</p>
-        </article>
-
-        <article class="blog-post">
-            <img src="https://via.placeholder.com/150" />
-            <h3>Title Here</h3>
-            <p>Introduce IRepository and the built-in InMemoryDatabase so you don't have to worry about picking a database at the beginning of developing your app</p>
-        </article>
-
-        <article class="blog-post no-img">
-            <h3>Channel.Name</h3>
-            <p>Here is text</p>
-        </article>*@
-
-        @if (Channel != null)
+    <div class="background"><img src="images/Pattern_1.png" alt="" /></div>
+    <h1 class="header">21 Days of Blossom</h1>
+    <h2>Blog</h2>
+    <div class="blog-post-list">
+        @foreach (var post in Content)
         {
-            foreach (var item in Channel.Content)
-            {
-
-                if (img == true)
-                {
-                    <article class="blog-post">
-                        <img src="https://via.placeholder.com/150" />
-                        <h2>Title Here</h2>
-                        <p>Hello here is article text...</p>
-                    </article>
-                } else
-                {
-                    <article class="blog-post no-img">
-                        <h2 @onclick="() => NavigateToBlogEntry(ChannelId, item.Tag)">Title</h2>
-                        <p>@item.Text.Substring(0, item.Text.Length < 100 ? item.Text.Length : 100) ...</p>
-                    </article>
-                }
-            }
+            <div @onclick="@(e => GoTo(post))">
+                <BlogPost Post="post" />
+            </div>
         }
-
-
-</div>
+    </div>
 </div>
 
 @inject NavigationManager Navigation
 
 @code {
-    //public string Content = "";
-    IbisChannel? Channel;
-    //List<IbisContent>? blogContent;
     public bool img = false;
-    [Parameter] public string? ChannelId { get; set; } = "blog-testing";
-    List<string> DefaultChannels = new() { "law-of-100-blog" };
+    [Parameter] public string? ChannelId { get; set; } = null!;
+    List<string> DefaultChannels = new() { "new-blossom-blog" };
     List<IbisContent> Content = new();
-    //IbisContent? testContent;
 
     protected override async Task OnInitializedAsync()
     {
-
-
-        var channel = await Ibis.GetAllAsync("blog-testing", asHtml: false, take: 2);
-
-
         //if (ChannelId != null)
         //{
-        //    var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true);
+        //    var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
         //    Content.AddRange(channel!.Content);
         //}
         //else
         //{
-        //    foreach (var channel in DefaultChannels)
-        //    {
-        //        var channelContent = await Ibis.GetAllAsync(channel, asHtml: true);
-        //        Content.AddRange(channelContent!.Content);
-        //    }
-        //    Content = Content.OrderByDescending(x => x.Timestamp).ToList();
-        //}
-
-        //testContent = await Ibis.GetAsync("", "test");
-
-        //Content = Ibis.Get("test");
+        foreach (var channel in DefaultChannels)
+        {
+            var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
+            Content.AddRange(channelContent!.Content);
+        }
+        Content = Content.OrderByDescending(x => x.Timestamp).ToList();
     }
 
-    private void NavigateToBlogEntry(string name, string tag)
-    {
-        Navigation.NavigateTo("blog/" + name + "/" + tag);
-    }
-
-    //public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");
+    public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");
 }

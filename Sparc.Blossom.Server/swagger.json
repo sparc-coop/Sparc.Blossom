@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "Sparc.Blossom.Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "title": "Sparc.Blossom, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null",
     "version": "v1"
   },
   "paths": { },
