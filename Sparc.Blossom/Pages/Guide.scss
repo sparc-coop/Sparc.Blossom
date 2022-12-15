@@ -1,0 +1,180 @@
+﻿@import "../App.Variables.scss";
+
+.guide {
+    width: 100%;
+    max-width: 1038px;
+    box-sizing: border-box;
+    padding: 125px 20px;
+    margin: 0 auto;
+    color: $white;
+
+    &--hero {
+        text-align: center;
+
+        .header {
+            margin: 0 auto;
+            font-family: 'NimbusSansExtd', sans-serif;
+
+            p {
+                max-width: 705px;
+                margin: 0 auto;
+            }
+
+            h1 {
+                width: 50%;
+                margin: 20px auto;
+            }
+        }
+
+        .ask-questions {
+            margin-top: 50px;
+            margin-bottom: 183px;
+            display: flex;
+            justify-content: center;
+            gap: 19px;
+
+            input {
+                width: 90%;
+                max-width: 900px;
+                height: 100px;
+                box-sizing: border-box;
+                padding: 0 47px;
+                border: 2px solid $grey-100;
+                border-radius: 100px;
+                background: transparent;
+                color: $grey-200;
+                font-size: 33px;
+            }
+
+            button {
+                width: 100px;
+                height: 100px;
+                padding: 0;
+                margin: 0;
+                background: transparent;
+                border: none;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .category {
+        margin-bottom: 102px;
+
+        .subtitle-1 {
+            font-family: 'NimbusSans', sans-serif;
+            color: $grey-400;
+        }
+
+        .guide--heading {
+            display: flex;
+            padding: 12px 0;
+        }
+
+        .asterisk {
+            display: inline;
+            vertical-align: middle;
+            margin: 10px 30px 0 0;
+            align-self: self-start;
+        }
+
+        h2 {
+            margin: 0;
+            font-family: 'NimbusSansExtd', sans-serif;
+            cursor: pointer;
+            display: inline;
+        }
+    }
+
+    &--wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 0 60px 0;
+
+        .arrow {
+            align-self: center;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+    }
+
+    &--content {
+        width: 100%;
+        margin: 0 auto;
+        background-color: $grey-200;
+        border-radius: 20px;
+        padding: 60px;
+        box-sizing: border-box;
+        color: $black;
+        display: none;
+        position: relative;
+
+        &.show-section {
+            display: block;
+        }
+
+        .slide-number {
+            color: $grey-200;
+            background: $background;
+            padding: 7px 15px;
+            border-radius: 36px;
+            position: absolute;
+            top: 24px;
+            right: 28px;
+        }
+
+        li {
+            padding: 8px 0;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: unset;
+        }
+
+        h4 {
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        h5 {
+            font-size: 20px;
+            margin: 0;
+            padding-bottom: 20px;
+        }
+
+        a {
+            margin: 0 6px;
+            text-decoration: none;
+        }
+
+        aside {
+            padding: 12px 16px;
+        }
+
+        code {
+            border-radius: 10px;
+        }
+    }
+
+    @media only screen and (max-width: 1560px) {
+        padding: 80px 20px;
+
+        .ask-questions {
+            margin-bottom: 100px;
+
+            input {
+                max-width: 700px;
+                height: 76px;
+            }
+
+            button {
+                width: 76px;
+                height: 76px;
+            }
+        }
+    }
+}

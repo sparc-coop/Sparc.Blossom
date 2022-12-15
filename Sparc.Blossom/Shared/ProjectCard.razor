@@ -1,0 +1,22 @@
+﻿<a href="@ProjectUrl" target="_blank" class="project-card">
+    <img class="project-photo" src="@GetPath(Name)" />
+    <div class="github-wrapper">
+        <p class="subtitle-1">@Name</p>
+        <a @onclick:stopPropagation="true" href="@GithubUrl" target="_blank">
+            <img class="github-logo" src="/images/Github.png" />
+        </a>
+    </div>
+</a>
+
+@code {
+    [Parameter] public string? Name { get; set; }
+    [Parameter] public string? ProjectUrl { get; set; }
+    [Parameter] public string? GithubUrl { get; set; }
+
+    public string GetPath(string? name)
+    {
+        string path;
+        path = "/images/projects/landing/" + name + "_Landing.png";
+        return path;
+    }
+}

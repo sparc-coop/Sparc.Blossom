@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>fef388b9-e1db-4866-81cd-fb3a86884d2e</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="App.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="App.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="App.Typography.scss" />
+    <Content Include="App.Variables.scss" />
+    <Content Include="Pages\Guide.scss" />
+    <Content Include="Shared\NavMenu.scss" />
+	<Content Include="Shared\Footer.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BuildWebCompiler2022" Version="1.14.8" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.0" />
+    <PackageReference Include="Sparc.Blossom.Server" Version="7.1.0-pre.7" />
+    <PackageReference Include="Sparc.Ibis" Version="7.1.0-pre.2" />
+  </ItemGroup>
+
+</Project>

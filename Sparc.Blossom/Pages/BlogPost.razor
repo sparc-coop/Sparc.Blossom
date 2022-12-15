@@ -1,0 +1,43 @@
+﻿@if(Post != null)
+{
+<article class="blog-post ibis-ignore">
+    <header>
+        @if (Post["title"] != null)
+        {
+            <h3>
+                @((MarkupString)Post["title"])
+            </h3>
+        }
+        else if(Post.Text.Length > 50)
+        {
+            <h3>
+                @((MarkupString)Post.Text.Substring(0, 50))
+            </h3>
+        }
+
+        @if (Post["author"] != null)
+        {
+            <aside>
+                by @Post["author"]
+            </aside>
+        }
+
+        <time datetime="@Post.Timestamp.ToString("O")">
+            @Post.Timestamp.ToString("M")
+        </time>
+    </header>
+
+    @if (Post["image"] != null)
+    {
+        <img src="@Post["image"]" alt="@Post["title"]" />
+    }
+
+    <section class="content">
+        @Post.Html
+    </section>
+</article>
+}
+
+@code {
+    [Parameter] public IbisContent Post { get; set; } = null!;
+}

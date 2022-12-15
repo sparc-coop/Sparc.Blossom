@@ -1,0 +1,74 @@
+﻿@import "../App.Variables.scss";
+
+nav {
+    width: 100vw;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: $background;
+    border-top: 1px solid $white;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+
+    .logo {
+        img {
+            margin-left: 50px;
+            width: 142px;
+        }
+    }
+    
+    .links-wrapper {
+        display: flex;
+        margin: auto 0;
+
+        .links {
+            a {
+                margin-right: 50px;
+                font-family: 'NimbusSansExtd', sans-serif;
+                color: $grey-100;
+                font-size: 16px;
+                line-height: 100%;
+                text-decoration: none;
+            }
+        }
+
+        .explore-blossom {
+            margin-right: 50px;
+            padding: 6px 25px;
+            border: solid 2px $grey-100;
+            border-radius: 50px;
+            font-family: 'NimbusSansExtd', sans-serif;
+            background: transparent;
+            color: $grey-100;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    }
+
+    @media only screen and (max-width: 800px) {
+        padding: 20px 0;
+        gap: 20px;
+
+        .logo {
+            img {
+                margin-left: 20px;
+                width: 120px;
+            }
+        }
+
+        .links-wrapper {
+            display: flex;
+            margin: auto 0;
+
+            .explore-blossom {
+                margin-right: 20px;
+                padding: 8px 18px;
+                font-size: 13px;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

@@ -1,0 +1,77 @@
+﻿<div class="guide--wrapper">
+    @if (SectionNumber > 1)
+    {
+        <img @onclick="Back" src="/images/Arrow_left.png" class="arrow"/>
+    }
+    <div class="guide--content show-section" id="sub-section-1">
+        <div class="slide-number">1/2</div>
+        <h4>What is Blossom?</h4>
+        <p>
+            Blossom is an opinionated framework-of-a-framework for .NET 6.0 Web,
+            Mobile, and Desktop development using a single shared codebase
+            (C# and Blazor).
+        </p>
+        <h4>OK, what is it really?</h4>
+        <p>
+            Blossom is a hand-crafted framework full of architectural conventions that 
+            attempt to remove as much of the boilerplate connective tissue as possible.
+
+            Its chief aim is to remove all the drivel it possibly can, so that you may focus more of
+            your creative programming energy on what really matters for your app:
+            <ul>
+                <li>the logic of the back end, and</li>
+                <li>the presentation of the front end.</li>
+            </ul>
+            Everything else should be secondary.
+        </p>
+    </div>
+    <div class="guide--content" id="sub-section-2">
+        <div class="slide-number">2/2</div>
+        <h4>How is a Blossom solution structured?</h4>
+        <p>
+            A typical Sparc solution has three main components:
+            <ul>
+                <li>
+                    one Features project. This project is the main back end API for
+                    the application, and contains the vast majority of the application's logic.
+                </li>
+                <li>
+                    one UI project. This project is the shared front end for Web, Mobile, and Desktop,
+                    using Blazor as its underlying architecture.
+                </li>
+                <li>
+                    (optional) one or more Platforms projects, if you're deploying to multiple platforms.
+                    These projects are the deployable units for Web (using Sparc.Platforms.Web) and
+                    Android/iOS/Mac/Windows (using Sparc.Platforms.Maui). They are typically very small
+                    projects with only platform-specific startup code and platform overrides. The vast
+                    majority of the UI code should still exist in the shared UI project.
+                </li>
+            </ul>
+        </p>
+    </div>
+    @if(SectionNumber < 2)
+    {
+        <img @onclick="Next" src="/images/Arrow_right.png" class="arrow" />
+    }
+</div>
+
+@code {
+    public int SectionNumber = 1;
+
+    protected async Task Back()
+    {
+        if (SectionNumber > 1)
+        {
+            int currentSection = SectionNumber;
+            SectionNumber--;
+            await JSRuntime.InvokeVoidAsync("backSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+        }
+    }
+    
+    protected async Task Next()
+    {
+        int currentSection = SectionNumber;
+        SectionNumber++;
+        await JSRuntime.InvokeVoidAsync("nextSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
+    }
+}

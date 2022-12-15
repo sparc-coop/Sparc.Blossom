@@ -1,0 +1,38 @@
+﻿//Global
+@import "App.Variables";
+@import "App.Typography";
+
+//Shared
+@import "Shared/NavMenu";
+@import "Shared/Footer";
+
+//Pages
+@import "Pages/Index";
+@import "Pages/Guide";
+@import "Pages/BlogList";
+@import "Pages/Blog";
+@import "Pages/BlogPost";
+
+
+body {
+    margin: 0;
+    background: $background;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+/*.ibis-translate {
+    padding: 0;
+    margin: 0;
+}
+
+.ibis-translating {
+    visibility: visible;
+    opacity: 0.3;
+}*/

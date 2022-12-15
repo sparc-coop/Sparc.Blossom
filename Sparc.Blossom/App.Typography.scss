@@ -1,0 +1,167 @@
+﻿body {
+    font-family: 'NimbusSansExtd', sans-serif;
+    font-weight: 400;
+
+    h1, h2, h3, h4 {
+        font-family: 'NimbusSansExtd', sans-serif;
+        font-weight: 400;
+        line-height: 115%;
+    }
+
+    p {
+        font-family: 'NimbusSans', sans-serif;
+        font-weight: 400;
+        line-height: 115%;
+    }
+
+    h1 {
+        font-size: 64px;
+    }
+
+    h2 {
+        font-size: 52px;
+    }
+
+    h3 {
+        font-size: 41px;
+    }
+
+    h4 {
+        font-size: 33px;
+    }
+
+    .title-1, .subtitle-1 {
+        font-size: 26px;
+    }
+
+    .title-2, .subtitle-2 {
+        font-size: 21px;
+    }
+
+    p.medium {
+        font-size: 17px;
+    }
+
+    p.small {
+        font-size: 14px;
+    }
+
+    @media only screen and (max-width: 800px) {
+        h1 {
+            font-size: 44px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 23px;
+        }
+
+        .title-1, .subtitle-1 {
+            font-size: 18px;
+        }
+
+        .title-2, .subtitle-2 {
+            font-size: 16px;
+        }
+
+        p.medium {
+            font-size: 16px;
+        }
+
+        p.small {
+            font-size: 14px;
+        }
+    }
+
+    @media only screen and (max-width: 460px) {
+        h1 {
+            font-size: 44px;
+        }
+
+        h2 {
+            font-size: 36px;
+        }
+
+        h3 {
+            font-size: 28px;
+        }
+
+        h4 {
+            font-size: 23px;
+        }
+
+        .title-1, .subtitle-1 {
+            font-size: 18px;
+        }
+
+        .title-2, .subtitle-2 {
+            font-size: 16px;
+        }
+
+        p.medium {
+            font-size: 16px;
+        }
+
+        p.small {
+            font-size: 14px;
+        }
+    }
+}
+
+//fonts
+@font-face {
+    font-family: 'NimbusSans';
+    font-weight: 400;
+    src: url(wwwroot/fonts/Nimbus-Sans-Regular.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'NimbusSans';
+    font-weight: 400;
+    font-style: italic;
+    src: url(wwwroot/fonts/Nimbus-Sans-RegularItalic.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'NimbusSans';
+    font-weight: 700;
+    src: url(wwwroot/fonts/Nimbus-Sans-Bold.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'NimbusSans';
+    font-weight: 700;
+    font-style: italic;
+    src: url(wwwroot/fonts/Nimbus-Sans-BoldItalic.otf) format('opentype');
+}
+ 
+@font-face {
+    font-family: 'NimbusSansExtd';
+    font-weight: 300;
+    src: url(wwwroot/fonts/Nimbus-Sans-Extd-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NimbusSansExtd';
+    font-weight: 400;
+    src: url(wwwroot/fonts/Nimbus-Sans-Extd-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NimbusSansExtd';
+    font-weight: 700;
+    src: url(wwwroot/fonts/Nimbus-Sans-Extd-Bold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'NimbusSansExtd';
+    font-weight: 900;
+    src: url(wwwroot/fonts/Nimbus-Sans-Extd-Black.ttf) format('truetype');
+}
