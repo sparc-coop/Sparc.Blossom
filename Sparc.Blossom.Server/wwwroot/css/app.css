@@ -513,8 +513,8 @@ footer .footer--column .column-links a {
   font-size: 64px;
   font-family: "NimbusSansExtd";
   line-height: 95%;
-  margin-top: 120px;
-  margin-bottom: 8px;
+  margin: 120px auto 8px auto;
+  width: 629px;
 }
 .blog-list h2 {
   font-size: 20px;
@@ -531,42 +531,6 @@ footer .footer--column .column-links a {
   flex-wrap: wrap;
   position: relative;
   z-index: 2;
-}
-.blog-list .blog-post-list .blog-post {
-  width: 413px;
-  height: 445px;
-  margin: 10.5px;
-  display: flex;
-  flex-direction: column;
-}
-.blog-list .blog-post-list .blog-post img {
-  width: 100%;
-  height: 277px;
-  border-radius: 20px;
-  object-fit: cover;
-  opacity: 1;
-}
-.blog-list .blog-post-list .blog-post .empty-img {
-  height: 277px;
-}
-.blog-list .blog-post-list .blog-post h3 {
-  margin: 7.5px;
-  font-family: "NimbusSansExtd";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 26px;
-  line-height: 31px;
-}
-.blog-list .blog-post-list .blog-post p {
-  font-family: "NimbusSans";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 21px;
-  line-height: 25px;
-  margin: 7.5px;
-  overflow: hidden;
-  max-height: 145px;
-  height: 145px;
 }
 .blog-list .blog-post-list .no-img {
   border: 1px solid white;
@@ -586,7 +550,11 @@ footer .footer--column .column-links a {
 
 .blog-page {
   color: white;
-  margin-left: 80px;
+}
+.blog-page .container {
+  max-width: 1400px;
+  margin: 300px auto 160px auto;
+  padding: 0 80px;
 }
 .blog-page .background {
   opacity: 0.2;
@@ -600,53 +568,80 @@ footer .footer--column .column-links a {
   width: 55vw;
   object-fit: contain;
 }
-.blog-page .blog-article {
-  margin-left: 80px;
-}
-.blog-page .blog-article .pagnation {
+.blog-page .pagnation {
   display: flex;
   justify-content: space-between;
   color: white;
-  margin: 100px 100px 100px 0px;
+  margin: 120px 100px 200px 0px;
 }
-.blog-page .blog-article .pagnation div, .blog-page .blog-article .pagnation a {
+.blog-page .pagnation div, .blog-page .pagnation a {
   color: white;
+  cursor: pointer;
 }
-.blog-page .blog-article h1 {
-  font-family: "NimbusSansExtd";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 52px;
-  line-height: 62px;
-  margin-bottom: 16px;
+
+.blog-post-list .blog-post {
+  width: 413px;
+  height: 445px;
+  margin: 10.5px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #F6F4F3;
+  border-radius: 23px;
+  padding: 18px;
+  box-sizing: border-box;
+  cursor: pointer;
+  overflow: hidden;
 }
-.blog-page .blog-article h2 {
+.blog-post-list .blog-post header h3 {
+  height: 132px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+.blog-post-list .blog-post .content {
+  max-height: 280px;
+  overflow: hidden;
+}
+.blog-post-list .blog-post img {
+  width: 100%;
+  height: 277px;
+  border-radius: 20px;
+  object-fit: cover;
+  opacity: 1;
+}
+.blog-post-list .blog-post .empty-img {
+  height: 277px;
+}
+.blog-post-list .blog-post p {
   font-family: "NimbusSans";
   font-style: normal;
   font-weight: 400;
   font-size: 21px;
-  margin-top: 16px;
+  line-height: 25px;
+  overflow: hidden;
 }
-.blog-page .blog-article .blog-post-content {
-  margin-top: 160px;
-  margin-right: 80px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+.blog-post-list .blog-post h3 {
+  margin: 0px;
+  padding-bottom: 10px;
+}
+.blog-post-list .blog-post h3 p {
+  font-family: "NimbusSansExtd";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 33px;
+  line-height: 40px;
+  margin: 0;
+}
+
+.blog-page .blog-post .content {
+  margin-top: 100px;
   font-family: "NimbusSans";
   font-weight: 300;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 150%;
 }
-.blog-page .blog-article .blog-post-content .post-left {
-  margin: 0px 80px 20px 0px;
-}
-.blog-page .blog-article .blog-post-content .post-right {
-  margin: 0px;
-}
-.blog-page .blog-article .blog-post-content p {
-  margin: 0px;
-  padding: 0px;
+.blog-page .blog-post .content p {
+  padding: 5px 0;
 }
 
 body {

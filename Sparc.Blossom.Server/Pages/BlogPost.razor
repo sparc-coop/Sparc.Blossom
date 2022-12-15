@@ -1,15 +1,17 @@
-﻿<article class="blog-post ibis-ignore">
+﻿@if(Post != null)
+{
+<article class="blog-post ibis-ignore">
     <header>
         @if (Post["title"] != null)
         {
             <h3>
-                @Post["title"]
+                @((MarkupString)Post["title"])
             </h3>
         }
-        else
+        else if(Post.Text.Length > 50)
         {
             <h3>
-                @Post.Text.Substring(0, 30)...
+                @((MarkupString)Post.Text.Substring(0, 50))
             </h3>
         }
 
@@ -25,17 +27,16 @@
         </time>
     </header>
 
-    <figure>
-        @if (Post["image"] != null)
-        {
-            <img src="@Post["image"]" alt="@Post["title"]" />
-        }
-    </figure>
+    @if (Post["image"] != null)
+    {
+        <img src="@Post["image"]" alt="@Post["title"]" />
+    }
 
     <section class="content">
         @Post.Html
     </section>
 </article>
+}
 
 @code {
     [Parameter] public IbisContent Post { get; set; } = null!;

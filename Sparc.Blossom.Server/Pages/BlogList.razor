@@ -2,8 +2,8 @@
 @page "/blogs/{ChannelId}"
 
 <div class="blog-list">
-    <div class="background"><img src="images/Pattern_1.png" alt="" /></div>
-    <h1 class="header">21 Days of Blossom</h1>
+    <div class="background"><img src="images/Pattern_1.png" alt="background image" /></div>
+    <h1>21 Days of Blossom</h1>
     <h2>Blog</h2>
     <div class="blog-post-list">
         @foreach (var post in Content)
@@ -25,19 +25,20 @@
 
     protected override async Task OnInitializedAsync()
     {
-        //if (ChannelId != null)
-        //{
-        //    var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true, take: 10);
-        //    Content.AddRange(channel!.Content);
-        //}
-        //else
-        //{
-        foreach (var channel in DefaultChannels)
+        if (ChannelId != null)
         {
-            var channelContent = await Ibis.GetAllAsync(channel, asHtml: true, take: 10);
-            Content.AddRange(channelContent!.Content);
+            var channel = await Ibis.GetAllAsync(ChannelId, asHtml: true);
+            Content.AddRange(channel!.Content);
         }
-        Content = Content.OrderByDescending(x => x.Timestamp).ToList();
+        else
+        {
+            foreach (var channel in DefaultChannels)
+            {
+                var channelContent = await Ibis.GetAllAsync(channel, asHtml: true);
+                Content.AddRange(channelContent!.Content);
+            }
+            Content = Content.OrderByDescending(x => x.Timestamp).ToList();
+        }
     }
 
     public void GoTo(IbisContent content) => Nav.NavigateTo($"/blogs/{content.RoomSlug}/{content.Tag}");

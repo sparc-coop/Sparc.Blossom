@@ -2,7 +2,12 @@
 
 .blog-page {
     color: white;
-    margin-left: 80px;
+
+    .container {
+        max-width: 1400px;
+        margin: 300px auto 160px auto;
+        padding: 0 80px;
+    }
 
     .background {
         opacity: 0.2;
@@ -18,60 +23,15 @@
         }
     }
 
-    .blog-article {
-        margin-left: 80px;
+    .pagnation {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        margin: 120px 100px 200px 0px;
 
-        .pagnation {
-            display: flex;
-            justify-content: space-between;
+        div, a {
             color: white;
-            margin: 100px 100px 100px 0px;
-
-            div, a {
-                color: white;
-            }
-        }
-
-        h1 {
-            font-family: 'NimbusSansExtd';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 52px;
-            line-height: 62px;
-            margin-bottom: 16px;
-        }
-
-        h2 {
-            font-family: 'NimbusSans';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 21px;
-            margin-top: 16px;
-        }
-
-        .blog-post-content {
-            margin-top: 160px;
-            margin-right: 80px;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            font-family: 'NimbusSans';
-            font-weight: 300;
-            font-size: 17px;
-            line-height: 150%;
-
-            .post-left {
-                margin: 0px 80px 20px 0px;
-            }
-
-            .post-right {
-                margin: 0px;
-            }
-
-            p {
-                margin: 0px;
-                padding: 0px;
-            }
+            cursor: pointer;
         }
     }
 }
