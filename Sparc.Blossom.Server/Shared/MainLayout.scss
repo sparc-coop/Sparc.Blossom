@@ -1,0 +1,23 @@
+@import "../App.Variables.scss";
+
+main {
+    width: 100vw;
+    background: $background;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr repeat(12, 64px) 1fr;
+    column-gap: 30px;
+
+    .landing {
+        grid-column: 1/15;
+    }
+
+    @media screen and (max-width: 1098px) {
+        grid-template-columns: 1fr repeat(8, 71px) 1fr;
+        column-gap: 15px;
+
+        .landing {
+            grid-column: 1/11;
+        }
+    }
+}

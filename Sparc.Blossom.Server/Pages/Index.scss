@@ -1,42 +1,54 @@
 ﻿@import "../App.Variables.scss";
 
-.home {
-    width: 100%;
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100px * 14));
+    }
+}
+
+@keyframes scrollReverse {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(100px * 14));
+    }
+}
+
+.landing {
+    margin-bottom: 64px;
     background: $background;
     color: $grey-100;
     font-family: 'NimbusSansExtd', sans-serif;
     font-weight: 400;
 
-    section {
-        padding: 150px 0;
-    }
-
     &--hero {
-        width: 100%;
-        margin: 0 auto;
-        position: fixed;
+        /*position: fixed;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-
-        .container {
-            padding: 0 15px;
-        }
+         transform: translate(-50%, -50%);*/
+        margin-top: 124px;
+        position: relative;
+        z-index: 1;
 
         .hero--image {
-            width: 100%;
+            width: 25%;
+            margin: 0 auto;
             margin-bottom: 35px;
             text-align: center;
 
             img {
-                width: 551px;
+                width: 100%;
             }
         }
 
         .header {
-            width: 100%;
-            max-width: 809px;
+            width: 809px;
             margin: 0 auto;
             text-align: center;
             font-family: 'NimbusSansExtd', sans-serif;
@@ -45,13 +57,16 @@
             h1 {
                 margin: 0;
                 margin-bottom: 15px;
+                font-size: 64px;
+                line-height: 95%;
             }
 
             p {
                 margin: 0;
                 font-family: 'NimbusSansExtd';
                 font-weight: 400;
-                line-height: 140%;
+                font-size: 20px;
+                line-height: 150%;
             }
         }
     }
@@ -61,15 +76,16 @@
         position: relative;
 
         .float-spacer {
-            width: 100vw;
+            /*width: 100vw;
             height: 100vh;
-            background: transparent;
+            background: transparent;*/
         }
     }
 
     &--intro {
         width: 100%;
-        padding-bottom: 312px;
+        margin-top: 270px;
+        margin-bottom: 184px;
         background: $background;
 
         .container {
@@ -77,8 +93,7 @@
         }
 
         .header {
-            width: 100%;
-            max-width: 1054px;
+            width: 1070px;
             margin: 0 auto;
             text-align: center;
             font-family: 'NimbusSansExtd', sans-serif;
@@ -90,6 +105,11 @@
 
             h3 {
                 margin-bottom: 8px;
+                font-size: 33px;
+            }
+
+            p {
+                font-size: 26px;
             }
         }
 
@@ -110,45 +130,78 @@
                 left: 50%;
                 transform: translate(-50%, 0);
             }
+
+            &--placeholder {
+                text-align: center;
+                margin-top: 37px;
+                margin-bottom: 77px;
+
+                img {
+                    width: 1440px;
+                    height: 485px;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 
     .projectlogo-carousel {
         width: 100%;
         margin: 0 auto;
-        padding: 0 0 100px 0;
-        display: flex;
-        justify-content: space-between;
-        background: $black;
+        position: relative;
+        background: $background;
+        overflow: hidden;
+
+        &::before, &::after {
+            background: linear-gradient(to right, $background 0%, rgba(10, 10, 10, 0) 100%);
+            content: "";
+            height: 44px;
+            position: absolute;
+            width: 200px;
+            z-index: 50;
+        }
+
+        &::before {
+            left: 0;
+            top: 0;
+        }
+
+        &::after {
+            right: 0;
+            top: 0;
+            transform: rotateZ(180deg);
+        }
+
+        .project-logos {
+            width: 100%;
+            display: flex;
+            gap: 69px;
+            animation: scroll 40s linear infinite;
+        }
 
         img {
             width: auto;
             height: 44px;
-            margin: 0 20px;
         }
-    }
-
-    section.home--about {
-        padding: 120px 0;
     }
 
     &--about {
         width: 100%;
         height: 100%;
+        padding: 120px 0;
         border: none;
         border-radius: 50px;
         background: $grey-200;
         color: $grey-900;
 
         .container {
-            height: 100%;
             padding: 0 80px;
         }
 
         .feature {
             width: 100%;
             height: 501px;
-            margin: 120px 0;
+            margin-bottom: 120px;
             display: flex;
             flex-direction: row;
             justify-content: center;
@@ -184,12 +237,12 @@
         }
 
         div:nth-child(4) {
-            margin-bottom: 0;
+            margin-bottom: 60px;
         }
 
         .button-wrapper {
             width: 100%;
-            padding-top: 60px;
+            height: 50px;
             text-align: center;
 
             .learn-more {
@@ -208,6 +261,7 @@
     &--projects {
         width: 100%;
         margin: 0 auto;
+        margin-top: 188px;
         text-align: center;
         background: $background;
         position: relative;
@@ -235,6 +289,7 @@
                 display: flex;
                 justify-content: center;
                 gap: 24px;
+                animation: scroll 20s linear infinite;
 
                 .github-card {
                     width: 413px;
@@ -276,6 +331,10 @@
                             }
                         }
                     }
+                }
+
+                &:hover {
+                    animation-play-state: paused;
                 }
             }
 
@@ -346,7 +405,7 @@
     }
 
     @media only screen and (max-width: 1100px) {
-        section.home--about {
+        section.landing--about {
             padding-top: 80px;
         }
 
@@ -437,7 +496,7 @@
             }
         }
 
-        section.home--about {
+        section.landing--about {
             padding: 0px;
         }
 
@@ -547,7 +606,7 @@
             }
         }
 
-        section.home--cta {
+        section.landing--cta {
             padding: 0;
             padding-top: 60px;
         }
@@ -652,7 +711,7 @@
             }
         }
 
-        section.home--about {
+        section.landing--about {
             padding: 0px;
         }
 
@@ -748,6 +807,10 @@
                             }
                         }
                     }
+
+                    &:hover {
+                        animation-play-state: paused;
+                    }
                 }
 
                 .arrows-container {
@@ -764,7 +827,7 @@
 
         &--cta {
             padding: 60px 0;
-            
+
             .container {
                 padding: 0 20px;
                 flex-direction: column;

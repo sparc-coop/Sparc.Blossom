@@ -1,44 +1,55 @@
 ﻿@page "/"
+@layout MainLayout
 
 <PageTitle>Sparc Blossom</PageTitle>
 
-<div class="home">
-    <section class="home--hero">
-        <div class="container">
-            <div class="hero--image">
-                <img src="images/Pattern_1.png" />
-            </div>
-            <div class="header">
-                <h1>From one codebase springs many platforms.</h1>
-                <p class="subtitle-2">
-                    Sparc offers a way to architect apps so that you can focus on painting the unique and beautiful art your app is meant to convey.
-                </p>
-            </div>
+<div class="landing">
+    <section class="landing--hero">
+        <div class="hero--image">
+            <img src="images/Pattern_1.png" />
+        </div>
+        <div class="header">
+            <h1>From one codebase springs many platforms.</h1>
+            <p class="subtitle-2">
+                Sparc offers a way to architect apps so that you can focus on painting the unique and beautiful art your app is meant to convey.
+            </p>
         </div>
     </section>
-    <div class="float-wrapper" id="float-wrapper">
-        <div class="float-spacer"></div>
-        <section class="home--intro">
-            <div class="container">
-                <div class="header">
-                    <h3>Blossom breaks many paradigms</h3>
-                    <p class="subtitle-1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
-                </div>
-@*                <div class="interactive-block">
-                    <img src="images/Blocks.png" />
-                </div>*@
+    <section class="landing--intro">
+        <div class="container">
+            <div class="header">
+                <h3>Blossom breaks many paradigms</h3>
+                <p class="subtitle-1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...</p>
             </div>
-            <div class="projectlogo-carousel">
-                <img src="/images//projects/logos/Citeblue_Hori.png"/>
-                <img src="/images//projects/logos/Law of 100_Hori.png"/>
+            @*                <div class="interactive-block">
+            <img src="images/Blocks.png" />
+            </div>*@
+            <div class="interactive-block--placeholder">
+                <img src="images/Placeholder_minigame.png" />
+            </div>
+        </div>
+        <div class="projectlogo-carousel">
+            <div class="project-logos">
+                <img src="/images//projects/logos/Citeblue_Hori.png" />
+                <img src="/images//projects/logos/Law of 100_Hori.png" />
+                <img src="/images//projects/logos/Kuvio_Hori.png" />
+                <img src="/images//projects/logos/Sparc_Hori.png" />
+                <img src="/images//projects/logos/Kodekit_Hori.png" />
+                <img src="/images//projects/logos/Ibis_Hori.png" />
+                <img src="/images//projects/logos/Conseris_Hori.png" />
+                <img src="/images//projects/logos/Citeblue_Hori.png" />
+                <img src="/images//projects/logos/Law of 100_Hori.png" />
                 <img src="/images//projects/logos/Kuvio_Hori.png" />
                 <img src="/images//projects/logos/Sparc_Hori.png" />
                 <img src="/images//projects/logos/Kodekit_Hori.png" />
                 <img src="/images//projects/logos/Ibis_Hori.png" />
                 <img src="/images//projects/logos/Conseris_Hori.png" />
             </div>
-        </section>
-        <section class="home--about">
+        </div>
+    </section>
+    <div class="float-wrapper">
+        <div class="float-spacer"></div>
+        <section class="landing--about">
             <div class="container">
                 <div class="feature">
                     <div class="image-wrapper">
@@ -97,31 +108,37 @@
                 </div>
             </div>
         </section>
-        <section class="home--projects">
+        <section class="landing--projects">
             <div class="container">
                 <div class="header">
                     <h3>Explore our work</h3>
                     <p class="subtitle-1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
                 </div>
-                <div class="project-carousel">
-                    <div class="project-wrapper">
+                <div class="project-carousel" id="project-carousel">
+                    <div class="project-wrapper" id="project-wrapper">
                         <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue"/>
                         <GithubCard Name="Sparc" ProjectUrl="https://www.sparc.coop/" GithubUrl="https://github.com/sparc-coop/sparc" />
                         <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris"/>
                         <GithubCard Name="Law of 100" ProjectUrl="https://lawof100.co/" GithubUrl="https://github.com/sparc-coop/law-of-100" />
                         <GithubCard Name="Kodekit" ProjectUrl="https://app.kodekit.io/" GithubUrl="https://github.com/sparc-coop/kodekit" />
                         <GithubCard Name="Ibis" ProjectUrl="https://github.com/sparc-coop/ibis" GithubUrl="https://github.com/sparc-coop/ibis" />
+                        <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue" />
+                        <GithubCard Name="Sparc" ProjectUrl="https://www.sparc.coop/" GithubUrl="https://github.com/sparc-coop/sparc" />
+                        <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris" />
+                        <GithubCard Name="Law of 100" ProjectUrl="https://lawof100.co/" GithubUrl="https://github.com/sparc-coop/law-of-100" />
+                        <GithubCard Name="Kodekit" ProjectUrl="https://app.kodekit.io/" GithubUrl="https://github.com/sparc-coop/kodekit" />
+                        <GithubCard Name="Ibis" ProjectUrl="https://github.com/sparc-coop/ibis" GithubUrl="https://github.com/sparc-coop/ibis" />
                     </div>
-                    <div class="arrows-container carousel-backward">
+                    <div class="arrows-container carousel-backward" id="carousel-backward">
                         <img src="/images/Double Arrow.png" />
                     </div>
-                    <div class="arrows-container carousel-forward">
+                    <div class="arrows-container carousel-forward" id="carousel-forward">
                         <img src="/images/Double Arrow.png" />
-                    </div>                  
+                    </div>
                 </div>
             </div>
         </section>
-        <section class="home--cta">
+        <section class="landing--cta">
             <div class="container">
                 <img src="/images/landing-cta.png"/>
                 <div class="header right">

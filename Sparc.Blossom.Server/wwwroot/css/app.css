@@ -131,28 +131,64 @@ body p.small {
   font-weight: 900;
   src: url(../fonts/Nimbus-Sans-Extd-Black.ttf) format("truetype");
 }
+main {
+  width: 100vw;
+  background: #0A0A0A;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr repeat(12, 64px) 1fr;
+  column-gap: 30px;
+}
+main .landing {
+  grid-column: 1/15;
+}
+@media screen and (max-width: 1098px) {
+  main {
+    grid-template-columns: 1fr repeat(8, 71px) 1fr;
+    column-gap: 15px;
+  }
+  main .landing {
+    grid-column: 1/11;
+  }
+}
+
+.nav--filter {
+  width: 100vw;
+  height: 64.41px;
+  padding: 0;
+  position: fixed;
+  bottom: 0;
+  backdrop-filter: blur(10px) brightness(120%);
+  opacity: 1;
+  z-index: 90;
+}
+
 nav {
   width: 100vw;
   margin: 0;
-  padding-top: 12px;
-  padding-bottom: 12px;
-  background: #020201;
-  border-top: 1px solid #FFFFFF;
+  padding: 12px 0;
   display: flex;
   justify-content: space-between;
+  background: #0A0A0A;
+  opacity: 0.8;
+  border-top: 1px solid #FFFFFF;
   position: fixed;
   bottom: 0;
   z-index: 100;
+}
+nav .nav--wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 nav .logo img {
   margin-left: 50px;
   width: 142px;
 }
-nav .links-wrapper {
+nav .links--wrapper {
   display: flex;
   margin: auto 0;
 }
-nav .links-wrapper .links a {
+nav .links--wrapper .links a {
   margin-right: 50px;
   font-family: "NimbusSansExtd", sans-serif;
   color: #F6F4F3;
@@ -160,7 +196,7 @@ nav .links-wrapper .links a {
   line-height: 100%;
   text-decoration: none;
 }
-nav .links-wrapper .explore-blossom {
+nav .links--wrapper .explore-blossom {
   margin-right: 50px;
   padding: 6px 25px;
   border: solid 2px #F6F4F3;
@@ -180,11 +216,11 @@ nav .links-wrapper .explore-blossom {
     margin-left: 20px;
     width: 120px;
   }
-  nav .links-wrapper {
+  nav .links--wrapper {
     display: flex;
     margin: auto 0;
   }
-  nav .links-wrapper .explore-blossom {
+  nav .links--wrapper .explore-blossom {
     margin-right: 20px;
     padding: 2px 18px;
     font-size: 13px;
@@ -195,7 +231,7 @@ nav .links-wrapper .explore-blossom {
 footer {
   width: 100%;
   padding: 150px 0;
-  background: #020201;
+  background: #0A0A0A;
   color: #FFFFFF;
   display: flex;
   justify-content: space-around;
@@ -228,86 +264,103 @@ footer .footer--column .column-links a {
   }
 }
 
-.home {
-  width: 100%;
-  background: #020201;
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-1400px);
+  }
+}
+@keyframes scrollReverse {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(1400px);
+  }
+}
+.landing {
+  margin-bottom: 64px;
+  background: #0A0A0A;
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-.home section {
-  padding: 150px 0;
-}
-.home--hero {
-  width: 100%;
-  margin: 0 auto;
-  position: fixed;
+.landing--hero {
+  /*position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 0;
+   transform: translate(-50%, -50%);*/
+  margin-top: 124px;
+  position: relative;
+  z-index: 1;
 }
-.home--hero .container {
-  padding: 0 15px;
-}
-.home--hero .hero--image {
-  width: 100%;
+.landing--hero .hero--image {
+  width: 25%;
+  margin: 0 auto;
   margin-bottom: 35px;
   text-align: center;
 }
-.home--hero .hero--image img {
-  width: 551px;
-}
-.home--hero .header {
+.landing--hero .hero--image img {
   width: 100%;
-  max-width: 809px;
+}
+.landing--hero .header {
+  width: 809px;
   margin: 0 auto;
   text-align: center;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-.home--hero .header h1 {
+.landing--hero .header h1 {
   margin: 0;
   margin-bottom: 15px;
+  font-size: 64px;
+  line-height: 95%;
 }
-.home--hero .header p {
+.landing--hero .header p {
   margin: 0;
   font-family: "NimbusSansExtd";
   font-weight: 400;
-  line-height: 140%;
+  font-size: 20px;
+  line-height: 150%;
 }
-.home .float-wrapper {
+.landing .float-wrapper {
   width: 100%;
   position: relative;
 }
-.home .float-wrapper .float-spacer {
-  width: 100vw;
+.landing .float-wrapper .float-spacer {
+  /*width: 100vw;
   height: 100vh;
-  background: transparent;
+  background: transparent;*/
 }
-.home--intro {
+.landing--intro {
   width: 100%;
-  padding-bottom: 312px;
-  background: #020201;
+  margin-top: 270px;
+  margin-bottom: 184px;
+  background: #0A0A0A;
 }
-.home--intro .container {
+.landing--intro .container {
   padding: 0 15px;
 }
-.home--intro .header {
-  width: 100%;
-  max-width: 1054px;
+.landing--intro .header {
+  width: 1070px;
   margin: 0 auto;
   text-align: center;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-.home--intro .header h3, .home--intro .header p {
+.landing--intro .header h3, .landing--intro .header p {
   margin: 0;
 }
-.home--intro .header h3 {
+.landing--intro .header h3 {
   margin-bottom: 8px;
+  font-size: 33px;
 }
-.home--intro .interactive-block {
+.landing--intro .header p {
+  font-size: 26px;
+}
+.landing--intro .interactive-block {
   width: 100%;
   max-width: 1054px;
   height: 500px;
@@ -317,81 +370,109 @@ footer .footer--column .column-links a {
   border-radius: 50px;
   position: relative;
 }
-.home--intro .interactive-block img {
+.landing--intro .interactive-block img {
   width: 542px;
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
 }
-.home .projectlogo-carousel {
+.landing--intro .interactive-block--placeholder {
+  text-align: center;
+  margin-top: 37px;
+  margin-bottom: 77px;
+}
+.landing--intro .interactive-block--placeholder img {
+  width: 1440px;
+  height: 485px;
+  margin: 0 auto;
+}
+.landing .projectlogo-carousel {
   width: 100%;
   margin: 0 auto;
-  padding: 0 0 100px 0;
-  display: flex;
-  justify-content: space-between;
-  background: #000000;
+  position: relative;
+  background: #0A0A0A;
+  overflow: hidden;
 }
-.home .projectlogo-carousel img {
+.landing .projectlogo-carousel::before, .landing .projectlogo-carousel::after {
+  background: linear-gradient(to right, #0A0A0A 0%, rgba(10, 10, 10, 0) 100%);
+  content: "";
+  height: 44px;
+  position: absolute;
+  width: 200px;
+  z-index: 50;
+}
+.landing .projectlogo-carousel::before {
+  left: 0;
+  top: 0;
+}
+.landing .projectlogo-carousel::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ(180deg);
+}
+.landing .projectlogo-carousel .project-logos {
+  width: 100%;
+  display: flex;
+  gap: 69px;
+  animation: scroll 40s linear infinite;
+}
+.landing .projectlogo-carousel img {
   width: auto;
   height: 44px;
-  margin: 0 20px;
 }
-.home section.home--about {
-  padding: 120px 0;
-}
-.home--about {
+.landing--about {
   width: 100%;
   height: 100%;
+  padding: 120px 0;
   border: none;
   border-radius: 50px;
   background: #D0CECD;
   color: #140903;
 }
-.home--about .container {
-  height: 100%;
+.landing--about .container {
   padding: 0 80px;
 }
-.home--about .feature {
+.landing--about .feature {
   width: 100%;
   height: 501px;
-  margin: 120px 0;
+  margin-bottom: 120px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   gap: 144px;
 }
-.home--about .feature .image-wrapper {
+.landing--about .feature .image-wrapper {
   margin: auto 0;
 }
-.home--about .feature .image-wrapper img.feature-image {
+.landing--about .feature .image-wrapper img.feature-image {
   width: 347px;
   height: 347px;
 }
-.home--about .feature .content-wrapper {
+.landing--about .feature .content-wrapper {
   width: 520px;
   margin: auto 0;
   padding: 77px 0;
   text-align: center;
 }
-.home--about .feature .content-wrapper h4 {
+.landing--about .feature .content-wrapper h4 {
   text-decoration: underline;
 }
-.home--about .feature.reverse {
+.landing--about .feature.reverse {
   flex-direction: row-reverse;
 }
-.home--about div:first-child {
+.landing--about div:first-child {
   margin-top: 0;
 }
-.home--about div:nth-child(4) {
-  margin-bottom: 0;
+.landing--about div:nth-child(4) {
+  margin-bottom: 60px;
 }
-.home--about .button-wrapper {
+.landing--about .button-wrapper {
   width: 100%;
-  padding-top: 60px;
+  height: 50px;
   text-align: center;
 }
-.home--about .button-wrapper .learn-more {
+.landing--about .button-wrapper .learn-more {
   padding: 8px 58px;
   border: solid 2px #140903;
   border-radius: 50px;
@@ -401,35 +482,37 @@ footer .footer--column .column-links a {
   color: #140903;
   text-decoration: none;
 }
-.home--projects {
+.landing--projects {
   width: 100%;
   margin: 0 auto;
+  margin-top: 188px;
   text-align: center;
-  background: #020201;
+  background: #0A0A0A;
   position: relative;
 }
-.home--projects .header {
+.landing--projects .header {
   margin-bottom: 60px;
 }
-.home--projects .header h3, .home--projects .header p {
+.landing--projects .header h3, .landing--projects .header p {
   margin: 0;
 }
-.home--projects .header h3 {
+.landing--projects .header h3 {
   margin-bottom: 8px;
 }
-.home--projects .project-carousel {
+.landing--projects .project-carousel {
   width: 100%;
   padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
-.home--projects .project-carousel .project-wrapper {
+.landing--projects .project-carousel .project-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 24px;
+  animation: scroll 20s linear infinite;
 }
-.home--projects .project-carousel .project-wrapper .github-card {
+.landing--projects .project-carousel .project-wrapper .github-card {
   width: 413px;
   height: 336px;
   padding-bottom: 9px;
@@ -438,34 +521,37 @@ footer .footer--column .column-links a {
   cursor: pointer;
   text-decoration: none;
 }
-.home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+.landing--projects .project-carousel .project-wrapper .github-card img.project-photo {
   width: 377px;
   height: 257.5px;
   margin: 18px;
   border-radius: 15px;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+.landing--projects .project-carousel .project-wrapper .github-card .github-wrapper {
   margin: 0 18px;
   display: flex;
   justify-content: space-between;
   vertical-align: middle;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper p.subtitle-1 {
+.landing--projects .project-carousel .project-wrapper .github-card .github-wrapper p.subtitle-1 {
   margin: auto 0;
   color: #FFFFFF;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo {
+.landing--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo {
   width: 29px;
   height: 29px;
   margin: auto 0;
   color: #FFFFFF;
   transition-duration: 0.4s;
 }
-.home--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo:hover {
+.landing--projects .project-carousel .project-wrapper .github-card .github-wrapper .github-logo:hover {
   transform: translateY(-2px);
   transition-duration: 0.2s;
 }
-.home--projects .project-carousel .arrows-container {
+.landing--projects .project-carousel .project-wrapper:hover {
+  animation-play-state: paused;
+}
+.landing--projects .project-carousel .arrows-container {
   backdrop-filter: blur(4px);
   border-top-right-radius: 125px;
   border-bottom-right-radius: 125px;
@@ -477,41 +563,41 @@ footer .footer--column .column-links a {
   top: 50px;
   z-index: 10;
 }
-.home--projects .project-carousel .arrows-container img {
+.landing--projects .project-carousel .arrows-container img {
   opacity: 0.3;
   height: 306px;
   border-top-right-radius: 125px;
   border-bottom-right-radius: 125px;
   cursor: pointer;
 }
-.home--projects .project-carousel .arrows-container.carousel-forward {
+.landing--projects .project-carousel .arrows-container.carousel-forward {
   transform: rotate(180deg);
   right: 0;
 }
-.home--cta {
+.landing--cta {
   width: 100%;
   padding: 150px 0;
-  background: #020201;
+  background: #0A0A0A;
 }
-.home--cta .container {
+.landing--cta .container {
   padding: 0 80px;
   display: flex;
   justify-content: center;
   gap: 40px;
   flex-wrap: wrap;
 }
-.home--cta .header {
+.landing--cta .header {
   max-width: 630px;
 }
-.home--cta .header h3 {
+.landing--cta .header h3 {
   font-size: 52px;
   margin: 0 0 40px 0;
 }
-.home--cta img {
+.landing--cta img {
   width: 630px;
   align-self: self-start;
 }
-.home--cta a {
+.landing--cta a {
   padding: 16px 80px;
   border-radius: 30px;
   text-align: center;
@@ -521,64 +607,64 @@ footer .footer--column .column-links a {
   text-decoration: none;
 }
 @media only screen and (max-width: 1100px) {
-  .home section.home--about {
+  .landing section.landing--about {
     padding-top: 80px;
   }
-  .home--about .feature {
+  .landing--about .feature {
     margin: 60px 0;
     gap: 60px;
   }
-  .home--about .feature .image-wrapper img.feature-image {
+  .landing--about .feature .image-wrapper img.feature-image {
     width: 310px;
     height: 310px;
   }
-  .home--about .feature .content-wrapper {
+  .landing--about .feature .content-wrapper {
     padding: 30px 0;
   }
-  .home--about div:nth-child(4) {
+  .landing--about div:nth-child(4) {
     margin-bottom: 30px;
   }
 }
 @media only screen and (max-width: 800px) {
-  .home section {
+  .landing section {
     width: 100%;
     padding: 80px 0;
   }
-  .home--hero .hero--image {
+  .landing--hero .hero--image {
     width: 80%;
     margin: 0 auto;
     margin-bottom: 15px;
     text-align: center;
   }
-  .home--hero .hero--image img {
+  .landing--hero .hero--image img {
     width: 80%;
   }
-  .home--hero .header {
+  .landing--hero .header {
     width: 100%;
   }
-  .home .float-wrapper {
+  .landing .float-wrapper {
     width: 100%;
     position: relative;
   }
-  .home--intro {
+  .landing--intro {
     width: 100%;
     padding-bottom: 312px;
-    background: #020201;
+    background: #0A0A0A;
   }
-  .home--intro .header {
+  .landing--intro .header {
     width: 100%;
   }
-  .home--intro .interactive-block {
+  .landing--intro .interactive-block {
     width: 100%;
     max-width: 650px;
     height: 400px;
     margin-top: 40px;
     border-radius: 25px;
   }
-  .home--intro .interactive-block img {
+  .landing--intro .interactive-block img {
     max-width: 400px;
   }
-  .home--intro .projectlogo-carousel {
+  .landing--intro .projectlogo-carousel {
     margin: 0 -15px;
     margin-top: 80px;
     margin-bottom: 30px;
@@ -587,13 +673,13 @@ footer .footer--column .column-links a {
     gap: 35px;
     overflow: hidden;
   }
-  .home--intro .projectlogo-carousel img {
+  .landing--intro .projectlogo-carousel img {
     height: 25px;
   }
-  .home section.home--about {
+  .landing section.landing--about {
     padding: 0px;
   }
-  .home--about {
+  .landing--about {
     width: 100%;
     height: 100%;
     border: none;
@@ -601,11 +687,11 @@ footer .footer--column .column-links a {
     background: #D0CECD;
     color: #140903;
   }
-  .home--about .container {
+  .landing--about .container {
     height: 100%;
     padding: 80px 20px;
   }
-  .home--about .feature {
+  .landing--about .feature {
     width: 100%;
     height: 100%;
     margin: 60px 0;
@@ -614,138 +700,138 @@ footer .footer--column .column-links a {
     justify-content: space-between;
     gap: 0;
   }
-  .home--about .feature .image-wrapper {
+  .landing--about .feature .image-wrapper {
     margin: 0 auto;
   }
-  .home--about .feature .image-wrapper img.feature-image {
+  .landing--about .feature .image-wrapper img.feature-image {
     width: 200px;
     height: 200px;
   }
-  .home--about .feature .content-wrapper {
+  .landing--about .feature .content-wrapper {
     width: 100%;
     margin: 0 auto;
     padding: 0;
   }
-  .home--about .feature.reverse {
+  .landing--about .feature.reverse {
     flex-direction: column;
   }
-  .home--about div:nth-child(4) {
+  .landing--about div:nth-child(4) {
     margin-bottom: 0;
   }
-  .home--about .button-wrapper .learn-more {
+  .landing--about .button-wrapper .learn-more {
     padding: 8px 35px;
     font-size: 18px;
   }
-  .home--projects .header {
+  .landing--projects .header {
     margin-bottom: 60px;
     padding: 0 20px;
   }
-  .home--projects .project-carousel .project-wrapper {
+  .landing--projects .project-carousel .project-wrapper {
     justify-content: start;
     gap: 15px;
   }
-  .home--projects .project-carousel .project-wrapper:first-child {
+  .landing--projects .project-carousel .project-wrapper:first-child {
     padding-left: 20px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card {
+  .landing--projects .project-carousel .project-wrapper .github-card {
     width: 100%;
     height: auto;
     padding-bottom: 9px;
     border-radius: 15px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+  .landing--projects .project-carousel .project-wrapper .github-card img.project-photo {
     width: 200px;
     height: auto;
     margin: 10px;
     border-radius: 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+  .landing--projects .project-carousel .project-wrapper .github-card .github-wrapper {
     margin: 0 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
+  .landing--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
     width: 20px;
     height: 20px;
   }
-  .home--projects .project-carousel .arrows-container {
+  .landing--projects .project-carousel .arrows-container {
     width: 62px;
     height: 150px;
     top: 40px;
   }
-  .home--projects .project-carousel .arrows-container img {
+  .landing--projects .project-carousel .arrows-container img {
     height: 150px;
   }
-  .home section.home--cta {
+  .landing section.landing--cta {
     padding: 0;
     padding-top: 60px;
   }
-  .home--cta .container {
+  .landing--cta .container {
     padding: 0 20px;
     flex-direction: column;
     justify-content: space-between;
     gap: 0;
     flex-wrap: nowrap;
   }
-  .home--cta .header {
+  .landing--cta .header {
     width: 100%;
   }
-  .home--cta .header h3 {
+  .landing--cta .header h3 {
     font-size: 28px;
   }
-  .home--cta .cta-input {
+  .landing--cta .cta-input {
     margin: auto 0;
     gap: 15px;
   }
-  .home--cta .cta-input input {
+  .landing--cta .cta-input input {
     width: 100%;
     height: 30px;
     padding: 0 25px;
     font-size: 16px;
   }
-  .home--cta .cta-input button.sign-up {
+  .landing--cta .cta-input button.sign-up {
     width: 36px;
     height: 36px;
   }
 }
 @media only screen and (max-width: 460px) {
-  .home section {
+  .landing section {
     width: 100%;
     padding: 80px 0;
   }
-  .home--hero .hero--image {
+  .landing--hero .hero--image {
     width: 100%;
     margin-bottom: 15px;
     text-align: center;
   }
-  .home--hero .hero--image img {
+  .landing--hero .hero--image img {
     width: 80%;
   }
-  .home--hero .header {
+  .landing--hero .header {
     max-width: 100%;
   }
-  .home .float-wrapper {
+  .landing .float-wrapper {
     width: 100%;
     position: relative;
   }
-  .home--intro {
+  .landing--intro {
     width: 100%;
     padding-bottom: 312px;
-    background: #020201;
+    background: #0A0A0A;
   }
-  .home--intro .header {
+  .landing--intro .header {
     width: 100%;
     max-width: 370px;
   }
-  .home--intro .interactive-block {
+  .landing--intro .interactive-block {
     width: 100%;
     max-width: 370px;
     height: 200px;
     margin-top: 40px;
     border-radius: 25px;
   }
-  .home--intro .interactive-block img {
+  .landing--intro .interactive-block img {
     max-width: 200px;
   }
-  .home--intro .projectlogo-carousel {
+  .landing--intro .projectlogo-carousel {
     margin: 0 -15px;
     margin-top: 80px;
     margin-bottom: 30px;
@@ -754,13 +840,13 @@ footer .footer--column .column-links a {
     gap: 35px;
     overflow: hidden;
   }
-  .home--intro .projectlogo-carousel img {
+  .landing--intro .projectlogo-carousel img {
     height: 25px;
   }
-  .home section.home--about {
+  .landing section.landing--about {
     padding: 0px;
   }
-  .home--about {
+  .landing--about {
     width: 100%;
     height: 100%;
     border: none;
@@ -768,11 +854,11 @@ footer .footer--column .column-links a {
     background: #D0CECD;
     color: #140903;
   }
-  .home--about .container {
+  .landing--about .container {
     height: 100%;
     padding: 80px 20px;
   }
-  .home--about .feature {
+  .landing--about .feature {
     width: 100%;
     height: 100%;
     margin: 60px 0;
@@ -781,84 +867,87 @@ footer .footer--column .column-links a {
     justify-content: space-between;
     gap: 0;
   }
-  .home--about .feature .image-wrapper {
+  .landing--about .feature .image-wrapper {
     margin: 0 auto;
   }
-  .home--about .feature .image-wrapper img.feature-image {
+  .landing--about .feature .image-wrapper img.feature-image {
     width: 200px;
     height: 200px;
   }
-  .home--about .feature .content-wrapper {
+  .landing--about .feature .content-wrapper {
     width: 100%;
     margin: 0 auto;
     padding: 0;
   }
-  .home--about .feature.reverse {
+  .landing--about .feature.reverse {
     flex-direction: column;
   }
-  .home--about div:nth-child(4) {
+  .landing--about div:nth-child(4) {
     margin-bottom: 0;
   }
-  .home--about .button-wrapper .learn-more {
+  .landing--about .button-wrapper .learn-more {
     padding: 8px 35px;
     font-size: 18px;
   }
-  .home--projects .header {
+  .landing--projects .header {
     margin-bottom: 60px;
     padding: 0 20px;
   }
-  .home--projects .project-carousel .project-wrapper {
+  .landing--projects .project-carousel .project-wrapper {
     justify-content: start;
     gap: 15px;
   }
-  .home--projects .project-carousel .project-wrapper:first-child {
+  .landing--projects .project-carousel .project-wrapper:first-child {
     padding-left: 20px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card {
+  .landing--projects .project-carousel .project-wrapper .github-card {
     width: 100%;
     height: auto;
     padding-bottom: 9px;
     border-radius: 15px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card img.project-photo {
+  .landing--projects .project-carousel .project-wrapper .github-card img.project-photo {
     width: 200px;
     height: auto;
     margin: 10px;
     border-radius: 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper {
+  .landing--projects .project-carousel .project-wrapper .github-card .github-wrapper {
     margin: 0 10px;
   }
-  .home--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
+  .landing--projects .project-carousel .project-wrapper .github-card .github-wrapper img.github-logo {
     width: 20px;
     height: 20px;
   }
-  .home--projects .project-carousel .arrows-container {
+  .landing--projects .project-carousel .project-wrapper:hover {
+    animation-play-state: paused;
+  }
+  .landing--projects .project-carousel .arrows-container {
     width: 62px;
     height: 150px;
     top: 40px;
   }
-  .home--projects .project-carousel .arrows-container img {
+  .landing--projects .project-carousel .arrows-container img {
     height: 150px;
   }
-  .home--cta {
+  .landing--cta {
     padding: 60px 0;
   }
-  .home--cta .container {
+  .landing--cta .container {
     padding: 0 20px;
     flex-direction: column;
     justify-content: space-between;
     gap: 0;
     flex-wrap: nowrap;
   }
-  .home--cta img {
+  .landing--cta img {
     width: 460px;
     margin-left: -30px;
   }
-  .home--cta .header {
+  .landing--cta .header {
     width: 100%;
   }
-  .home--cta .header h3 {
+  .landing--cta .header h3 {
     font-size: 28px;
   }
 }
@@ -957,10 +1046,10 @@ footer .footer--column .column-links a {
   box-sizing: border-box;
   color: #000000;
   display: none;
+  position: relative;
 }
 .guide--content.show-section {
   display: block;
-  position: relative;
 }
 .guide--content .slide-number {
   color: #D0CECD;
@@ -971,9 +1060,10 @@ footer .footer--column .column-links a {
   top: 24px;
   right: 28px;
 }
+
 body {
   margin: 0;
-  background: #020201;
+  background: #0A0A0A;
 }
 body::-webkit-scrollbar {
   display: none;
