@@ -1,6 +1,16 @@
 ﻿@import "../App.Variables.scss";
 
-@keyframes scroll {
+@keyframes scroll_Logos {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-100px * 14));
+    }
+}
+
+@keyframes scroll_Projects {
     0% {
         transform: translateX(0);
     }
@@ -10,13 +20,13 @@
     }
 }
 
-@keyframes scrollReverse {
+@keyframes scrollReverse_Projects {
     0% {
         transform: translateX(0);
     }
 
     100% {
-        transform: translateX(2641px);
+        transform: translateX(-2641px);
     }
 }
 
@@ -176,7 +186,7 @@
             width: 100%;
             display: flex;
             gap: 69px;
-            animation: scroll 40s linear infinite;
+            animation: scroll_Logos 40s linear infinite;
         }
 
         img {
@@ -289,14 +299,14 @@
                 display: flex;
                 justify-content: center;
                 gap: 24px;
-                animation: scroll 25s linear infinite;
+                animation: scroll_Projects 25s linear infinite;
 
                 &.backward {
-                    animation: scrollReverse 8s linear infinite;
+                    animation: scrollReverse_Projects 8s linear infinite;
                 }
 
                 &.forward {
-                    animation: scroll 8s linear infinite;
+                    animation: scroll_Projects 8s linear infinite;
                 }
 
                 .github-card {
