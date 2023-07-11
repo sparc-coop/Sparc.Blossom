@@ -58,7 +58,7 @@
                     <div class="content-wrapper">
                         <h4>Frontend</h4>
                         <p class="subtitle-1">
-                            Erat pellentesque adipiscing commodo elit. Facilisi nullam vehicula ipsum a. Sed nisi lacus sed viverra tellus in. 
+                            Erat pellentesque adipiscing commodo elit. Facilisi nullam vehicula ipsum a. Sed nisi lacus sed viverra tellus in.
                             Eget gravida cum sociis natoque penatibus. Imperdiet massa tincidunt nunc pulvinar sapien et ligula
                         </p>
                     </div>
@@ -96,7 +96,7 @@
                     <div class="content-wrapper">
                         <h4>Authentication</h4>
                         <p class="subtitle-1">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                             Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                         </p>
                     </div>
@@ -115,10 +115,10 @@
                     <p class="subtitle-1">Neque porro quisquam est qui dolorem ipsum quia dolor sit amet</p>
                 </div>
                 <div class="project-carousel" id="project-carousel">
-                    <div class="project-wrapper" id="project-wrapper">
-                        <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue"/>
+                    <div class="project-wrapper @ProjectWrapperAnimation" id="project-wrapper">
+                        <GithubCard Name="Citeblue" ProjectUrl="https://www.citeblue.com/" GithubUrl="https://github.com/sparc-coop/citeblue" />
                         <GithubCard Name="Sparc" ProjectUrl="https://www.sparc.coop/" GithubUrl="https://github.com/sparc-coop/sparc" />
-                        <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris"/>
+                        <GithubCard Name="Conseris" ProjectUrl="https://conseris.io/" GithubUrl="https://github.com/sparc-coop/conseris" />
                         <GithubCard Name="Law of 100" ProjectUrl="https://lawof100.co/" GithubUrl="https://github.com/sparc-coop/law-of-100" />
                         <GithubCard Name="Kodekit" ProjectUrl="https://app.kodekit.io/" GithubUrl="https://github.com/sparc-coop/kodekit" />
                         <GithubCard Name="Ibis" ProjectUrl="https://github.com/sparc-coop/ibis" GithubUrl="https://github.com/sparc-coop/ibis" />
@@ -129,10 +129,10 @@
                         <GithubCard Name="Kodekit" ProjectUrl="https://app.kodekit.io/" GithubUrl="https://github.com/sparc-coop/kodekit" />
                         <GithubCard Name="Ibis" ProjectUrl="https://github.com/sparc-coop/ibis" GithubUrl="https://github.com/sparc-coop/ibis" />
                     </div>
-                    <div class="arrows-container carousel-backward" id="carousel-backward">
+                    <div class="arrows-container carousel-backward" id="carousel-backward" @onmouseover=GoBackward @onmouseout=Stop>
                         <img src="/images/Double Arrow.png" />
                     </div>
-                    <div class="arrows-container carousel-forward" id="carousel-forward">
+                    <div class="arrows-container carousel-forward" id="carousel-forward" @onmouseover=GoForward @onmouseout=Stop>
                         <img src="/images/Double Arrow.png" />
                     </div>
                 </div>
@@ -140,7 +140,7 @@
         </section>
         <section class="landing--cta">
             <div class="container">
-                <img src="/images/landing-cta.png"/>
+                <img src="/images/landing-cta.png" />
                 <div class="header right">
                     <h3>Come and join us for the greatest marathon in the world</h3>
                     <a href="https://www.sparc.coop/" target="_blank" class="sign-up">Visit Sparc</a>
@@ -153,5 +153,8 @@
 
 
 @code {
-
+    string ProjectWrapperAnimation = "";
+    void GoBackward() => ProjectWrapperAnimation = "backward";
+    void GoForward() => ProjectWrapperAnimation = "forward";
+    void Stop() => ProjectWrapperAnimation = "";
 }

@@ -19,47 +19,5 @@
     </app>
 
     <script src="_framework/blazor.server.js"></script>
-
-    <script>
-        function nextSection(id, newId) {
-            if (id != null) {
-                var oldItem = document.getElementById(id);
-                oldItem.classList.remove("show-section");
-            }
-            
-            if(newId != null)
-            {
-                var element = document.getElementById(newId);
-                element.classList.add("show-section");
-            }
-        };
-        
-        function backSection(id, newId) {
-            if (id != null) {
-                var oldItem = document.getElementById(id);
-                oldItem.classList.remove("show-section");
-            }
-
-            if (newId != null) {
-                var element = document.getElementById(newId);
-                element.classList.add("show-section");
-            }
-        };
-    </script>
-
-    <script>
-        //document.getElementById("project-wrapper").onmouseover = function() {
-        //    document.getElementByClassName("arrows-container").style.opacity = "1";
-        //}
-
-        document.getElementById("carousel-backward").onmouseover = function() {
-            document.getElementById("project-wrapper").style.animation = "scrollReverse 10s linear infinite !important";
-        }
-
-        document.getElementById("carousel-forward").onmouseover = function() {
-            document.getElementById("project-wrapper").style.animation = "scroll 10s linear infinite !important";
-        }
-    </script>
-
 </body>
 </html>

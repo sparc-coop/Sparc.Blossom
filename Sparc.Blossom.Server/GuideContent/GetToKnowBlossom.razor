@@ -1,6 +1,6 @@
 ﻿<div class="guide--wrapper">
     <img @onclick="Back" src="/images/Arrow_left.png" class="arrow"/>
-    <div class="guide--content show-section" id="sub-section-1">
+    <div class="guide--content @ShowSection(1)">
         <div class="slide-number">1/5</div>
         <h4>What is blossom?</h4>
         <p>
@@ -22,7 +22,7 @@
             Everything else should be secondary.
         </p>
     </div>
-    <div class="guide--content" id="sub-section-2">
+    <div class="guide--content @ShowSection(2)">
         <div class="slide-number">2/5</div>
         <h4>How is a Blossom solution structured?</h4>
         <p>
@@ -52,20 +52,20 @@
 @code {
     public int SectionNumber = 1;
 
-    protected async Task Back()
+    string ShowSection(int sectionNumber) => SectionNumber == sectionNumber ? "show-section" : "";
+    
+    protected void Back()
     {
         if (SectionNumber > 1)
         {
             int currentSection = SectionNumber;
             SectionNumber--;
-            await JSRuntime.InvokeVoidAsync("backSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
         }
     }
     
-    protected async Task Next()
+    protected void Next()
     {
         int currentSection = SectionNumber;
         SectionNumber++;
-        await JSRuntime.InvokeVoidAsync("nextSection", $"sub-section-{currentSection}", $"sub-section-{SectionNumber}");
     }
 }
