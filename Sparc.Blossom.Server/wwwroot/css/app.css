@@ -269,7 +269,7 @@ footer .footer--column .column-links a {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-1400px);
+    transform: translateX(-2641px);
   }
 }
 @keyframes scrollReverse {
@@ -277,7 +277,7 @@ footer .footer--column .column-links a {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(1400px);
+    transform: translateX(2641px);
   }
 }
 .landing {
@@ -510,13 +510,13 @@ footer .footer--column .column-links a {
   display: flex;
   justify-content: center;
   gap: 24px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 25s linear infinite;
 }
 .landing--projects .project-carousel .project-wrapper.backward {
-  animation: scrollReverse 10s linear infinite;
+  animation: scrollReverse 8s linear infinite;
 }
 .landing--projects .project-carousel .project-wrapper.forward {
-  animation: scroll 10s linear infinite;
+  animation: scroll 8s linear infinite;
 }
 .landing--projects .project-carousel .project-wrapper .github-card {
   width: 413px;
