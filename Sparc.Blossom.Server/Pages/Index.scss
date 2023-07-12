@@ -72,7 +72,8 @@
             }
 
             p {
-                margin: 0;
+                width: 703px;
+                margin: 0 auto;
                 font-family: 'NimbusSansExtd';
                 font-weight: 400;
                 font-size: 20px;
@@ -125,8 +126,6 @@
 
         .interactive-block {
             width: 100%;
-            max-width: 1054px;
-            height: 500px;
             margin: 0 auto;
             margin-top: 40px;
             border: solid 1px $grey-100;
@@ -147,8 +146,9 @@
                 margin-bottom: 77px;
 
                 img {
-                    width: 1440px;
-                    height: 485px;
+                    width: 95%;
+                    max-width: 1437px;
+                    height: auto;
                     margin: 0 auto;
                 }
             }
@@ -394,7 +394,7 @@
             padding: 0 80px;
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 54px;
             flex-wrap: wrap;
         }
 
