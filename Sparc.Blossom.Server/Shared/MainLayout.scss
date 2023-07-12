@@ -20,4 +20,13 @@ main {
             grid-column: 1/11;
         }
     }
+
+    @media screen and (max-width: 600px) {
+        grid-template-columns: 1fr repeat(4, 71px) 1fr;
+        column-gap: 15px;
+
+        .landing {
+            grid-column: 1/7;
+        }
+    }
 }

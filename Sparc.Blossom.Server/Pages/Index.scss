@@ -10,6 +10,16 @@
     }
 }
 
+@keyframes scroll_Logos__tablet {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-70px * 14));
+    }
+}
+
 @keyframes scroll_Projects {
     0% {
         transform: translateX(0);
@@ -31,7 +41,6 @@
 }
 
 .landing {
-    margin-bottom: 64px;
     background: $background;
     color: $grey-100;
     font-family: 'NimbusSansExtd', sans-serif;
@@ -42,14 +51,14 @@
         top: 50%;
         left: 50%;
          transform: translate(-50%, -50%);*/
-        margin-top: 124px;
+        margin-top: 114px;
         position: relative;
         z-index: 1;
 
         .hero--image {
-            width: 25%;
+            width: 450px;
             margin: 0 auto;
-            margin-bottom: 35px;
+            margin-bottom: 20px;
             text-align: center;
 
             img {
@@ -57,8 +66,8 @@
             }
         }
 
-        .header {
-            width: 809px;
+        header {
+            width: 800px;
             margin: 0 auto;
             text-align: center;
             font-family: 'NimbusSansExtd', sans-serif;
@@ -99,11 +108,7 @@
         margin-bottom: 184px;
         background: $background;
 
-        .container {
-            padding: 0 15px;
-        }
-
-        .header {
+        header {
             width: 1070px;
             margin: 0 auto;
             text-align: center;
@@ -146,8 +151,7 @@
                 margin-bottom: 77px;
 
                 img {
-                    width: 95%;
-                    max-width: 1437px;
+                    width: 1437px;
                     height: auto;
                     margin: 0 auto;
                 }
@@ -198,14 +202,13 @@
     &--about {
         width: 100%;
         height: 100%;
-        padding: 120px 0;
         border: none;
         border-radius: 50px;
         background: $grey-200;
         color: $grey-900;
 
         .container {
-            padding: 0 80px;
+            padding: 120px 80px;
         }
 
         .feature {
@@ -229,7 +232,6 @@
             .content-wrapper {
                 width: 520px;
                 margin: auto 0;
-                padding: 77px 0;
                 text-align: center;
 
                 h4 {
@@ -276,7 +278,7 @@
         background: $background;
         position: relative;
 
-        .header {
+        header {
             margin-bottom: 60px;
 
             h3, p {
@@ -290,7 +292,6 @@
 
         .project-carousel {
             width: 100%;
-            padding: 20px 0;
             position: relative;
             overflow: hidden;
 
@@ -398,7 +399,7 @@
             flex-wrap: wrap;
         }
 
-        .header {
+        header {
             max-width: 630px;
 
             h3 {
@@ -423,54 +424,98 @@
         }
     }
 
-    @media only screen and (max-width: 1100px) {
-        section.landing--about {
-            padding-top: 80px;
+    @media only screen and (max-width: 1437px) {
+        &--intro {
+            header {
+                width: 800px;
+            }
+
+            .interactive-block {
+                &--placeholder {
+                    img {
+                        width: 1000px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        &--hero {
+            .hero--image {
+                img {
+                    width: 350px;
+                }
+            }
+        }
+
+        &--intro {
+            header {
+                width: 600px;
+            }
+
+            .interactive-block {
+                &--placeholder {
+                    img {
+                        width: 800px;
+                    }
+                }
+            }
         }
 
         &--about {
+            .container {
+                padding: 80px 40px 100px 40px;
+            }
+
             .feature {
-                margin: 60px 0;
+                height: 400px;
+                margin: 40px 0;
                 gap: 60px;
 
                 .image-wrapper {
                     img.feature-image {
-                        width: 310px;
-                        height: 310px;
+                        width: 240px;
+                        height: 240px;
                     }
                 }
 
                 .content-wrapper {
-                    padding: 30px 0;
+                    width: 400px;
                 }
             }
 
             div:nth-child(4) {
-                margin-bottom: 30px;
+                margin-bottom: 80px;
+            }
+        }
+
+        &--cta {
+            header {
+                h3 {
+                    font-size: 33px;
+                }
             }
         }
     }
 
     @media only screen and (max-width: 800px) {
-        section {
-            width: 100%;
-            padding: 80px 0;
-        }
-
         &--hero {
             .hero--image {
-                width: 80%;
-                margin: 0 auto;
-                margin-bottom: 15px;
-                text-align: center;
-
                 img {
-                    width: 80%;
                 }
             }
 
-            .header {
-                width: 100%;
+            header {
+                width: 600px;
+
+                h1 {
+                    font-size: 48px;
+                }
+
+                p {
+                    width: 500px;
+                }
             }
         }
 
@@ -479,63 +524,51 @@
             position: relative;
         }
 
-        &--intro {
-            width: 100%;
-            padding-bottom: 312px;
-            background: $background;
+        section {
+            margin: 150px 0;
+        }
 
-            .header {
-                width: 100%;
+        &--intro {
+            margin-top: 150px;
+            margin-bottom: 150px;
+
+            header {
+                width: 450px;
+
+                p {
+                    font-size: 20px;
+                }
             }
 
             .interactive-block {
-                width: 100%;
-                max-width: 650px;
-                height: 400px;
-                margin-top: 40px;
-                border-radius: 25px;
-
-                img {
-                    max-width: 400px;
+                &--placeholder {
+                    img {
+                        width: 600px;
+                    }
                 }
             }
 
             .projectlogo-carousel {
-                margin: 0 -15px;
-                margin-top: 80px;
-                margin-bottom: 30px;
-                display: flex;
-                justify-content: space-between;
-                gap: 35px;
-                overflow: hidden;
+                .project-logos {
+                    gap: 40px;
+                    animation: scroll_Logos__tablet 30s linear infinite;
 
-                img {
-                    height: 25px;
+                    img {
+                        height: 25px;
+                    }
                 }
             }
         }
 
-        section.landing--about {
-            padding: 0px;
-        }
-
         &--about {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 50px;
-            background: $grey-200;
-            color: $grey-900;
-
             .container {
-                height: 100%;
-                padding: 80px 20px;
+                padding: 100px 20px 80px 20px;
             }
 
             .feature {
-                width: 100%;
+                width: 500px;
                 height: 100%;
-                margin: 60px 0;
+                margin: 60px auto;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-between;
@@ -562,7 +595,7 @@
             }
 
             div:nth-child(4) {
-                margin-bottom: 0;
+                margin-bottom: 80px;
             }
 
             .button-wrapper {
@@ -574,7 +607,7 @@
         }
 
         &--projects {
-            .header {
+            header {
                 margin-bottom: 60px;
                 padding: 0 20px;
             }
@@ -625,22 +658,24 @@
             }
         }
 
-        section.landing--cta {
-            padding: 0;
-            padding-top: 60px;
-        }
-
         &--cta {
+            padding: 0;
             .container {
-                padding: 0 20px;
+                padding: 0;
                 flex-direction: column;
                 justify-content: space-between;
-                gap: 0;
+                gap: 20px;
                 flex-wrap: nowrap;
             }
 
-            .header {
-                width: 100%;
+            img {
+                width: 500px;
+                margin: 0 auto;
+            }
+
+            header {
+                width: 500px;
+                margin: 0 auto;
 
                 h3 {
                     font-size: 28px;
@@ -648,17 +683,7 @@
             }
 
             .cta-input {
-                margin: auto 0;
-                gap: 15px;
-
-                input {
-                    width: 100%;
-                    height: 30px;
-                    padding: 0 25px;
-                    font-size: 16px;
-                }
-
-                button.sign-up {
+                .sign-up {
                     width: 36px;
                     height: 36px;
                 }
@@ -666,52 +691,42 @@
         }
     }
 
-    @media only screen and (max-width: 460px) {
-        section {
-            width: 100%;
-            padding: 80px 0;
-        }
+    @media screen and (max-width: 600px) {
 
+    }
+
+    @media screen and (max-width: 460px) {
         &--hero {
+            margin-top: 80px !important;
+
             .hero--image {
-                width: 100%;
                 margin-bottom: 15px;
                 text-align: center;
 
                 img {
-                    width: 80%;
+                    width: 300px;
                 }
             }
 
-            .header {
-                max-width: 100%;
-            }
-        }
+            header {
+                width: 300px;
 
-        .float-wrapper {
-            width: 100%;
-            position: relative;
+                p {
+                    width: 300px;
+                }
+            }
         }
 
         &--intro {
-            width: 100%;
-            padding-bottom: 312px;
-            background: $background;
-
-            .header {
-                width: 100%;
-                max-width: 370px;
+            header {
+                width: 300px;
             }
 
             .interactive-block {
-                width: 100%;
-                max-width: 370px;
-                height: 200px;
-                margin-top: 40px;
-                border-radius: 25px;
-
-                img {
-                    max-width: 200px;
+                &--placeholder {
+                    img {
+                        width: 200px;
+                    }
                 }
             }
 
@@ -730,31 +745,17 @@
             }
         }
 
-        section.landing--about {
-            padding: 0px;
-        }
-
         &--about {
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 50px;
             background: $grey-200;
             color: $grey-900;
 
             .container {
                 height: 100%;
-                padding: 80px 20px;
+                padding: 80px 0px;
             }
 
             .feature {
-                width: 100%;
-                height: 100%;
                 margin: 60px 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 0;
 
                 .image-wrapper {
                     margin: 0 auto;
@@ -766,7 +767,7 @@
                 }
 
                 .content-wrapper {
-                    width: 100%;
+                    width: 300px;
                     margin: 0 auto;
                     padding: 0;
                 }
@@ -777,7 +778,7 @@
             }
 
             div:nth-child(4) {
-                margin-bottom: 0;
+                margin-bottom: 60px;
             }
 
             .button-wrapper {
@@ -789,7 +790,7 @@
         }
 
         &--projects {
-            .header {
+            header {
                 margin-bottom: 60px;
                 padding: 0 20px;
             }
@@ -845,27 +846,22 @@
         }
 
         &--cta {
-            padding: 60px 0;
-
             .container {
-                padding: 0 20px;
-                flex-direction: column;
-                justify-content: space-between;
-                gap: 0;
+                gap: 20px;
                 flex-wrap: nowrap;
             }
 
             img {
-                width: 460px;
-                margin-left: -30px;
+                width: 300px;
             }
 
-            .header {
-                width: 100%;
+            header {
+                width: 300px;
+            }
 
-                h3 {
-                    font-size: 28px;
-                }
+            .sign-up {
+                padding: 12px 36px;
+                font-size: 20px;
             }
         }
     }

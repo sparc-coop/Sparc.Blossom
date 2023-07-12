@@ -151,6 +151,15 @@ main .landing {
     grid-column: 1/11;
   }
 }
+@media screen and (max-width: 600px) {
+  main {
+    grid-template-columns: 1fr repeat(4, 71px) 1fr;
+    column-gap: 15px;
+  }
+  main .landing {
+    grid-column: 1/7;
+  }
+}
 
 .nav--filter {
   width: 100vw;
@@ -161,6 +170,11 @@ main .landing {
   backdrop-filter: blur(10px) brightness(120%);
   opacity: 1;
   z-index: 90;
+}
+@media screen and (max-width: 809px) {
+  .nav--filter {
+    height: 53px;
+  }
 }
 
 nav {
@@ -207,7 +221,7 @@ nav .links--wrapper .explore-blossom {
   font-size: 16px;
   text-decoration: none;
 }
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 809px) {
   nav {
     padding: 9px 0;
     gap: 20px;
@@ -272,6 +286,14 @@ footer .footer--column .column-links a {
     transform: translateX(-1400px);
   }
 }
+@keyframes scroll_Logos__tablet {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-980px);
+  }
+}
 @keyframes scroll_Projects {
   0% {
     transform: translateX(0);
@@ -289,7 +311,6 @@ footer .footer--column .column-links a {
   }
 }
 .landing {
-  margin-bottom: 64px;
   background: #0A0A0A;
   color: #F6F4F3;
   font-family: "NimbusSansExtd", sans-serif;
@@ -300,33 +321,33 @@ footer .footer--column .column-links a {
   top: 50%;
   left: 50%;
    transform: translate(-50%, -50%);*/
-  margin-top: 124px;
+  margin-top: 114px;
   position: relative;
   z-index: 1;
 }
 .landing--hero .hero--image {
-  width: 25%;
+  width: 450px;
   margin: 0 auto;
-  margin-bottom: 35px;
+  margin-bottom: 20px;
   text-align: center;
 }
 .landing--hero .hero--image img {
   width: 100%;
 }
-.landing--hero .header {
-  width: 809px;
+.landing--hero header {
+  width: 800px;
   margin: 0 auto;
   text-align: center;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-.landing--hero .header h1 {
+.landing--hero header h1 {
   margin: 0;
   margin-bottom: 15px;
   font-size: 64px;
   line-height: 95%;
 }
-.landing--hero .header p {
+.landing--hero header p {
   width: 703px;
   margin: 0 auto;
   font-family: "NimbusSansExtd";
@@ -349,24 +370,21 @@ footer .footer--column .column-links a {
   margin-bottom: 184px;
   background: #0A0A0A;
 }
-.landing--intro .container {
-  padding: 0 15px;
-}
-.landing--intro .header {
+.landing--intro header {
   width: 1070px;
   margin: 0 auto;
   text-align: center;
   font-family: "NimbusSansExtd", sans-serif;
   font-weight: 400;
 }
-.landing--intro .header h3, .landing--intro .header p {
+.landing--intro header h3, .landing--intro header p {
   margin: 0;
 }
-.landing--intro .header h3 {
+.landing--intro header h3 {
   margin-bottom: 8px;
   font-size: 33px;
 }
-.landing--intro .header p {
+.landing--intro header p {
   font-size: 26px;
 }
 .landing--intro .interactive-block {
@@ -390,8 +408,7 @@ footer .footer--column .column-links a {
   margin-bottom: 77px;
 }
 .landing--intro .interactive-block--placeholder img {
-  width: 95%;
-  max-width: 1437px;
+  width: 1437px;
   height: auto;
   margin: 0 auto;
 }
@@ -432,14 +449,13 @@ footer .footer--column .column-links a {
 .landing--about {
   width: 100%;
   height: 100%;
-  padding: 120px 0;
   border: none;
   border-radius: 50px;
   background: #D0CECD;
   color: #140903;
 }
 .landing--about .container {
-  padding: 0 80px;
+  padding: 120px 80px;
 }
 .landing--about .feature {
   width: 100%;
@@ -460,7 +476,6 @@ footer .footer--column .column-links a {
 .landing--about .feature .content-wrapper {
   width: 520px;
   margin: auto 0;
-  padding: 77px 0;
   text-align: center;
 }
 .landing--about .feature .content-wrapper h4 {
@@ -498,18 +513,17 @@ footer .footer--column .column-links a {
   background: #0A0A0A;
   position: relative;
 }
-.landing--projects .header {
+.landing--projects header {
   margin-bottom: 60px;
 }
-.landing--projects .header h3, .landing--projects .header p {
+.landing--projects header h3, .landing--projects header p {
   margin: 0;
 }
-.landing--projects .header h3 {
+.landing--projects header h3 {
   margin-bottom: 8px;
 }
 .landing--projects .project-carousel {
   width: 100%;
-  padding: 20px 0;
   position: relative;
   overflow: hidden;
 }
@@ -601,10 +615,10 @@ footer .footer--column .column-links a {
   gap: 54px;
   flex-wrap: wrap;
 }
-.landing--cta .header {
+.landing--cta header {
   max-width: 630px;
 }
-.landing--cta .header h3 {
+.landing--cta header h3 {
   font-size: 52px;
   margin: 0 0 40px 0;
 }
@@ -621,95 +635,90 @@ footer .footer--column .column-links a {
   font-size: 26px;
   text-decoration: none;
 }
-@media only screen and (max-width: 1100px) {
-  .landing section.landing--about {
-    padding-top: 80px;
+@media only screen and (max-width: 1437px) {
+  .landing--intro header {
+    width: 800px;
+  }
+  .landing--intro .interactive-block--placeholder img {
+    width: 1000px;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  .landing--hero .hero--image img {
+    width: 350px;
+  }
+  .landing--intro header {
+    width: 600px;
+  }
+  .landing--intro .interactive-block--placeholder img {
+    width: 800px;
+  }
+  .landing--about .container {
+    padding: 80px 40px 100px 40px;
   }
   .landing--about .feature {
-    margin: 60px 0;
+    height: 400px;
+    margin: 40px 0;
     gap: 60px;
   }
   .landing--about .feature .image-wrapper img.feature-image {
-    width: 310px;
-    height: 310px;
+    width: 240px;
+    height: 240px;
   }
   .landing--about .feature .content-wrapper {
-    padding: 30px 0;
+    width: 400px;
   }
   .landing--about div:nth-child(4) {
-    margin-bottom: 30px;
+    margin-bottom: 80px;
+  }
+  .landing--cta header h3 {
+    font-size: 33px;
   }
 }
 @media only screen and (max-width: 800px) {
-  .landing section {
-    width: 100%;
-    padding: 80px 0;
+  .landing--hero header {
+    width: 600px;
   }
-  .landing--hero .hero--image {
-    width: 80%;
-    margin: 0 auto;
-    margin-bottom: 15px;
-    text-align: center;
+  .landing--hero header h1 {
+    font-size: 48px;
   }
-  .landing--hero .hero--image img {
-    width: 80%;
-  }
-  .landing--hero .header {
-    width: 100%;
+  .landing--hero header p {
+    width: 500px;
   }
   .landing .float-wrapper {
     width: 100%;
     position: relative;
   }
+  .landing section {
+    margin: 150px 0;
+  }
   .landing--intro {
-    width: 100%;
-    padding-bottom: 312px;
-    background: #0A0A0A;
+    margin-top: 150px;
+    margin-bottom: 150px;
   }
-  .landing--intro .header {
-    width: 100%;
+  .landing--intro header {
+    width: 450px;
   }
-  .landing--intro .interactive-block {
-    width: 100%;
-    max-width: 650px;
-    height: 400px;
-    margin-top: 40px;
-    border-radius: 25px;
+  .landing--intro header p {
+    font-size: 20px;
   }
-  .landing--intro .interactive-block img {
-    max-width: 400px;
+  .landing--intro .interactive-block--placeholder img {
+    width: 600px;
   }
-  .landing--intro .projectlogo-carousel {
-    margin: 0 -15px;
-    margin-top: 80px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: space-between;
-    gap: 35px;
-    overflow: hidden;
+  .landing--intro .projectlogo-carousel .project-logos {
+    gap: 40px;
+    animation: scroll_Logos__tablet 30s linear infinite;
   }
-  .landing--intro .projectlogo-carousel img {
+  .landing--intro .projectlogo-carousel .project-logos img {
     height: 25px;
   }
-  .landing section.landing--about {
-    padding: 0px;
-  }
-  .landing--about {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 50px;
-    background: #D0CECD;
-    color: #140903;
-  }
   .landing--about .container {
-    height: 100%;
-    padding: 80px 20px;
+    padding: 100px 20px 80px 20px;
   }
   .landing--about .feature {
-    width: 100%;
+    width: 500px;
     height: 100%;
-    margin: 60px 0;
+    margin: 60px auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -731,13 +740,13 @@ footer .footer--column .column-links a {
     flex-direction: column;
   }
   .landing--about div:nth-child(4) {
-    margin-bottom: 0;
+    margin-bottom: 80px;
   }
   .landing--about .button-wrapper .learn-more {
     padding: 8px 35px;
     font-size: 18px;
   }
-  .landing--projects .header {
+  .landing--projects header {
     margin-bottom: 60px;
     padding: 0 20px;
   }
@@ -775,76 +784,54 @@ footer .footer--column .column-links a {
   .landing--projects .project-carousel .arrows-container img {
     height: 150px;
   }
-  .landing section.landing--cta {
+  .landing--cta {
     padding: 0;
-    padding-top: 60px;
   }
   .landing--cta .container {
-    padding: 0 20px;
+    padding: 0;
     flex-direction: column;
     justify-content: space-between;
-    gap: 0;
+    gap: 20px;
     flex-wrap: nowrap;
   }
-  .landing--cta .header {
-    width: 100%;
+  .landing--cta img {
+    width: 500px;
+    margin: 0 auto;
   }
-  .landing--cta .header h3 {
+  .landing--cta header {
+    width: 500px;
+    margin: 0 auto;
+  }
+  .landing--cta header h3 {
     font-size: 28px;
   }
-  .landing--cta .cta-input {
-    margin: auto 0;
-    gap: 15px;
-  }
-  .landing--cta .cta-input input {
-    width: 100%;
-    height: 30px;
-    padding: 0 25px;
-    font-size: 16px;
-  }
-  .landing--cta .cta-input button.sign-up {
+  .landing--cta .cta-input .sign-up {
     width: 36px;
     height: 36px;
   }
 }
-@media only screen and (max-width: 460px) {
-  .landing section {
-    width: 100%;
-    padding: 80px 0;
+@media screen and (max-width: 460px) {
+  .landing--hero {
+    margin-top: 80px !important;
   }
   .landing--hero .hero--image {
-    width: 100%;
     margin-bottom: 15px;
     text-align: center;
   }
   .landing--hero .hero--image img {
-    width: 80%;
+    width: 300px;
   }
-  .landing--hero .header {
-    max-width: 100%;
+  .landing--hero header {
+    width: 300px;
   }
-  .landing .float-wrapper {
-    width: 100%;
-    position: relative;
+  .landing--hero header p {
+    width: 300px;
   }
-  .landing--intro {
-    width: 100%;
-    padding-bottom: 312px;
-    background: #0A0A0A;
+  .landing--intro header {
+    width: 300px;
   }
-  .landing--intro .header {
-    width: 100%;
-    max-width: 370px;
-  }
-  .landing--intro .interactive-block {
-    width: 100%;
-    max-width: 370px;
-    height: 200px;
-    margin-top: 40px;
-    border-radius: 25px;
-  }
-  .landing--intro .interactive-block img {
-    max-width: 200px;
+  .landing--intro .interactive-block--placeholder img {
+    width: 200px;
   }
   .landing--intro .projectlogo-carousel {
     margin: 0 -15px;
@@ -858,29 +845,16 @@ footer .footer--column .column-links a {
   .landing--intro .projectlogo-carousel img {
     height: 25px;
   }
-  .landing section.landing--about {
-    padding: 0px;
-  }
   .landing--about {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 50px;
     background: #D0CECD;
     color: #140903;
   }
   .landing--about .container {
     height: 100%;
-    padding: 80px 20px;
+    padding: 80px 0px;
   }
   .landing--about .feature {
-    width: 100%;
-    height: 100%;
     margin: 60px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0;
   }
   .landing--about .feature .image-wrapper {
     margin: 0 auto;
@@ -890,7 +864,7 @@ footer .footer--column .column-links a {
     height: 200px;
   }
   .landing--about .feature .content-wrapper {
-    width: 100%;
+    width: 300px;
     margin: 0 auto;
     padding: 0;
   }
@@ -898,13 +872,13 @@ footer .footer--column .column-links a {
     flex-direction: column;
   }
   .landing--about div:nth-child(4) {
-    margin-bottom: 0;
+    margin-bottom: 60px;
   }
   .landing--about .button-wrapper .learn-more {
     padding: 8px 35px;
     font-size: 18px;
   }
-  .landing--projects .header {
+  .landing--projects header {
     margin-bottom: 60px;
     padding: 0 20px;
   }
@@ -945,25 +919,19 @@ footer .footer--column .column-links a {
   .landing--projects .project-carousel .arrows-container img {
     height: 150px;
   }
-  .landing--cta {
-    padding: 60px 0;
-  }
   .landing--cta .container {
-    padding: 0 20px;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 0;
+    gap: 20px;
     flex-wrap: nowrap;
   }
   .landing--cta img {
-    width: 460px;
-    margin-left: -30px;
+    width: 300px;
   }
-  .landing--cta .header {
-    width: 100%;
+  .landing--cta header {
+    width: 300px;
   }
-  .landing--cta .header h3 {
-    font-size: 28px;
+  .landing--cta .sign-up {
+    padding: 12px 36px;
+    font-size: 20px;
   }
 }
 
