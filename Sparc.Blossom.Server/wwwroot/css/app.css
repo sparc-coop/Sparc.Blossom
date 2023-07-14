@@ -236,7 +236,7 @@ nav .links--wrapper .explore-blossom {
   }
   nav .links--wrapper .explore-blossom {
     margin-right: 20px;
-    padding: 2px 18px;
+    padding: 4px 18px;
     font-size: 13px;
     flex-wrap: wrap;
   }
@@ -805,7 +805,77 @@ footer .footer--column .column-links a {
   .landing--cta header h3 {
     font-size: 28px;
   }
+  .landing--cta .sign-up {
+    padding: 12px 48px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .landing--hero header {
+    width: 460px;
+  }
+  .landing--hero header h1 {
+    font-size: 48px;
+  }
+  .landing--hero header p {
+    width: 100%;
+  }
+  .landing .float-wrapper {
+    width: 100%;
+    position: relative;
+  }
+  .landing section {
+    margin: 150px 0;
+  }
+  .landing--intro {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+  .landing--intro header {
+    width: 460px;
+  }
+  .landing--intro header p {
+    font-size: 20px;
+  }
+  .landing--intro .interactive-block--placeholder img {
+    width: 600px;
+  }
+  .landing--intro .projectlogo-carousel .project-logos {
+    gap: 40px;
+    animation: scroll_Logos__tablet 30s linear infinite;
+  }
+  .landing--intro .projectlogo-carousel .project-logos img {
+    height: 25px;
+  }
+  .landing--about .container {
+    padding: 100px 20px 80px 20px;
+  }
+  .landing--about .feature {
+    width: 400px;
+  }
+  .landing--about .feature .image-wrapper img.feature-image {
+    width: 175px;
+    height: 175px;
+  }
+  .landing--projects header {
+    width: 460px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    padding: 0;
+  }
+  .landing--cta img {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .landing--cta header {
+    width: 400px;
+    margin: 0 auto;
+  }
+  .landing--cta header h3 {
+    font-size: 28px;
+  }
   .landing--cta .cta-input .sign-up {
+    font-size: 20px;
     width: 36px;
     height: 36px;
   }
@@ -824,11 +894,17 @@ footer .footer--column .column-links a {
   .landing--hero header {
     width: 300px;
   }
+  .landing--hero header h1 {
+    font-size: 42px;
+  }
   .landing--hero header p {
-    width: 300px;
+    font-size: 18px;
   }
   .landing--intro header {
     width: 300px;
+  }
+  .landing--intro header p {
+    font-size: 18px;
   }
   .landing--intro .interactive-block--placeholder img {
     width: 200px;

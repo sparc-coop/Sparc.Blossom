@@ -501,11 +501,6 @@
 
     @media only screen and (max-width: 800px) {
         &--hero {
-            .hero--image {
-                img {
-                }
-            }
-
             header {
                 width: 600px;
 
@@ -660,6 +655,7 @@
 
         &--cta {
             padding: 0;
+
             .container {
                 padding: 0;
                 flex-direction: column;
@@ -682,17 +678,118 @@
                 }
             }
 
-            .cta-input {
-                .sign-up {
-                    width: 36px;
-                    height: 36px;
-                }
+            .sign-up {
+                padding: 12px 48px;
+                font-size: 20px;
             }
         }
     }
 
     @media screen and (max-width: 600px) {
+        &--hero {
+            header {
+                width: 460px;
 
+                h1 {
+                    font-size: 48px;
+                }
+
+                p {
+                    width: 100%;
+                }
+            }
+        }
+
+        .float-wrapper {
+            width: 100%;
+            position: relative;
+        }
+
+        section {
+            margin: 150px 0;
+        }
+
+        &--intro {
+            margin-top: 150px;
+            margin-bottom: 150px;
+
+            header {
+                width: 460px;
+
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            .interactive-block {
+                &--placeholder {
+                    img {
+                        width: 600px;
+                    }
+                }
+            }
+
+            .projectlogo-carousel {
+                .project-logos {
+                    gap: 40px;
+                    animation: scroll_Logos__tablet 30s linear infinite;
+
+                    img {
+                        height: 25px;
+                    }
+                }
+            }
+        }
+
+        &--about {
+            .container {
+                padding: 100px 20px 80px 20px;
+            }
+
+            .feature {
+                width: 400px;
+
+                .image-wrapper {
+                    img.feature-image {
+                        width: 175px;
+                        height: 175px;
+                    }
+                }
+            }
+        }
+
+        &--projects {
+            header {
+                width: 460px;
+                margin: 0 auto;
+                margin-bottom: 60px;
+                padding: 0;
+            }
+        }
+
+        &--cta {
+            img {
+                width: 400px;
+                margin: 0 auto;
+            }
+
+            header {
+                width: 400px;
+                margin: 0 auto;
+
+                h3 {
+                    font-size: 28px;
+                }
+            }
+
+            .cta-input {
+                .sign-up {
+                    font-size: 20px;
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+        }
     }
 
     @media screen and (max-width: 460px) {
@@ -711,8 +808,12 @@
             header {
                 width: 300px;
 
+                h1 {
+                    font-size: 42px;
+                }
+
                 p {
-                    width: 300px;
+                    font-size: 18px;
                 }
             }
         }
@@ -720,6 +821,10 @@
         &--intro {
             header {
                 width: 300px;
+
+                p {
+                    font-size: 18px;
+                }
             }
 
             .interactive-block {
