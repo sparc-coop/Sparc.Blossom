@@ -686,7 +686,13 @@
     }
 
     @media screen and (max-width: 600px) {
+        section {
+            margin: 150px 0;
+        }
+
         &--hero {
+            margin-top: 100px !important;
+
             header {
                 width: 460px;
 
@@ -705,14 +711,7 @@
             position: relative;
         }
 
-        section {
-            margin: 150px 0;
-        }
-
         &--intro {
-            margin-top: 150px;
-            margin-bottom: 150px;
-
             header {
                 width: 460px;
 
@@ -797,19 +796,18 @@
             margin-top: 80px !important;
 
             .hero--image {
-                margin-bottom: 15px;
-                text-align: center;
+                width: 275px;
 
                 img {
-                    width: 300px;
+                    width: 275px;
                 }
             }
 
             header {
-                width: 300px;
+                width: 275px;
 
                 h1 {
-                    font-size: 42px;
+                    font-size: 39px;
                 }
 
                 p {
@@ -820,7 +818,7 @@
 
         &--intro {
             header {
-                width: 300px;
+                width: 280px;
 
                 p {
                     font-size: 18px;
@@ -830,143 +828,61 @@
             .interactive-block {
                 &--placeholder {
                     img {
-                        width: 200px;
+                        width: 300px;
                     }
                 }
             }
 
             .projectlogo-carousel {
-                margin: 0 -15px;
-                margin-top: 80px;
-                margin-bottom: 30px;
-                display: flex;
-                justify-content: space-between;
-                gap: 35px;
-                overflow: hidden;
+                .project-logos {
+                    gap: 40px;
+                    animation: scroll_Logos__tablet 30s linear infinite;
 
-                img {
-                    height: 25px;
+                    img {
+                        height: 25px;
+                    }
                 }
             }
         }
 
         &--about {
-            background: $grey-200;
-            color: $grey-900;
-
             .container {
-                height: 100%;
-                padding: 80px 0px;
+                padding: 100px 20px 80px 20px;
             }
 
             .feature {
-                margin: 60px 0;
+                width: 280px;
 
                 .image-wrapper {
-                    margin: 0 auto;
-
                     img.feature-image {
-                        width: 200px;
-                        height: 200px;
-                    }
-                }
-
-                .content-wrapper {
-                    width: 300px;
-                    margin: 0 auto;
-                    padding: 0;
-                }
-
-                &.reverse {
-                    flex-direction: column;
-                }
-            }
-
-            div:nth-child(4) {
-                margin-bottom: 60px;
-            }
-
-            .button-wrapper {
-                .learn-more {
-                    padding: 8px 35px;
-                    font-size: 18px;
-                }
-            }
-        }
-
-        &--projects {
-            header {
-                margin-bottom: 60px;
-                padding: 0 20px;
-            }
-
-            .project-carousel {
-                .project-wrapper {
-                    justify-content: start;
-                    gap: 15px;
-
-                    &:first-child {
-                        padding-left: 20px;
-                    }
-
-
-                    .github-card {
-                        width: 100%;
-                        height: auto;
-                        padding-bottom: 9px;
-                        border-radius: 15px;
-
-                        img.project-photo {
-                            width: 200px;
-                            height: auto;
-                            margin: 10px;
-                            border-radius: 10px;
-                        }
-
-                        .github-wrapper {
-                            margin: 0 10px;
-
-                            img.github-logo {
-                                width: 20px;
-                                height: 20px;
-                            }
-                        }
-                    }
-
-                    &:hover {
-                        animation-play-state: paused;
-                    }
-                }
-
-                .arrows-container {
-                    width: 62px;
-                    height: 150px;
-                    top: 40px;
-
-                    img {
+                        width: 150px;
                         height: 150px;
                     }
                 }
             }
         }
 
-        &--cta {
-            .container {
-                gap: 20px;
-                flex-wrap: nowrap;
+        &--projects {
+            header {
+                width: 280px;
             }
+        }
 
+        &--cta {
             img {
-                width: 300px;
+                width: 280px;
             }
 
             header {
-                width: 300px;
+                width: 280px;
+
+                h3 {
+                    font-size: 24px;
+                }
             }
 
             .sign-up {
-                padding: 12px 36px;
-                font-size: 20px;
+                font-size: 18px;
             }
         }
     }
