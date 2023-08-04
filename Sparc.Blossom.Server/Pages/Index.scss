@@ -132,10 +132,13 @@
         .interactive-block {
             width: 100%;
             margin: 0 auto;
-            margin-top: 40px;
-            border: solid 1px $grey-100;
-            border-radius: 50px;
+            margin-top: 93px;
+            margin-bottom: 168px;
+            /*border: solid 1px $grey-100;
+            border-radius: 50px;*/
             position: relative;
+            display: flex;
+            justify-content: center;
 
             img {
                 width: 542px;
@@ -155,6 +158,10 @@
                     height: auto;
                     margin: 0 auto;
                 }
+            }
+
+            .game-container {
+                margin: 0 auto;
             }
         }
     }

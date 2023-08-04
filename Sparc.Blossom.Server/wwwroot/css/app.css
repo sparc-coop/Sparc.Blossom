@@ -390,10 +390,13 @@ footer .footer--column .column-links a {
 .landing--intro .interactive-block {
   width: 100%;
   margin: 0 auto;
-  margin-top: 40px;
-  border: solid 1px #F6F4F3;
-  border-radius: 50px;
+  margin-top: 93px;
+  margin-bottom: 168px;
+  /*border: solid 1px $grey-100;
+  border-radius: 50px;*/
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 .landing--intro .interactive-block img {
   width: 542px;
@@ -410,6 +413,9 @@ footer .footer--column .column-links a {
 .landing--intro .interactive-block--placeholder img {
   width: 1437px;
   height: auto;
+  margin: 0 auto;
+}
+.landing--intro .interactive-block .game-container {
   margin: 0 auto;
 }
 .landing .projectlogo-carousel {
