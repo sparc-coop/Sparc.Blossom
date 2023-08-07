@@ -1056,6 +1056,31 @@ footer .footer--column .column-links a {
   right: 28px;
 }
 
+.shapes, .shapes--tablet, .shapes--mobile {
+  display: none;
+}
+
+#game-container {
+  width: 1056px;
+  height: 430px;
+  border: none;
+  overflow: hidden;
+}
+@media screen and (max-width: 1098px) {
+  #game-container {
+    width: 600px;
+  }
+}
+@media screen and (max-width: 600px) {
+  #game-container {
+    width: 340px;
+  }
+}
+
+#game-container:hover {
+  cursor: pointer;
+}
+
 body {
   margin: 0;
   background: #0A0A0A;

@@ -1,5 +1,5 @@
 ﻿<div class="shapes">
-    <div class="stack-1" id="stack-1">
+    <div>
         <Circle Id="stack-1-0" />
         <Diamond Id="stack-1-1" />
         <Square Id="stack-1-2" />
@@ -12,7 +12,7 @@
         <Diamond Id="stack-1-9" />
     </div>
 
-    <div class="stack-2" id="stack-2">
+    <div>
         <Square Id="stack-2-0" />
         <TriangleUp Id="stack-2-1" />
         <Circle Id="stack-2-2" />
@@ -25,7 +25,7 @@
         <TriangleUp Id="stack-2-9" />
     </div>
 
-    <div class="stack-3" id="stack-3">
+    <div>
         <TriangleDown Id="stack-3-0" />
         <Circle Id="stack-3-1" />
         <TriangleDown Id="stack-3-2" />
@@ -38,7 +38,7 @@
         <Circle Id="stack-3-9" />
     </div>
 
-    <div class="stack-4" id="stack-4">
+    <div>
         <Circle Id="stack-4-0" />
         <Diamond Id="stack-4-1" />
         <Square Id="stack-4-2" />
@@ -52,11 +52,83 @@
     </div>
 </div>
 
+<div class="shapes--tablet">
+    <div>
+        <Square Id="tabletStack-1-2" />
+        <Diamond Id="tabletStack-1-3" />
+        <Circle Id="tabletStack-1-4" />
+        <Diamond Id="tabletStack-1-5" />
+        <Square Id="tabletStack-1-6" />
+        <Diamond Id="tabletStack-1-7" />
+    </div>
+
+    <div>
+        <Circle Id="tabletStack-2-2" />
+        <TriangleUp Id="tabletStack-2-3" />
+        <Square Id="tabletStack-2-4" />
+        <TriangleUp Id="tabletStack-2-5" />
+        <Circle Id="tabletStack-2-6" />
+        <TriangleUp Id="tabletStack-2-7" />
+    </div>
+
+    <div>
+        <TriangleDown Id="tabletStack-3-2" />
+        <Circle Id="tabletStack-3-3" />
+        <TriangleDown Id="tabletStack-3-4" />
+        <Circle Id="tabletStack-3-5" />
+        <TriangleDown Id="tabletStack-3-6" />
+        <Circle Id="tabletStack-3-7" />
+    </div>
+
+    <div>
+        <Square Id="tabletStack-4-2" />
+        <Diamond Id="tabletStack-4-3" />
+        <Circle Id="tabletStack-4-4" />
+        <Diamond Id="tabletStack-4-5" />
+        <Square Id="tabletStack-4-6" />
+        <Diamond Id="tabletStack-4-7" />
+    </div>
+</div>
+
+<div class="shapes--mobile">
+    <div>
+        <Circle Id="mobileStack-1-4" />
+        <Diamond Id="mobileStack-1-5" />
+        <Square Id="mobileStack-1-6" />
+    </div>
+
+    <div>
+        <Square Id="mobileStack-2-4" />
+        <TriangleUp Id="mobileStack-2-5" />
+        <Circle Id="mobileStack-2-6" />
+    </div>
+
+    <div>
+        <TriangleDown Id="mobileStack-3-4" />
+        <Circle Id="mobileStack-3-5" />
+        <TriangleDown Id="mobileStack-3-6" />
+    </div>
+
+    <div>
+        <Circle Id="mobileStack-4-4" />
+        <Diamond Id="mobileStack-4-5" />
+        <Square Id="mobileStack-4-6" />
+    </div>
+</div>
+
 <div class="game-container" id="game-container">
 </div>
 
-<style>
+@*<style>
     .shapes {
+        display: none;
+    }
+
+    .shapes--tablet {
+        display: none;
+    }
+    
+    .shapes--mobile {
         display: none;
     }
 
@@ -66,11 +138,11 @@
         border: none;
     }
 
-        #game-container:hover {
-            cursor: pointer;
-        }
+    #game-container:hover {
+        cursor: pointer;
+    }
 </style>
-
+*@
 @code {
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {

@@ -2,6 +2,7 @@
     var canvas = document.getElementById("game-container");
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
+
     window.addEventListener("resize", function () {
         document.getElementById("game-container").width = canvas.width;
         document.getElementById("game-container").height = canvas.height;
@@ -120,124 +121,372 @@
     bodies.push(floor);
     bodies.push(rightWall);
     bodies.push(leftWall);
+    Composite.add(world, bodies);
 
-    // stack
-    var row = 1;
-    var index = 0;
+    // stacks
+    if (window.innerWidth > 1098) {
+        desktopGame();
+    }
 
-    var myStack = Composites.stack(
-        100,
-        40,
-        10,
-        4,
-        0,
-        0,
-        function (x, y) {
-            if (index > 9) {
-                index = 0;
-                row++;
-            }
+    if (window.innerWidth <= 1098 & window.innerWidth > 600) {
+        tabletGame();
+    }
 
-            var string = "stack-" + row + "-";
-            var id = string + index;
-            console.log(id);
-            index++;
+    if (window.innerWidth <= 600) {
+        mobileGame();
+    }
 
-            var path = document.getElementById(id);
+    function desktopGame() {
+        var row = 1;
+        var index = 0;
 
-            if (path) {
-                var cls = path.getAttribute("class");
-                var color = "#FFFFFF";
-                if (cls) {
-                    if (cls.includes("square")) {
-                        color = "#F05A67";
-                        return Bodies.rectangle(x, y, 85, 85, {
-                            isStatic: true,
-                            slop: 0,
-                            restitution: 0.75,
-                            chamfer: { radius: 23 },
-                            render: {
-                                fillStyle: color,
-                                strokeStyle: color
-                            }
-                        });
-                    }
-                    if (cls.includes("triangle-down")) {
-                        color = "#4D4ADF";
-                        var positionY = y - 4;
-                        return Bodies.fromVertices(
-                            x,
-                            positionY,
-                            Svg.pathToVertices(path, 1),
-                            {
+        var desktopStack = Composites.stack(
+            100,
+            40,
+            10,
+            4,
+            0,
+            0,
+            function (x, y) {
+                if (index > 9) {
+                    index = 0;
+                    row++;
+                }
+
+                var string = "stack-" + row + "-";
+                var id = string + index;
+                console.log(id);
+                index++;
+
+                var path = document.getElementById(id);
+
+                if (path) {
+                    var cls = path.getAttribute("class");
+                    var color = "#FFFFFF";
+                    if (cls) {
+                        if (cls.includes("square")) {
+                            color = "#F05A67";
+                            return Bodies.rectangle(x, y, 85, 85, {
+                                isStatic: true,
+                                slop: 0,
+                                restitution: 0.75,
+                                chamfer: { radius: 23 },
+                                render: {
+                                    fillStyle: color,
+                                    strokeStyle: color
+                                }
+                            });
+                        }
+                        if (cls.includes("triangle-down")) {
+                            color = "#4D4ADF";
+                            var positionY = y - 4;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+                        if (cls.includes("triangle-up")) {
+                            color = "#4D4ADF";
+                            var positionY = y + 15;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+
+                        if (cls.includes("circle")) {
+                            color = "#E2A30D";
+                            return Bodies.circle(x, y, 42.5, {
                                 isStatic: true,
                                 slop: 0,
                                 restitution: 0.75,
                                 render: {
                                     fillStyle: color,
-                                    strokeStyle: color,
+                                    strokeStyle: color
                                 }
-                            },
-                            true
-                        );
-                    }
-                    if (cls.includes("triangle-up")) {
-                        color = "#4D4ADF";
-                        var positionY = y + 15;
-                        return Bodies.fromVertices(
-                            x,
-                            positionY,
-                            Svg.pathToVertices(path, 1),
-                            {
-                                isStatic: true,
-                                slop: 0,
-                                restitution: 0.75,
-                                render: {
-                                    fillStyle: color,
-                                    strokeStyle: color,
-                                }
-                            },
-                            true
-                        );
-                    }
-
-                    if (cls.includes("circle")) {
-                        color = "#E2A30D";
-                        return Bodies.circle(x, y, 42.5, {
-                            isStatic: true,
-                            slop: 0,
-                            restitution: 0.75,
-                            render: {
-                                fillStyle: color,
-                                strokeStyle: color
-                            }
-                        });
-                    }
-                    if (cls.includes("diamond")) {
-                        color = "#3BD7FF";
-                        return Bodies.fromVertices(
-                            x,
-                            y,
-                            Svg.pathToVertices(path, 1),
-                            {
-                                isStatic: true,
-                                slop: 0,
-                                restitution: 0.75,
-                                render: {
-                                    fillStyle: color,
-                                    strokeStyle: color,
-                                }
-                            },
-                            true
-                        );
+                            });
+                        }
+                        if (cls.includes("diamond")) {
+                            color = "#3BD7FF";
+                            return Bodies.fromVertices(
+                                x,
+                                y,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
                     }
                 }
             }
-        }
-    );
+        );
 
-    bodies.push(myStack);
-    Composite.add(world, bodies);
+        Composite.add(world, desktopStack);
+    }
+
+    function tabletGame() {
+        row = 1;
+        index = 2;
+
+        var tabletStack = Composites.stack(
+            50,
+            40,
+            6,
+            4,
+            0,
+            0,
+            function (x, y) {
+                if (index > 7) {
+                    index = 2;
+                    row++;
+                }
+
+                var string = "tabletStack-" + row + "-";
+                var id = string + index;
+                index++;
+
+                var path = document.getElementById(id);
+
+                if (path) {
+                    var cls = path.getAttribute("class");
+                    var color = "#FFFFFF";
+                    if (cls) {
+                        if (cls.includes("square")) {
+                            color = "#F05A67";
+                            return Bodies.rectangle(x, y, 85, 85, {
+                                isStatic: true,
+                                slop: 0,
+                                restitution: 0.75,
+                                chamfer: { radius: 23 },
+                                render: {
+                                    fillStyle: color,
+                                    strokeStyle: color
+                                }
+                            });
+                        }
+                        if (cls.includes("triangle-down")) {
+                            color = "#4D4ADF";
+                            var positionY = y - 4;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+                        if (cls.includes("triangle-up")) {
+                            color = "#4D4ADF";
+                            var positionY = y + 15;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+
+                        if (cls.includes("circle")) {
+                            color = "#E2A30D";
+                            return Bodies.circle(x, y, 42.5, {
+                                isStatic: true,
+                                slop: 0,
+                                restitution: 0.75,
+                                render: {
+                                    fillStyle: color,
+                                    strokeStyle: color
+                                }
+                            });
+                        }
+                        if (cls.includes("diamond")) {
+                            color = "#3BD7FF";
+                            return Bodies.fromVertices(
+                                x,
+                                y,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+                    }
+                }
+            }
+        );
+
+        Composite.add(world, tabletStack);
+    }
+
+    function mobileGame() {
+        row = 1;
+        index = 4;
+
+        var mobileStack = Composites.stack(
+            40,
+            40,
+            3,
+            4,
+            0,
+            0,
+            function (x, y) {
+                if (index > 6) {
+                    index = 4;
+                    row++;
+                }
+
+                var string = "mobileStack-" + row + "-";
+                var id = string + index;
+                index++;
+
+                var path = document.getElementById(id);
+
+                if (path) {
+                    var cls = path.getAttribute("class");
+                    var color = "#FFFFFF";
+                    if (cls) {
+                        if (cls.includes("square")) {
+                            color = "#F05A67";
+                            return Bodies.rectangle(x, y, 85, 85, {
+                                isStatic: true,
+                                slop: 0,
+                                restitution: 0.75,
+                                chamfer: { radius: 23 },
+                                render: {
+                                    fillStyle: color,
+                                    strokeStyle: color
+                                }
+                            });
+                        }
+                        if (cls.includes("triangle-down")) {
+                            color = "#4D4ADF";
+                            var positionY = y - 4;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+                        if (cls.includes("triangle-up")) {
+                            color = "#4D4ADF";
+                            var positionY = y + 15;
+                            return Bodies.fromVertices(
+                                x,
+                                positionY,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+
+                        if (cls.includes("circle")) {
+                            color = "#E2A30D";
+                            return Bodies.circle(x, y, 42.5, {
+                                isStatic: true,
+                                slop: 0,
+                                restitution: 0.75,
+                                render: {
+                                    fillStyle: color,
+                                    strokeStyle: color
+                                }
+                            });
+                        }
+                        if (cls.includes("diamond")) {
+                            color = "#3BD7FF";
+                            return Bodies.fromVertices(
+                                x,
+                                y,
+                                Svg.pathToVertices(path, 1),
+                                {
+                                    isStatic: true,
+                                    slop: 0,
+                                    restitution: 0.75,
+                                    render: {
+                                        fillStyle: color,
+                                        strokeStyle: color,
+                                    }
+                                },
+                                true
+                            );
+                        }
+                    }
+                }
+            }
+        );
+
+        Composite.add(world, mobileStack);
+    }
 
     // bodies (not walls) set to not static on scroll
     const delay = 2500;
@@ -250,8 +499,6 @@
             onEnter: () => {
                 const allBodies = Matter.Composite.allBodies(world);
                 allBodies.forEach(body => {
-                    console.log(body);
-                    console.log(Body);
                     if (body.label !== "wall") {
                         Body.setStatic(body, false);
                     }
@@ -259,7 +506,7 @@
             },
         })
     }
-    , delay);
+        , delay);
 
     // mouse control
     let mouse = Mouse.create(render.canvas),
