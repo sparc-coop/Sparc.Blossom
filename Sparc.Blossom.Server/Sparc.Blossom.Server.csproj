@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <None Remove="App.scss" />
-    <None Remove="Kori\Guide.scss" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +22,6 @@
     </Content>
     <Content Include="App.Typography.scss" />
     <Content Include="App.Variables.scss" />
-    <Content Include="Kori\KoriWidget.scss" />
     <Content Include="Pages\Guide.scss" />
     <Content Include="Shared\NavMenu.scss" />
 	<Content Include="Shared\Footer.scss" />
@@ -31,24 +29,6 @@
 
   <ItemGroup>
     <None Include="compilerconfig.json" />
-    <None Include="wwwroot\kori\borders\black-16.svg" />
-    <None Include="wwwroot\kori\borders\black-8.svg" />
-    <None Include="wwwroot\kori\borders\Box_4 with carrot.svg" />
-    <None Include="wwwroot\kori\borders\orange-16.svg" />
-    <None Include="wwwroot\kori\icons\Attachment.svg" />
-    <None Include="wwwroot\kori\icons\Bold.svg" />
-    <None Include="wwwroot\kori\icons\Bullet.svg" />
-    <None Include="wwwroot\kori\icons\Code.svg" />
-    <None Include="wwwroot\kori\icons\Italic.svg" />
-    <None Include="wwwroot\kori\icons\Link.svg" />
-    <None Include="wwwroot\kori\icons\Numbered.svg" />
-    <None Include="wwwroot\kori\icons\Quote.svg" />
-    <None Include="wwwroot\kori\icons\Strikethrough.svg" />
-    <None Include="wwwroot\kori\icons\Union.svg" />
-    <None Include="wwwroot\kori\icons\User.svg" />
-    <None Include="wwwroot\kori\images\dock-icon.svg" />
-    <None Include="wwwroot\kori\images\kori-buddy.svg" />
-    <None Include="wwwroot\kori\js\kori.js" />
   </ItemGroup>
 
   <ItemGroup>
