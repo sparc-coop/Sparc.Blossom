@@ -1,20 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>fef388b9-e1db-4866-81cd-fb3a86884d2e</UserSecretsId>
   </PropertyGroup>
-
   <ItemGroup>
     <Content Remove="compilerconfig.json" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="App.scss" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="App.scss">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
@@ -24,17 +20,17 @@
     <Content Include="App.Variables.scss" />
     <Content Include="Pages\Guide.scss" />
     <Content Include="Shared\NavMenu.scss" />
-	<Content Include="Shared\Footer.scss" />
+    <Content Include="Shared\Footer.scss" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="7.0.0" />
     <PackageReference Include="Sparc.Ibis" Version="7.0.5" />
     <PackageReference Include="Sparc.Kernel" Version="7.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.7" />
   </ItemGroup>
-
+  <ItemGroup>
+    <ProjectReference Include="..\..\sparc\Kori\Kori.csproj" />
+  </ItemGroup>
 </Project>

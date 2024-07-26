@@ -1081,6 +1081,45 @@ footer .footer--column .column-links a {
   cursor: pointer;
 }
 
+.kori-content {
+  padding: 0;
+  margin: 0;
+}
+
+.kori-initializing {
+  visibility: visible;
+  opacity: 0.3;
+}
+
+.kori-loggedin .kori__btn:hover {
+  background: var(--orange-500) !important;
+}
+.kori-loggedin .kori__btn-text:hover {
+  color: var(--orange-500) !important;
+}
+.kori-loggedin .kori__btn-primary:hover {
+  background: var(--orange-200) !important;
+  filter: opacity(1) !important;
+}
+.kori-loggedin .kori-enabled:not(.selected):hover {
+  border: 1px solid var(--orange-500) !important;
+}
+.kori-loggedin .kori__btn:active {
+  filter: opacity(1) !important;
+}
+.kori-loggedin .kori__btn-text:active {
+  color: var(--grey-600) !important;
+}
+.kori-loggedin .kori__btn-primary:active {
+  background: var(--orange-500) !important;
+}
+.kori-loggedin .kori-edit__options button:hover {
+  border: 1px solid var(--grey-700);
+}
+.kori-loggedin .kori-edit__options button:active {
+  border: 1px solid var(--grey-200);
+}
+
 body {
   margin: 0;
   background: #0A0A0A;
