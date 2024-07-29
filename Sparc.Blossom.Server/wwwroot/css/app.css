@@ -1081,6 +1081,69 @@ footer .footer--column .column-links a {
   cursor: pointer;
 }
 
+body {
+  margin: 0;
+  background: #0A0A0A;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/*.ibis-translate {
+    padding: 0;
+    margin: 0;
+}
+
+.ibis-translating {
+    visibility: visible;
+    opacity: 0.3;
+}*/
+@font-face {
+  font-family: "Love Ya Like A Sister";
+  font-weight: 400;
+  src: url("/kori/fonts/LoveYaLikeASister-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "ArticulatCF";
+  font-weight: 500;
+  src: url("/kori/fonts/ArticulatCF-Medium.otf") format("opentype");
+}
+:root {
+  --white: #FFFFFF;
+  --grey-50: #F2F2F2;
+  --grey-100: #E6E6E6;
+  --grey-200: #CCCCCC;
+  --grey-300: #B3B3B3;
+  --grey-400: #999999;
+  --grey-500: #808080;
+  --grey-600: #666666;
+  --grey-700: #4D4D4D;
+  --grey-800: #333333;
+  --grey-900: #1A1A1A;
+  --black: #000000;
+  --yellow-300: #FCF29E;
+  --yellow-500: #FEF07E;
+  --yellow-600: #FDF37A;
+  --yellow-700: #ECDD2A;
+  --blue-300: #80C3E4;
+  --blue-500: #6DC8F4;
+  --blue-600: #4288CD;
+  --blue-700: #227CD3;
+  --orange-200: #FFA158;
+  --orange-300: #DBA57F;
+  --orange-500: #FF801E;
+  --orange-600: #E67976;
+  --orange-700: #E84141;
+  --green-300: #9EBF94;
+  --green-500: #86D170;
+  --green-600: #31726E;
+  --green-700: #0E7973;
+}
+
 .kori-content {
   padding: 0;
   margin: 0;
@@ -1119,25 +1182,3 @@ footer .footer--column .column-links a {
 .kori-loggedin .kori-edit__options button:active {
   border: 1px solid var(--grey-200);
 }
-
-body {
-  margin: 0;
-  background: #0A0A0A;
-}
-body::-webkit-scrollbar {
-  display: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-/*.ibis-translate {
-    padding: 0;
-    margin: 0;
-}
-
-.ibis-translating {
-    visibility: visible;
-    opacity: 0.3;
-}*/
